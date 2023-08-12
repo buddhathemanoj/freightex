@@ -456,7 +456,7 @@ console.log("its clicked" )
     
                 <Col span={7}>
                     <div>
-                    <TextArea  style={{backgroundColor:'#b5b3ae'}}  />
+                    <TextArea  style={{backgroundColor:'#b5b3ae',minHeight:'150px'}}  />
                     </div>
                 </Col>
             </Row>
