@@ -180,12 +180,12 @@ import { Col, Row, Form, Input, Button ,message} from 'antd';
 import { createUserWithEmailAndPassword ,sendEmailVerification} from "firebase/auth"
 import { auth ,firestore } from '../../firebase'; // Make sure you have the correct path to firestore
 import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 export const Signup = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const authInstance = getAuth();
- 
+ const navigate =useNavigate()
   const signUp =  async (values) => {
     setLoading(true);
     const { email, password, username } = values;
@@ -198,6 +198,9 @@ export const Signup = () => {
      
         await sendEmailVerification(userCredential.user);
         message.success("Sign-up successful! Please check your email for verification.");
+        setTimeout(() => {
+            navigate('/login');
+          }, 1000); //
       console.log(userCredential);
     } catch (error) {
       console.log(error);
@@ -207,28 +210,29 @@ export const Signup = () => {
   };
 
   return (
-    <div className="sign-in-container">
-      <Row justify="center">
-        <Col xl={8}>
+    <div className="sign-in-container" style={{justifyContent:'center',alignItems:'center',padding:'15% 0'}}>
+        <div>
+             <Row justify="center">
+        <Col xl={6}>
           <Form form={form} onFinish={signUp}>
-            <h1>Create Account</h1>
+            <h1 style={{fontSize:'30px',textAlign:'center'}}>Create Account</h1>
             <Form.Item
               name="email"
               rules={[{ required: true, type: 'email', message: 'Please enter your email' }]}
             >
-              <Input placeholder="Enter your email" />
+              <Input style={{height:'40px'}} placeholder="Enter your email" />
             </Form.Item>
             <Form.Item
               name="password"
               rules={[{ required: true, message: 'Please enter your password' }]}
             >
-              <Input.Password placeholder="Enter your password" />
+              <Input.Password style={{height:'40px'}} placeholder="Enter your password" />
             </Form.Item>
             <Form.Item
               name="username"
               rules={[{ required: true, message: 'Please enter your username' }]}
             >
-              <Input placeholder="Enter your username" />
+              <Input style={{height:'40px'}} placeholder="Enter your username" />
             </Form.Item>
             <div style={{display:'flex' ,gap:'30px'}}>
                  <Form.Item>
@@ -242,6 +246,8 @@ export const Signup = () => {
           </Form>
         </Col>
       </Row>
+        </div>
+     
     </div>
   );
 };

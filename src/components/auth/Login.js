@@ -24,22 +24,26 @@ export const Login = () => {
   };
 
   return (
-    <div className="sign-in-container">
-        <Row justify="center">
-        <Col xl={8}>
+    <div className="sign-in-container"  style={{justifyContent:'center',alignItems:'center',padding:'15% 0'}}>
+        <div  >
+           
+           
+             <Row justify="center">
+        <Col xl={6}>
+      
       <Form form={form} onFinish={signIn}>
-        <h1>Sign In</h1>
+        <h1 style={{textAlign:'center'}}>Sign In</h1>
         <Form.Item
           name="email"
           rules={[{ required: true, type: 'email', message: 'Please enter your email' }]}
         >
-          <Input placeholder="Enter your email" />
+          <Input style={{height:'40px'}} placeholder="Enter your email" />
         </Form.Item>
         <Form.Item
           name="password"
           rules={[{ required: true, message: 'Please enter your password' }]}
         >
-          <Input.Password placeholder="Enter your password" />
+          <Input.Password style={{height:'40px'}} placeholder="Enter your password" />
         </Form.Item>
         <Form.Item>
           <Button type="primary" htmlType="submit" loading={loading}>
@@ -49,6 +53,8 @@ export const Login = () => {
       </Form>
       </Col>
       </Row>
+        </div>
+       
     </div>
   );
 };
