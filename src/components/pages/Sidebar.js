@@ -5,6 +5,7 @@ import { DesktopOutlined, FileOutlined, BookTwoTone, TeamOutlined, UserOutlined 
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import  '../../App.css'
 import { Newshipment } from '../Ocean import/Newshipment';
+import Shipmentlist from '../Ocean import/Shipemntlist';
 const { Header, Content, Footer, Sider } = Layout;
 
 function getItem(label, key, icon, children) {
@@ -54,6 +55,30 @@ const Sidebar = () => {
     setSelectedMenuKey(key);
   };
 
+  const generateBreadcrumbTrail = (menuItems, targetKey) => {
+    for (const item of menuItems) {
+      if (item.key === targetKey) {
+        return (
+          <Breadcrumb.Item key={item.key}>
+            <span>{item.label}</span>
+          </Breadcrumb.Item>
+        );
+      } else if (item.children) {
+        const subMenuItem = generateBreadcrumbTrail(item.children, targetKey);
+        if (subMenuItem) {
+          return (
+            <>
+              <Breadcrumb.Item key={item.key}>
+                <span>{item.label}</span>
+              </Breadcrumb.Item>
+              {subMenuItem}
+            </>
+          );
+        }
+      }
+    }
+    return null;
+  };
 
   const getContentForMenuKey = (key) => {
     // You can define the content for each menu key here
@@ -63,7 +88,7 @@ const Sidebar = () => {
         case '1.1':
           return <Newshipment/>;
         case '1.2':
-          return 'Shipment List content goes here';
+          return <Shipmentlist/>;
         case '1.3':
           return 'MB/L List content goes here';
         case '1.4':
@@ -123,10 +148,10 @@ const Sidebar = () => {
     </Sider>
     <Layout>
       <Content style={{ margin: '0 16px' }}>
-        <Breadcrumb style={{ margin: '16px 0' }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>{selectedMenuKey}</Breadcrumb.Item>
-        </Breadcrumb>
+      <Breadcrumb style={{ margin: '16px 0' }}>
+    <Breadcrumb.Item>Home</Breadcrumb.Item>
+    {generateBreadcrumbTrail(items, selectedMenuKey)}
+  </Breadcrumb>
         <div style={{ padding: " 0", minHeight: 360 }}>
           {/* Render the content dynamically based on the selected menu key */}
           {getContentForMenuKey(selectedMenuKey)}

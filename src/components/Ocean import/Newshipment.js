@@ -11,10 +11,16 @@ const { Option } = Select;
 
 export const Newshipment = () => {
     const [isPanelOpen, setIsPanelOpen] = useState(false);
-    const [ismemoOpen, setIsmemoOpen] = useState(false);
+    const [ismemoOpen, setIsmemoOpen] = useState(true);
     const [isSecondMemoOpen, setIsSecondMemoOpen] = useState(false); 
     const [tableData, setTableData] = useState([]);
     const [isAnyInputClicked, setIsAnyInputClicked] = useState(false);
+
+    const [showAdditionalInputs, setShowAdditionalInputs] = useState(false);
+
+    const handleCheckboxChange = (e) => {
+      setShowAdditionalInputs(e.target.checked);
+    };
 
     const handlememoToggle = () => {
         setIsmemoOpen((prevState) => !prevState);
@@ -116,6 +122,7 @@ console.log("its clicked" )
    
     const formItemStyle = { marginBottom: '5px' };
         const formItemStyle1 = { marginBottom: '25px' };
+        const formItemStyle2 = { marginBottom: '40px' };
         const inputstyle= { innerHeight: '15px' };
         const [placement, SetPlacement] = useState('topLeft');
         const [oblReceivedChecked, setOblReceivedChecked] = useState(true);
@@ -160,7 +167,7 @@ console.log("its clicked" )
     {/* Add more options as needed */}
     </Select>
     </Form.Item>
-    <Form.Item label="OP" style={formItemStyle1}>
+    <Form.Item label="OP" style={formItemStyle}>
     <Select onClick={() => setIsAnyInputClicked(true)} style={{  height: '24px' }}>
     <Option value="option1">Option 1</Option>
     <Option value="option2">Option 2</Option>
@@ -168,6 +175,30 @@ console.log("its clicked" )
     {/* Add more options as needed */}
     </Select>
     </Form.Item>
+    {showAdditionalInputs && (
+        <>
+          <Form.Item label="Customer Ref.No">
+            <Input />
+          </Form.Item>
+          <Form.Item label="Customer" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    
+    </Select>
+    </Form.Item>
+    <Form.Item label="Sales" style={formItemStyle2}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+   
+    </Select>
+    </Form.Item>
+          {/* Add more additional inputs as needed */}
+        </>
+      )}
     <br/>
     <Form.Item label="Vessel" style={formItemStyle}>
     <Select>
@@ -185,7 +216,7 @@ console.log("its clicked" )
     {/* Add more options as needed */}
     </Select>
     </Form.Item>
-    <Form.Item label="Place of Delivery (DEL)" style={formItemStyle}>
+    <Form.Item label="Place of Delivery (DEL)" style={formItemStyle2}>
     
       <div style={{ display: 'flex', flexDirection: 'column' }}>
     
@@ -243,10 +274,34 @@ console.log("its clicked" )
     {/* Add more options as needed */}
     </Select>
     </Form.Item>
-    <Form.Item label="Carrier Contact No" style={formItemStyle1}>
+    <Form.Item label="Carrier Contact No" style={formItemStyle}>
     <Input />
     </Form.Item>
     
+    {showAdditionalInputs && (
+        <>
+        
+          <Form.Item label="Shipper" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    
+    </Select>
+    </Form.Item>
+    <Form.Item label="Bill To" style={formItemStyle2}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+   
+    </Select>
+    </Form.Item>
+          {/* Add more additional inputs as needed */}
+        </>
+      )}
+
+
     <Form.Item label="Voyage" style={formItemStyle}>
     <Input />
     </Form.Item>
@@ -256,7 +311,7 @@ console.log("its clicked" )
     <Form.Item label="Place of Delivery ETA" style={formItemStyle}>
     <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
     </Form.Item>
-    <Form.Item label="ATD" style={formItemStyle1}>
+    <Form.Item label="ATD" style={formItemStyle2}>
     <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
     </Form.Item>
     
@@ -308,10 +363,32 @@ console.log("its clicked" )
     <Form.Item label="Agent Ref No" style={formItemStyle}>
     <Input />
     </Form.Item>
-    <Form.Item label="Direct Master" style={formItemStyle1}>
-    <Checkbox/>
-    </Form.Item>
+    <Form.Item label="Direct Master" style={formItemStyle}>
+        <Checkbox onChange={handleCheckboxChange} />
+      </Form.Item>
     
+      {showAdditionalInputs && (
+        <>
+        
+          <Form.Item label="Consignee" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    
+    </Select>
+    </Form.Item>
+    <Form.Item label=" Sales  Type" style={formItemStyle2}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+   
+    </Select>
+    </Form.Item>
+          {/* Add more additional inputs as needed */}
+        </>
+      )}
     <Form.Item label="CY Location" style={formItemStyle}>
     <Select >
     <Option value="option1">Option 1</Option>
@@ -336,7 +413,7 @@ console.log("its clicked" )
     {/* Add more options as needed */}
     </Select>
     </Form.Item>
-    <Form.Item label="ATA" style={formItemStyle1}>
+    <Form.Item label="ATA" style={formItemStyle2}>
     <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
     </Form.Item>
     <Form.Item  label="*Service Term" style={formItemStyle}>
@@ -394,10 +471,32 @@ console.log("its clicked" )
     {/* Add more options as needed */}
     </Select>
     </Form.Item>
-    <Form.Item label="Sub B/L No." style={formItemStyle1}>
+    <Form.Item label="Sub B/L No." style={formItemStyle2}>
     <Input />
     </Form.Item>
+    {showAdditionalInputs && (
+        <>
+        
+          <Form.Item label="Notify" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
     
+    </Select>
+    </Form.Item>
+    <Form.Item label=" Cargo  Type" style={formItemStyle2}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+   
+    </Select>
+    </Form.Item>
+          {/* Add more additional inputs as needed */}
+        </>
+      )}
+
     <Form.Item label="CFS Location " style={formItemStyle}>
     <Select >
     <Option value="option1">Option 1</Option>
@@ -412,7 +511,7 @@ console.log("its clicked" )
     <Form.Item label="Final ETA " style={formItemStyle1}>
     <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
     </Form.Item>
-    <Form.Item label="ETB" style={formItemStyle1}>
+    <Form.Item label="ETB" style={formItemStyle2}>
     <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
     </Form.Item>
     
