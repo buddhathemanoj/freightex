@@ -10,7 +10,8 @@ import { useAuth } from "./firebase";
 import Sidebar from "./components/pages/Sidebar";
 function App() {
   const currentUser = useAuth();
-  console.log( 'current: user',currentUser)
+  console.log( 'current: user',currentUser )
+
 
   return (
     <BrowserRouter>
@@ -19,41 +20,14 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route
         path="/home"
-        element={currentUser ?<> <Sidebar/></> : <Navigate to="/login" />}
+        element={currentUser && currentUser.emailVerified ?<> <Sidebar/></> : <Navigate to="/login" />}
       />
       <Route path="/" element={<Navigate to="/signup" />} />
       </Routes>
     </BrowserRouter>
 
-    // <div>
-    //   <Signup/>
-    //   <Login/>
-    //   <Home/>
-    // </div>
+   
   );
 }
 
 export default App;
-
-// import React from 'react';
-// import './App.css';
-// import { BrowserRouter, BrowserRouter as Router } from "react-router-dom";
-// import { Signup } from './components/auth/Signup';
-// import { Login } from './components/auth/Login';
-// import { Home } from './components/pages/Home';
-// import { useAuth } from './firebase';
-// import { Routesmain } from './components/auth/Routesmain';
-
-
-// function App() {
-//   return (
-//     <div>
-    
-    
-//     <Routesmain/>
- 
-//   </div>
-//   );
-// }
-
-// export default App;

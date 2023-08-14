@@ -7,22 +7,28 @@ export const Login = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+
+
+
   const signIn = async (values) => {
     setLoading(true);
     try {
       const { email, password } = values;
       await signInWithEmailAndPassword(auth, email, password);
-      message.success("Sign-in successful!");
-      setTimeout(() => {
-        navigate('/home');
-      }, 1000); // Redirect after 1 second
+if (auth.currentUser && !auth.currentUser.emailVerified) {
+        message.warning("Please verify your email before signing in.");
+      } else {
+        message.success("Sign-in successful!");
+        setTimeout(() => {
+          navigate('/home');
+        }, 1000); // Redirect after 1 second
+      }
     } catch (error) {
       message.error("Sign-in failed. Please check your credentials.");
     } finally {
       setLoading(false);
     }
   };
-
   return (
     <div className="sign-in-container"  style={{justifyContent:'center',alignItems:'center',padding:'15% 0'}}>
         <div  >
