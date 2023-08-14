@@ -20,13 +20,13 @@ export const Signup = () => {
 
   const signUp =  async (values) => {
     setLoading(true);
-    const { email, password, username } = values;
+    const { email, password, displayName } = values;
     try {
         const userCredential = await createUserWithEmailAndPassword(authInstance, email, password);
 
         // Store the username in Firestore
         const userDocRef = doc(firestore, 'users', userCredential.user.uid);
-        await setDoc(userDocRef, { username });
+        await setDoc(userDocRef, { displayName });
      
         await sendEmailVerification(userCredential.user);
         message.success("Sign-up successful! Please check your email for verification.");
@@ -66,7 +66,7 @@ export const Signup = () => {
               <Input.Password style={{height:'40px'}} placeholder="Enter your password" />
             </Form.Item>
             <Form.Item
-              name="username"
+              name="displayName"
               rules={[{ required: true, message: 'Please enter your username' }]}
             >
               <Input style={{height:'40px'}} placeholder="Enter your username" />

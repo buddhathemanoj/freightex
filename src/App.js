@@ -11,7 +11,7 @@ import Sidebar from "./components/pages/Sidebar";
 function App() {
   const currentUser = useAuth();
   console.log( 'current: user',currentUser )
-
+  console.log('Current user:', currentUser ? currentUser.displayName || currentUser.email : 'No user logged in');
 
   return (
     <BrowserRouter>

@@ -1,13 +1,15 @@
 
 
-import React, { useState } from 'react';
-import { DesktopOutlined, FileOutlined, BookTwoTone, TeamOutlined, UserOutlined } from '@ant-design/icons';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
-import  '../../App.css'
+import React, { useState,useEffect } from 'react';
+import { DesktopOutlined, FileOutlined, BookTwoTone, TeamOutlined, UserOutlined,DownOutlined ,LogoutOutlined} from '@ant-design/icons';
+import { Breadcrumb, Layout,Select, Menu, theme, Form,Dropdown } from 'antd';
+import './Sidebar.css'
 import { Newshipment } from '../Ocean import/Newshipment';
 import Shipmentlist from '../Ocean import/Shipemntlist';
-const { Header, Content, Footer, Sider } = Layout;
 
+
+const { Header, Content, Footer, Sider } = Layout;
+const { Option } = Select;
 function getItem(label, key, icon, children) {
   return {
     key,
@@ -17,6 +19,19 @@ function getItem(label, key, icon, children) {
   };
 }
 
+const userMenu = (
+  <Menu>
+    <Menu.Item key="profile">
+      <UserOutlined />
+    My Profile
+    </Menu.Item>
+  
+    <Menu.Item key="logout">
+      <LogoutOutlined />
+      Logout
+    </Menu.Item>
+  </Menu>
+);
 const items = [
     getItem('Ocean Import', '1', <UserOutlined />, [
       getItem('New Shipment', '1.1'),
@@ -49,11 +64,17 @@ const Sidebar = () => {
   const [selectedMenuKey, setSelectedMenuKey] = useState('1');
   const [response, setResponse] = useState(null); // State for the generated story
 
+
+  const [username, setUsername] = useState('');
   const colorBgContainer = '#38323d';
   const colorBgContainer1 = '#38323d';
   const handleMenuClick = ({ key }) => {
     setSelectedMenuKey(key);
   };
+
+
+
+
 
   const generateBreadcrumbTrail = (menuItems, targetKey) => {
     for (const item of menuItems) {
@@ -137,10 +158,20 @@ const Sidebar = () => {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-<Header style={{paddingBottom:'15px 0px ' , backgroundColor:colorBgContainer}}>
-    <h1 style={{color:'white' ,paddingBottom:'20px' }}>Go Freight</h1>
-   
-  </Header> 
+ <Header style={{ paddingBottom: '15px 0px ', display: 'flex',justifyContent:"space-between", backgroundColor: colorBgContainer }}>
+      <div>
+        <h1 style={{ color: 'white', paddingBottom: '20px' }}>Go Freight</h1>
+      </div>
+      <div style={{padding:'20px 0 0 0'}}>
+        {/* Ant Design Dropdown */}
+        <Dropdown overlay={userMenu} style={{ color: 'white' }}   >
+          <a className="ant-dropdown-link" onClick={(e) => e.preventDefault()} style={{ color: 'white' }}>
+            <UserOutlined style={{ fontSize: '18px', marginRight: '5px' }} />
+            {username} <DownOutlined style={{ fontSize: '12px' }} />
+          </a>
+        </Dropdown>
+      </div>
+    </Header>
  <Layout>
     <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)} style={{ backgroundColor: colorBgContainer1, color: 'white' }}>
       <div className="demo-logo-vertical" />
