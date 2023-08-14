@@ -19,15 +19,15 @@ export const Login = () => {
       if (auth.currentUser && !auth.currentUser.emailVerified) {
         message.warning("Please verify your email before signing in.");
       } else {
-        // Fetch the username from Firestore using the user's UID
-        const userDocRef = firestore.doc(`users/${auth.currentUser.uid}`);
-        userDocRef.get().then((doc) => {
-          if (doc.exists) {
-            const userData = doc.data();
-            // setUsername(userData.username);
-            console.log(userData); // This should now print the correct username
-          }
-        });
+       
+        // const userDocRef = firestore.doc(`users/${auth.currentUser.uid}`);
+        // userDocRef.get().then((doc) => {
+        //   if (doc.exists) {
+        //     const userData = doc.data();
+        //     // setUsername(userData.username);
+        //     console.log(userData); // This should now print the correct username
+        //   }
+        // });
     
         message.success("Sign-in successful!");
         console.log('Current user:', currentUser ? currentUser.displayName || currentUser.email : 'No user logged in');
