@@ -1,7 +1,15 @@
 import { useState } from 'react';
 import React  from 'react';
+import {PlusOutlined,DeleteOutlined,CopyOutlined} from '@ant-design/icons';
 import { Table, Button, Modal, Checkbox,Input } from 'antd';
 const columns = [
+    {
+        title: <Checkbox/>,
+        width: 100,
+        dataIndex: 'name',
+        key: 'name',
+        fixed: 'left',
+      },
   {
     title: 'Full Name',
     width: 100,
@@ -176,68 +184,14 @@ const data = [
 ];
 
 
-
-
-
-
-// const Shipmentlist = () => {
-//     const [visibleColumns, setVisibleColumns] = useState(columns.map(column => column.key));
-//     const [configVisible, setConfigVisible] = useState(false);
-  
-//     const handleColumnConfigChange = checkedColumns => {
-//       setVisibleColumns(checkedColumns);
-//       setConfigVisible(true);
-//     };
-  
-//     const openConfigModal = () => {
-//       setConfigVisible(true);
-//     };
-  
-//     const configModalContent = (
-//       <div>
-//         <h2>Column Configuration</h2>
-//         <Checkbox.Group
-//           options={columns.map(column => ({ label: column.title, value: column.key }))}
-//           value={visibleColumns}
-//           onChange={handleColumnConfigChange}
-//         />
-//       </div>
-//     );
-  
-//     return (
-//       <div>
-//         <Button onClick={openConfigModal}>Config</Button>
-//         <Button>Filter</Button>
-//         <Table
-//           columns={columns.filter(column => visibleColumns.includes(column.key))} // Filter columns based on visibility
-//           dataSource={data}
-//           scroll={{
-//             x: 2500,
-//             y: 300,
-//           }}
-//         />
-//         <Modal
-//         style={{width:'100%'}}
-//           visible={configVisible}
-//           onCancel={() => setConfigVisible(false)}
-//           onOk={() => setConfigVisible(false)}
-//         >
-//           {configModalContent}
-//         </Modal>
-//       </div>
-//     );
-//   };
-  
-//   export default Shipmentlist;
-
-
 const Shipmentlist = () => {
     const [visibleColumns, setVisibleColumns] = useState(columns.map(column => column.key));
     const [filterVisible, setFilterVisible] = useState(false);
     const [filteredData, setFilteredData] = useState(data);
     const [filterName, setFilterName] = useState('');
     const [filterAge, setFilterAge] = useState('');
-  
+    const [selectAllChecked, setSelectAllChecked] = useState(false);
+
     const [configVisible, setConfigVisible] = useState(false);
   
     const handleColumnConfigChange = checkedColumns => {
@@ -285,7 +239,12 @@ const Shipmentlist = () => {
              <Button style={{backgroundColor:'green',color:'white'}} onClick={openFilterModal}>Filter</Button>
         <Button style={{backgroundColor:'green',color:'white'}} onClick={openConfigModal}>Config</Button>
         </div>
-       
+       <div>
+
+        <Button  style={{backgroundColor:'green',marginRight:'5px'}} ><PlusOutlined/></Button>
+        <Button style={{marginRight:'5px'}} ><DeleteOutlined/></Button>
+        <Button  style={{marginRight:'5px'}}><CopyOutlined/></Button>
+       </div>
         <Modal
         visible={filterVisible}
         onCancel={closeFilterModal}
