@@ -53,6 +53,12 @@ export const Signup = () => {
     <Form form={form} onFinish={signUp}>
             <h1 style={{fontSize:'30px',textAlign:'center'}}>Create Account</h1>
             <Form.Item
+              name="displayName"
+              rules={[{ required: true, message: 'Please enter your username' }]}
+            >
+              <Input style={{height:'40px'}} placeholder="Enter your username" />
+            </Form.Item>
+            <Form.Item
               name="email"
               rules={[{ required: true, type: 'email', message: 'Please enter your email' }]}
             >
@@ -64,12 +70,7 @@ export const Signup = () => {
             >
               <Input.Password style={{height:'40px'}} placeholder="Enter your password" />
             </Form.Item>
-            <Form.Item
-              name="displayName"
-              rules={[{ required: true, message: 'Please enter your username' }]}
-            >
-              <Input style={{height:'40px'}} placeholder="Enter your username" />
-            </Form.Item>
+        
             <div className="signup-button-container">
         <Link to={'/login'}><p>Already a user?</p></Link>
         <Form.Item>
