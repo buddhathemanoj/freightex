@@ -1,15 +1,82 @@
+
+
 import { useState } from 'react';
 import React  from 'react';
 import {PlusOutlined,DeleteOutlined,CopyOutlined} from '@ant-design/icons';
 import { Table, Button, Modal, Checkbox,Input } from 'antd';
-const columns = [
-    {
-        title: <Checkbox/>,
-        width: 100,
-        dataIndex: 'name',
-        key: 'name',
-        fixed: 'left',
-      },
+import './Shipmentlist.css'
+const data = [
+  {
+    key: '1',
+    name: 'John Brown',
+    age: 32,
+    address: 'New York Park',
+  },
+  {
+    key: '2',
+    name: 'Jim Green',
+    age: 40,
+    address: 'London Park',
+  },
+  {
+    key: '3',
+    name: 'Jim Green',
+    age: 40,
+    address: 'London Park',
+  },
+  {
+    key: '4',
+    name: 'Jim Green',
+    age: 40,
+    address: 'London Park',
+  },
+  {
+    key: '5',
+    name: 'Jim Green',
+    age: 40,
+    address: 'London Park',
+  },
+  {
+    key: '6',
+    name: 'Jim Green',
+    age: 40,
+    address: 'London Park',
+  },
+  {
+    key: '7',
+    name: 'Jim Green',
+    age: 40,
+    address: 'London Park',
+  },
+];
+
+
+
+const Shipmentlist = () => {
+  const [selectAllChecked, setSelectAllChecked] = useState(false);
+
+    const [filterVisible, setFilterVisible] = useState(false);
+    const [filteredData, setFilteredData] = useState(data);
+    const [filterName, setFilterName] = useState('');
+    const [filterAge, setFilterAge] = useState('');
+   
+    const [configVisible, setConfigVisible] = useState(false);
+    
+    const handleSelectAllChange = (e) => {
+      const newSelectAllChecked = !selectAllChecked; // Toggle the selection status
+        
+      setSelectAllChecked(newSelectAllChecked);
+        
+      // Update the selection status of all items
+      const updatedData = filteredData.map(item => ({
+        ...item,
+        selected: newSelectAllChecked,
+      }));
+      setFilteredData(updatedData);
+    };
+    
+  const columns = [
+ 
   {
     title: 'Full Name',
     width: 100,
@@ -138,62 +205,24 @@ const columns = [
     render: () => <a>action</a>,
   },
 ];
-const data = [
-  {
-    key: '1',
-    name: 'John Brown',
-    age: 32,
-    address: 'New York Park',
-  },
-  {
-    key: '2',
-    name: 'Jim Green',
-    age: 40,
-    address: 'London Park',
-  },
-  {
-    key: '3',
-    name: 'Jim Green',
-    age: 40,
-    address: 'London Park',
-  },
-  {
-    key: '4',
-    name: 'Jim Green',
-    age: 40,
-    address: 'London Park',
-  },
-  {
-    key: '5',
-    name: 'Jim Green',
-    age: 40,
-    address: 'London Park',
-  },
-  {
-    key: '6',
-    name: 'Jim Green',
-    age: 40,
-    address: 'London Park',
-  },
-  {
-    key: '7',
-    name: 'Jim Green',
-    age: 40,
-    address: 'London Park',
-  },
-];
+const [visibleColumns, setVisibleColumns] = useState(columns.map(column => column.key));
 
 
-const Shipmentlist = () => {
-    const [visibleColumns, setVisibleColumns] = useState(columns.map(column => column.key));
-    const [filterVisible, setFilterVisible] = useState(false);
-    const [filteredData, setFilteredData] = useState(data);
-    const [filterName, setFilterName] = useState('');
-    const [filterAge, setFilterAge] = useState('');
-    const [selectAllChecked, setSelectAllChecked] = useState(false);
+const handleRowSelect = (record, selected) => {
+  const updatedData = filteredData.map(item => 
+    item.key === record.key ? { ...item, selected } : item
+  );
+  setFilteredData(updatedData);
+};
+const handleSelectAllRows = (selected, changedRows) => {
+  const updatedData = filteredData.map(item => ({
+    ...item,
+    selected: selected && changedRows.some(changedItem => changedItem.key === item.key),
+  }));
+  setFilteredData(updatedData);
+};
 
-    const [configVisible, setConfigVisible] = useState(false);
-  
+
     const handleColumnConfigChange = checkedColumns => {
       setVisibleColumns(checkedColumns);
       setConfigVisible(true);
@@ -236,14 +265,14 @@ const Shipmentlist = () => {
     return (
       <div>
         <div style={{float:'right',gap:'10px'}}>
-             <Button style={{backgroundColor:'green',color:'white'}} onClick={openFilterModal}>Filter</Button>
-        <Button style={{backgroundColor:'green',color:'white'}} onClick={openConfigModal}>Config</Button>
+             <Button style={{backgroundColor:'green',color:'white',borderRadius:'0px'}} onClick={openFilterModal}>Filter</Button>
+        <Button style={{backgroundColor:'green',color:'white',borderRadius:'0px'}} onClick={openConfigModal}>Config</Button>
         </div>
        <div>
 
-        <Button  style={{backgroundColor:'green',marginRight:'5px'}} ><PlusOutlined/></Button>
-        <Button style={{marginRight:'5px'}} ><DeleteOutlined/></Button>
-        <Button  style={{marginRight:'5px'}}><CopyOutlined/></Button>
+        <Button  style={{backgroundColor:'green',marginRight:'5px',color:"white",fontWeight:'600',borderRadius:'0px'}} ><PlusOutlined/></Button>
+        <Button style={{marginRight:'5px',borderRadius:'0px'}} ><DeleteOutlined/></Button>
+        <Button  style={{marginRight:'5px',borderRadius:'0px'}}><CopyOutlined/></Button>
        </div>
         <Modal
         visible={filterVisible}
@@ -255,11 +284,14 @@ const Shipmentlist = () => {
       >
         <h2>Filter Options</h2>
         <Input
+         className="custom-input"
           placeholder="Filter by Name"
           value={filterName}
           onChange={e => setFilterName(e.target.value)}
         />
+        <br/>
         <Input
+         className="custom-input"
           placeholder="Filter by Age"
           value={filterAge}
           onChange={e => setFilterAge(e.target.value)}
@@ -274,13 +306,19 @@ const Shipmentlist = () => {
           {configModalContent}
         </Modal>
         <Table
-          columns={columns.filter(column => visibleColumns.includes(column.key))}
-          dataSource={filteredData}
-          scroll={{
-            x: 2500,
-            y: 300,
-          }}
-        />
+                columns={columns.filter(column => visibleColumns.includes(column.key))}
+                dataSource={filteredData}
+                scroll={{
+                    x: 2500,
+                    y: 300,
+                }}
+                rowKey="key"
+                rowSelection={{
+                    selectedRowKeys: filteredData.filter(item => item.selected).map(item => item.key),
+                    onSelect: (record, selected) => handleRowSelect(record, selected),
+                    onSelectAll: (selected, selectedRows, changedRows) => handleSelectAllRows(selected, changedRows),
+                }}
+            />
       </div>
     );
   };

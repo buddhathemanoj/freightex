@@ -1,26 +1,55 @@
 import React from 'react';
 import { Layout, Dropdown, Menu } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import { UserOutlined, DownOutlined ,LogoutOutlined} from '@ant-design/icons';
-
+import './Header.css'
+import { auth } from '../../firebase';
 const { Header } = Layout;
-const userMenu = (
-  <Menu>
-    <Menu.Item key="profile">
-      <UserOutlined />
-      My Profile
-    </Menu.Item>
-    <Menu.Item key="logout">
-      <LogoutOutlined />
-      Logout
-    </Menu.Item>
-  </Menu>
-);
+
+
+
 
 const HeaderComponent = ({ username }) => {
+
+
+  const navigate = useNavigate();
+
+
+
+
+
+
+
+  const handleLogout = async () => {
+    console.log('Attempting to log out...');
+    try {
+      await auth.signOut();
+      console.log('User logged out successfully.');
+    
+      navigate('/login');
+    } catch (error) {
+      console.error('Error during logout:', error);
+    }
+  };
+
+
+  const userMenu = (
+    <Menu>
+      <Menu.Item key="profile">
+        <UserOutlined />
+        My Profile
+      </Menu.Item>
+      <Menu.Item key="logout" onClick={() => handleLogout()}>
+        <LogoutOutlined />
+        Logout
+      </Menu.Item>
+    </Menu>
+  );
+  
   const colorBgContainer = '#38323d';
   return (
     <Layout >
-      <Header style={{ paddingBottom: '15px 0px ', display: 'flex', justifyContent: "space-between", backgroundColor: colorBgContainer }}>
+      <Header className='headerrr' style={{ paddingBottom: '15px 0px ', display: 'flex', justifyContent: "space-between", backgroundColor: colorBgContainer }}>
         <div>
           <h1 style={{ color: 'white', paddingBottom: '20px' }}>Go Freight</h1>
         </div>

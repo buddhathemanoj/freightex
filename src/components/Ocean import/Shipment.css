@@ -1,11 +1,17 @@
+
 .ant-input,
 .ant-picker-input
  {
   height: 24px;
  width: 100%;
 }
+.ant-layout-content {
+  min-height: 150vh !important;
+  position: relative !important;
+}
 .ant-layout .ant-layout-sider-trigger {
     background-color: #38323d;
+    position: absolute;
   }
   .ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title{
     color: rgb(255, 255, 255);
@@ -27,4 +33,5 @@
   }
   .ant-collapse-header .ant-collapse-arrow {
 margin-top: 13px;
+position: relative;
   }

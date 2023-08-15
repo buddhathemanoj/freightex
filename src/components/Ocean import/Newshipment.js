@@ -139,7 +139,7 @@ console.log("its clicked" )
 
 
         <div className='newshipment-container' >
-             <Row>
+             <Row style={{minHeight: '200vh !important'}}>
             <Col span={20}>
              <>
                 <Collapse activeKey={ismemoOpen ? '1' : ''}>
@@ -155,10 +155,10 @@ console.log("its clicked" )
     <div >
     <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
     <Form.Item label="File No" style={formItemStyle}>
-    <Input onClick={() => setIsAnyInputClicked(true)} />
+    <Input  />
     </Form.Item>
     <Form.Item label="Post Date" style={formItemStyle}>
-    <Input  onClick={() => setIsAnyInputClicked(true)} />
+    <Input  />
     </Form.Item>
     <Form.Item label="Forwarding Agent"  style={formItemStyle}>
     <Select  >
@@ -169,7 +169,7 @@ console.log("its clicked" )
     </Select>
     </Form.Item>
     <Form.Item label="OP" style={formItemStyle}>
-    <Select onClick={() => setIsAnyInputClicked(true)} style={{  height: '24px' }}>
+    <Select style={{  height: '24px' }}>
     <Option value="option1">Option 1</Option>
     <Option value="option2">Option 2</Option>
     <Option value="option3">Option 3</Option>
@@ -257,7 +257,7 @@ console.log("its clicked" )
     <div>
     <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
     <Form.Item label="*MB/L No." style={formItemStyle}>
-    <Input />
+    <Input onClick={() => setIsAnyInputClicked(true)} />
     </Form.Item>
     <Form.Item label="Oversea Agent" style={formItemStyle}>
     <Select>
@@ -346,7 +346,7 @@ console.log("its clicked" )
     <div>
     <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
     <Form.Item label="*Office" style={formItemStyle}>
-    <Select >
+    <Select onClick={() => setIsAnyInputClicked(true)} >
     <Option value="option1">Option 1</Option>
     <Option value="option2">Option 2</Option>
     <Option value="option3">Option 3</Option>
@@ -507,7 +507,7 @@ console.log("its clicked" )
     </Select>
     </Form.Item>
     <Form.Item label="*ETA" style={formItemStyle1}>
-    <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
+    <DatePicker onClick={() => setIsAnyInputClicked(true)}  style={{ width: '100%',height:'24px' }} placement={placement} />
     </Form.Item>
     <Form.Item label="Final ETA " style={formItemStyle1}>
     <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
