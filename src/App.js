@@ -56,7 +56,7 @@ function App() {
 
       <Route
         path="/home"
-        element={currentUser && currentUser.emailVerified ?<> <Sidebarr/></> : <Navigate to="/login" />}
+        element={currentUser && currentUser.emailVerified ?<> <HeaderComponent/><Sidebarr/></> : <Navigate to="/login" />}
       />
       <Route path="/" element={<Navigate to="/signup" />} />
       </Routes>
