@@ -50,8 +50,8 @@ export const Login = () => {
 <div className="login-wrapper">
   
   <div className="logincontainer">
-  <Row >
-        <Col>
+  <Row className="Row1" >
+        <Col >
       
       <Form form={form} onFinish={signIn}>
         <h1 className="signinname" >Sign In</h1>

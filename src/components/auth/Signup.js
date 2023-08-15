@@ -8,7 +8,7 @@ import { createUserWithEmailAndPassword ,sendEmailVerification} from "firebase/a
 import { auth ,firestore } from '../../firebase'; // Make sure you have the correct path to firestore
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
+import './Login.css'
 
 export const Signup = () => {
   const [form] = Form.useForm();
@@ -46,11 +46,11 @@ export const Signup = () => {
   };
 
   return (
-    <div className="sign-in-container" style={{justifyContent:'center',alignItems:'center',padding:'15% 0'}}>
-        <div>
-             <Row justify="center">
-        <Col xl={6}>
-          <Form form={form} onFinish={signUp}>
+    <div className="signup-container">
+        <h1 className="company-title">Go Freight</h1>
+  <div className="signup-content">
+
+    <Form form={form} onFinish={signUp}>
             <h1 style={{fontSize:'30px',textAlign:'center'}}>Create Account</h1>
             <Form.Item
               name="email"
@@ -70,20 +70,17 @@ export const Signup = () => {
             >
               <Input style={{height:'40px'}} placeholder="Enter your username" />
             </Form.Item>
-            <div style={{display:'flex' ,gap:'30px'}}>
-                 <Form.Item>
-              <Button type="primary" htmlType="submit" loading={loading}>
-                Sign Up
-              </Button>
-            </Form.Item>
-            <Link to={'/login'}><p>Already a user?</p></Link>
-            </div>
+            <div className="signup-button-container">
+        <Link to={'/login'}><p>Already a user?</p></Link>
+        <Form.Item>
+          <Button type="primary" htmlType="submit" loading={loading}>
+            Sign Up
+          </Button>
+        </Form.Item>
+      </div>
            
-          </Form>
-        </Col>
-      </Row>
-        </div>
-     
-    </div>
+            </Form>
+  </div>
+</div>
   );
 };

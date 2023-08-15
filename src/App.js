@@ -1,13 +1,17 @@
 import { BrowserRouter as Router ,Route, BrowserRouter, Routes,Navigate} from "react-router-dom";
 import './App.css';
 import 'antd/dist/antd'
-
+import { Layout, Row, Col } from 'antd';
 
 import { Signup } from './components/auth/Signup';
 import { Login } from "./components/auth/Login";
-import { Home } from "./components/pages/Home";
+import Sidebarr from "./components/pages/Home";
 import { useAuth } from "./firebase";
-import Sidebar from "./components/pages/Sidebar";
+
+import { Newshipment } from "./components/Ocean import/Newshipment";
+import HeaderComponent from "./components/Headers/Header";
+import Shipmentlist from "./components/Ocean import/Shipemntlist";
+const { Content } = Layout;
 function App() {
   const currentUser = useAuth();
   console.log( 'current: user',currentUser )
@@ -18,9 +22,41 @@ function App() {
    <Routes>
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/homeee" element={<Sidebarr/>} />
+     
+      <Route path="/ocean-import/new-shipment" element={<><HeaderComponent/> <Layout>
+      <Row>
+        <Col span={3}>
+          <Sidebarr />
+        </Col>
+       <Col span={21}>
+          <Content style={{paddingTop:'20px'}} >
+          
+            <Newshipment />
+          </Content>
+     </Col>
+      </Row>
+    </Layout></>} />
+    <Route path="/ocean-import/shipment-list" element={<><HeaderComponent/> <Layout>
+      <Row>
+        <Col span={3}>
+          <Sidebarr />
+        </Col>
+       <Col span={21}>
+          <Content style={{paddingTop:'20px'}} >
+          
+            < Shipmentlist/>
+          </Content>
+     </Col>
+      </Row>
+    </Layout></>} />
+  
+
+
+
       <Route
         path="/home"
-        element={currentUser && currentUser.emailVerified ?<> <Sidebar/></> : <Navigate to="/login" />}
+        element={currentUser && currentUser.emailVerified ?<> <Sidebarr/></> : <Navigate to="/login" />}
       />
       <Route path="/" element={<Navigate to="/signup" />} />
       </Routes>

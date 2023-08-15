@@ -5,6 +5,7 @@
 import React, { useState } from 'react';
 import { Button, Collapse, Input, Table, Popconfirm, Form, Select, DatePicker, Checkbox, Col, Row } from 'antd';
 import {DeleteOutlined ,PlusOutlined } from '@ant-design/icons';
+import './Shipment.css'
 const { TextArea } = Input;
 const { Panel } = Collapse;
 const { Option } = Select;

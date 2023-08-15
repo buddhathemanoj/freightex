@@ -29,16 +29,16 @@ body, html {
     justify-content: center;
     align-items: center;
   }
-  .ant-input{
-    min-width: 350px;
-   
-  }
+ 
   .logincontainer {
     background-color: #eceef1;
-    min-width: 380px !important;
-    width: 100%; 
+    min-width: 370px !important;
+    /* width: 100%;  */
     padding: 30px;
    
+  }
+  .logincontainer ,ant-input{
+    min-width: 320px;
   }
 .company{
 
@@ -53,4 +53,37 @@ body, html {
     font-weight: 600;
     border-color: #3ea49d;
     border-radius: 0 !important;
+}
+
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #333333;
+}
+
+.signup-content {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+
+  background-color: #eceef1;
+ 
+  margin-top: 20px; /* Add a margin to separate from the title */
+}
+
+.company-title {
+  font-size: 28px;
+  font-family: 'Open Sans', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+.signup-button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
 }
