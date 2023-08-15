@@ -25,6 +25,7 @@ function App() {
       <Route path="/homeee" element={<Sidebarr/>} />
      
       <Route path="/ocean-import/new-shipment" element={<><HeaderComponent/> <Layout>
+
       <Row>
         <Col span={3}>
           <Sidebarr />
@@ -42,7 +43,7 @@ function App() {
         <Col span={3}>
           <Sidebarr />
         </Col>
-       <Col span={21}>
+       <Col span={21} >
           <Content style={{paddingTop:'20px'}} >
           
             < Shipmentlist/>
@@ -58,7 +59,7 @@ function App() {
         path="/home"
         element={currentUser && currentUser.emailVerified ?<> <HeaderComponent/><Sidebarr/></> : <Navigate to="/login" />}
       />
-      <Route path="/" element={<Navigate to="/signup" />} />
+      <Route path="/" element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
 
