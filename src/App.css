@@ -1,32 +1,7 @@
 .App {
   text-align: center;
 }
-.ant-layout .ant-layout-sider-trigger {
-  background-color: #38323d;
-}
-.ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title{
-  color: rgb(255, 255, 255);
-}
-.ant-layout-header {
-  line-height: normal;
-}
-.ant-input,
-.ant-picker-input
- {
-  height: 24px; /* Set the desired height */
-  /* Add more custom styles as needed */
-}
-.ant-collapse-header-text {
-color: white !important;
-font-size: 22px;
-}
-div.ant-select-selector{
-  height: 24px !important; 
 
-}
-.ant-form{
-  line-height: 0px !important;
-}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -37,7 +12,9 @@ div.ant-select-selector{
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.ant-layout .ant-layout-sider-trigger {
+  background-color: #38323d;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;

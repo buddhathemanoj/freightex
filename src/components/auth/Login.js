@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { Form, Input, Button, message,Row,Col } from 'antd';
+import { Form, Input, Button, message,Row,Col,Checkbox } from 'antd';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase';
 import { useAuth ,firestore} from "../../firebase";
 import { useNavigate } from "react-router-dom";
+import './Login.css'
 export const Login = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
@@ -42,15 +43,18 @@ export const Login = () => {
     }
   };
   return (
-    <div className="sign-in-container"  style={{justifyContent:'center',alignItems:'center',padding:'15% 0'}}>
-        <div  >
-           
-           
-             <Row justify="center">
-        <Col xl={6}>
+   
+
+<div className="sign-in-container">
+<h1 className="company">Go Freight</h1>
+<div className="login-wrapper">
+  
+  <div className="logincontainer">
+  <Row className="Row1" >
+        <Col >
       
       <Form form={form} onFinish={signIn}>
-        <h1 style={{textAlign:'center'}}>Sign In</h1>
+        <h1 className="signinname" >Sign In</h1>
         <Form.Item
           name="email"
           rules={[{ required: true, type: 'email', message: 'Please enter your email' }]}
@@ -63,16 +67,33 @@ export const Login = () => {
         >
           <Input.Password style={{height:'40px'}} placeholder="Enter your password" />
         </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit" loading={loading}>
-            Sign In
-          </Button>
-        </Form.Item>
+        <div style={{ display: 'flex' }}>
+  <Form.Item>
+    <Button className="signinbutton" type="primary" htmlType="submit" loading={loading}>
+      Sign In
+    </Button>
+  </Form.Item>
+  <div style={{marginLeft:"20px"}} >
+    <Form.Item style={{ marginBottom: 0 }}>
+      <Checkbox />
+      <span style={{ marginLeft: '8px' }}>Remember me</span>
+    </Form.Item>
+  </div>
+  <div style={{marginTop:'3px', marginLeft:'40px'}}>
+    <p>Forget Password?</p>
+  </div>
+</div>
+
       </Form>
       </Col>
       </Row>
-        </div>
-       
-    </div>
+      </div>
+  </div>
+</div>
+
+
+
+
+
   );
 };

@@ -1,0 +1,30 @@
+.ant-input,
+.ant-picker-input
+ {
+  height: 24px;
+ width: 100%;
+}
+.ant-layout .ant-layout-sider-trigger {
+    background-color: #38323d;
+  }
+  .ant-menu-light .ant-menu-submenu-selected >.ant-menu-submenu-title{
+    color: rgb(255, 255, 255);
+  }
+  .ant-layout-header {
+    line-height: normal;
+  }
+  
+  .ant-collapse-header-text {
+  color: white !important;
+  font-size: 22px;
+  }
+  div.ant-select-selector{
+    height: 24px !important; 
+   
+  }
+  .ant-form{
+    line-height: 0px !important;
+  }
+  .ant-collapse-header .ant-collapse-arrow {
+margin-top: 13px;
+  }
