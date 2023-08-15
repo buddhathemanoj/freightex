@@ -25,3 +25,6 @@
   .ant-form{
     line-height: 0px !important;
   }
+  .ant-collapse-header .ant-collapse-arrow {
+margin-top: 13px;
+  }

@@ -138,7 +138,7 @@ console.log("its clicked" )
 
 
 
-        <div>
+        <div className='newshipment-container' >
              <Row>
             <Col span={20}>
              <>
