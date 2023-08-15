@@ -38,7 +38,7 @@ function App() {
      </Col>
       </Row>
     </Layout></>} />
-    <Route path="/ocean-import/shipment-list" element={<><HeaderComponent/> <Layout>
+    <Route path="/ocean-import/shipment-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent/> <Layout>
       <Row>
         <Col span={3}>
           <Sidebarr />
@@ -50,7 +50,7 @@ function App() {
           </Content>
      </Col>
       </Row>
-    </Layout></>} />
+    </Layout></>: <Navigate to="/login" />}/>
   
 
 
