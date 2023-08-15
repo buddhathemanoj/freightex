@@ -1,0 +1,56 @@
+/* Login.css */
+body, html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    overflow: hidden;
+  }
+  
+  .sign-in-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Use viewport height */
+    flex-direction: column; /* Stack elements vertically */
+  }
+  
+  .signinname {
+    text-align: center;
+    font-size: 28px;
+    font-family: 'Open Sans', sans-serif;
+    color: #4db3a5;
+    font-weight: 400;
+  }
+  
+  .login-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .ant-input{
+    min-width: 350px;
+   
+  }
+  .logincontainer {
+    background-color: #eceef1;
+    min-width: 380px !important;
+    width: 100%; 
+    padding: 30px;
+   
+  }
+.company{
+
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    
+}
+.signinbutton{
+    background-color: #45B6AF;
+    font-weight: 600;
+    border-color: #3ea49d;
+    border-radius: 0 !important;
+}
