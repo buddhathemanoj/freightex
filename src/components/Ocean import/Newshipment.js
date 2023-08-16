@@ -139,7 +139,7 @@ console.log("its clicked" )
 
 
         <div className='newshipment-container' >
-             <Row style={{minHeight: '200vh !important'}}>
+             <Row className='mainrow' style={{minHeight: '200vh !important',width:'100%'}}>
             <Col span={20}>
              <>
                 <Collapse activeKey={ismemoOpen ? '1' : ''}>
@@ -573,7 +573,10 @@ console.log("its clicked" )
                 
               </Col>
               <Col span={4} >
-               <Button style={{height:'40px' , width:'250px' , marginLeft:'20px', marginTop:'10px'}} >+ Add HB/L</Button>
+                <div >
+                <Button style={{height:'40px' , width:'90%' , marginLeft:'20px', marginTop:'10px'}} >+ Add HB/L</Button>
+
+                </div>
               </Col>
               <Button
                style={{
