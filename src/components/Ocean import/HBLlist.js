@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 import './Shipmentlist.css'
 
-const HBLlist = () => {
+export const HBLlist = () => {
   const [selectAllChecked, setSelectAllChecked] = useState(false);
 
     const [filterVisible, setFilterVisible] = useState(false);
@@ -331,5 +331,5 @@ const handleSelectAllRows = (selected, changedRows) => {
     );
   };
   
-  export default HBLlist;
+ 
 
