@@ -21,26 +21,20 @@ export const Login = () => {
         message.warning("Please verify your email before signing in.");
       } else {
        
-        // const userDocRef = firestore.doc(`users/${auth.currentUser.uid}`);
-        // userDocRef.get().then((doc) => {
-        //   if (doc.exists) {
-        //     const userData = doc.data();
-        //     // setUsername(userData.username);
-        //     console.log(userData); // This should now print the correct username
-        //   }
-        // });
+   
     
         message.success("Sign-in successful!");
+        console.log(currentUser)
         console.log('Current user:', currentUser ? currentUser.displayName || currentUser.email : 'No user logged in');
-        setTimeout(() => {
-          navigate('/home');
-        }, 1000); // Redirect after 1 second
+        navigate('/home'); // Redirect after 1 second
       }
     } catch (error) {
       message.error("Sign-in failed. Please check your credentials.");
     } finally {
       setLoading(false);
     }
+
+ 
   };
   return (
    
