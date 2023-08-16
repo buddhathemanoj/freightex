@@ -63,11 +63,11 @@ const Sidebarrr = () => {
           <Menu.Item key="/ocean-import/shipment-list">
             <Link to="/ocean-import/shipment-list">Shipment List</Link>
           </Menu.Item>
-          <Menu.Item key="/ocean-import/mb-l-list">
-            <Link to="/ocean-import/mb-l-list">MB/L List</Link>
+          <Menu.Item key="/ocean-import/MB_L-list">
+            <Link to="/ocean-import/MB_L-list">MB/L List</Link>
           </Menu.Item>
-          <Menu.Item key="/ocean-import/hb-l-list">
-            <Link to="/ocean-import/hb-l-list">HB/L List</Link>
+          <Menu.Item key="/ocean-import/HB_L-list">
+            <Link to="/ocean-import/HB_L-list">HB/L List</Link>
           </Menu.Item>
         </Menu.SubMenu>
 

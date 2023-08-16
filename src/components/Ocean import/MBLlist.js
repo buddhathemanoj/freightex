@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCheck, faTimes, faLock, faUnlock } from '@fortawesome/free-solid-svg-icons';
 import './Shipmentlist.css'
 
-const Shipmentlist = () => {
+const MBLlist = () => {
   const [selectAllChecked, setSelectAllChecked] = useState(false);
 
     const [filterVisible, setFilterVisible] = useState(false);
@@ -271,15 +271,14 @@ const handleSelectAllRows = (selected, changedRows) => {
         <Button style={{backgroundColor:'green',color:'white',borderRadius:'0px'}} onClick={openConfigModal}>Config</Button>
         </div>
        <div>
-
        <Link to="/ocean-import/new-shipment">
         <Button
           style={{ backgroundColor: 'green', marginRight: '5px', color: 'white', fontWeight: '600', borderRadius: '0px' }}
         >
           <PlusOutlined />
         </Button>
-      </Link>    
-      <Button style={{marginRight:'5px',borderRadius:'0px'}} ><DeleteOutlined/></Button>
+      </Link>
+        <Button style={{marginRight:'5px',borderRadius:'0px'}} ><DeleteOutlined/></Button>
         <Button  style={{marginRight:'5px',borderRadius:'0px'}}><CopyOutlined/></Button>
        </div>
         <Modal
@@ -331,5 +330,5 @@ const handleSelectAllRows = (selected, changedRows) => {
     );
   };
   
-  export default Shipmentlist;
+  export default MBLlist;
 
