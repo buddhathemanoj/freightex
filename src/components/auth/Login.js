@@ -26,7 +26,7 @@ export const Login = () => {
         message.success("Sign-in successful!");
         console.log(currentUser)
         console.log('Current user:', currentUser ? currentUser.displayName || currentUser.email : 'No user logged in');
-        navigate('/home'); // Redirect after 1 second
+        navigate('/gofreight'); // Redirect after 1 second
       }
     } catch (error) {
       message.error("Sign-in failed. Please check your credentials.");
