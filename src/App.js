@@ -33,7 +33,7 @@ function App() {
           <Sidebarr />
         </Col>
        <Col span={21}>
-          <Content style={{paddingTop:'20px'}} >
+          <Content style={{padding:'20px 20px'}} >
           
             <Newshipment />
           </Content>

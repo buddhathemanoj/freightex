@@ -138,169 +138,169 @@ export const Newshipment = () => {
 
 
 
-    <div className='newshipment-container' >
-      <Row style={{ minHeight: '200vh !important' }}>
-        <Col span={20}>
-          <>
-            <Collapse activeKey={ismemoOpen ? '1' : ''}>
-              <Panel
-                style={{ backgroundColor: '#38323d' }}
-                header="MB/L 102012"
-                key="1"
-                onClick={handlememoToggle}>
-                <Col span={24} style={{ border: '1px solid orange', padding: '10px' }}>
-                  <div onClick={handleSecondMemoContentClick} >
-                    <Row>
-                      <Col span={6} >
-                        <div >
-                          <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
-                            <Form.Item label="File No" style={formItemStyle}>
-                              <Input />
-                            </Form.Item>
-                            <Form.Item label="Post Date" style={formItemStyle}>
-                              <Input />
-                            </Form.Item>
-                            <Form.Item label="Forwarding Agent" style={formItemStyle}>
-                              <Select  >
-                                <Option style={{ height: '24px' }} value="option1">Option 1</Option>
-                                <Option style={{ height: '24px' }} value="option2">Option 2</Option>
-                                <Option style={{ height: '24px' }} value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            <Form.Item label="OP" style={formItemStyle}>
-                              <Select style={{ height: '24px' }}>
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            {showAdditionalInputs && (
-                              <>
-                                <Form.Item label="Customer Ref.No">
-                                  <Input />
-                                </Form.Item>
-                                <Form.Item label="Customer" style={formItemStyle}>
-                                  <Select>
-                                    <Option value="option1">Option 1</Option>
-                                    <Option value="option2">Option 2</Option>
-                                    <Option value="option3">Option 3</Option>
-
-                                  </Select>
-                                </Form.Item>
-                                <Form.Item label="Sales" style={formItemStyle2}>
-                                  <Select>
-                                    <Option value="option1">Option 1</Option>
-                                    <Option value="option2">Option 2</Option>
-                                    <Option value="option3">Option 3</Option>
-
-                                  </Select>
-                                </Form.Item>
-                                {/* Add more additional inputs as needed */}
-                              </>
-                            )}
-                            <br />
-                            <Form.Item label="Vessel" style={formItemStyle}>
-                              <Select>
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            <Form.Item label="Port of Loading" style={formItemStyle}>
-                              <Select>
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            <Form.Item label="Place of Delivery (DEL)" style={formItemStyle2}>
-
-                              <div style={{ display: 'flex', flexDirection: 'column' }}>
-
-                                <Select>
-                                  <Option value="option1">Option 1</Option>
-                                  <Option value="option2">Option 2</Option>
-                                  <Option value="option3">Option 3</Option>
-                                  {/* Add more options as needed */}
-                                </Select>
-
-                              </div>
-                            </Form.Item>
-                            <br />
-                            <Form.Item label="Freight" style={formItemStyle}>
-                              <Select>
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            <Form.Item label="OB/L Type" style={formItemStyle}>
-                              <Select>
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            <Form.Item label="Latest Gate In" style={formItemStyle1}>
-                              <DatePicker style={{ width: '100%', height: '24px' }} placement={placement} />
-                            </Form.Item>
-                          </Form>
-                        </div>
-                      </Col>
-                      <Col span={6}>
-                        <div>
-                          <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
-                            <Form.Item label="*MB/L No." style={formItemStyle}>
-                              <Input onClick={() => setIsAnyInputClicked(true)} />
-                            </Form.Item>
-                            <Form.Item label="Oversea Agent" style={formItemStyle}>
-                              <Select>
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            <Form.Item label="Co-loader" style={formItemStyle}>
-                              <Select>
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            <Form.Item label="Carrier Contact No" style={formItemStyle}>
-                              <Input />
-                            </Form.Item>
-
-                            {showAdditionalInputs && (
-                              <>
-
-                                <Form.Item label="Shipper" style={formItemStyle}>
-                                  <Select>
-                                    <Option value="option1">Option 1</Option>
-                                    <Option value="option2">Option 2</Option>
-                                    <Option value="option3">Option 3</Option>
-
-                                  </Select>
-                                </Form.Item>
-                                <Form.Item label="Bill To" style={formItemStyle2}>
-                                  <Select>
-                                    <Option value="option1">Option 1</Option>
-                                    <Option value="option2">Option 2</Option>
-                                    <Option value="option3">Option 3</Option>
-
-                                  </Select>
-                                </Form.Item>
-                                {/* Add more additional inputs as needed */}
-                              </>
-                            )}
+        <div className='newshipment-container' >
+             <Row style={{minHeight: '200vh !important'}}>
+            <Col span={20}>
+             <>
+                <Collapse activeKey={ismemoOpen ? '1' : ''}>
+                  <Panel
+                    style={{ backgroundColor: '#38323d' }}
+                    header="MB/L 102012"
+                    key="1"
+                    onClick={handlememoToggle}>
+    <Col span={24} style={{border:'1px solid orange' ,padding:'10px'}}>
+    <div onClick={handleSecondMemoContentClick} >
+     <Row>   
+    <Col span={6} >
+    <div >
+    <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
+    <Form.Item label="File No" style={formItemStyle}>
+    <Input  />
+    </Form.Item>
+    <Form.Item label="Post Date" style={formItemStyle}>
+    <Input  />
+    </Form.Item>
+    <Form.Item label="Forwarding Agent"  style={formItemStyle}>
+    <Select  >
+    <Option style={{  height: '24px' }} value="option1">Option 1</Option>
+    <Option style={{  height: '24px' }} value="option2">Option 2</Option>
+    <Option style={{  height: '24px' }} value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    <Form.Item label="OP" style={formItemStyle}>
+    <Select style={{  height: '24px' }}>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    {showAdditionalInputs && (
+        <>
+          <Form.Item label="Customer Ref.No">
+            <Input />
+          </Form.Item>
+          <Form.Item label="Customer" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    
+    </Select>
+    </Form.Item>
+    <Form.Item label="Sales" style={formItemStyle2}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+   
+    </Select>
+    </Form.Item>
+          {/* Add more additional inputs as needed */}
+        </>
+      )}
+    <br/>
+    <Form.Item label="Vessel" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    <Form.Item label="Port of Loading" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    <Form.Item label="Place of Delivery (DEL)" style={formItemStyle2}>
+    
+      <div style={{ display: 'flex', flexDirection: 'column' }}>
+    
+        <Select>
+          <Option value="option1">Option 1</Option>
+          <Option value="option2">Option 2</Option>
+          <Option value="option3">Option 3</Option>
+          {/* Add more options as needed */}
+        </Select>
+      
+      </div>
+    </Form.Item>
+    <br/>
+    <Form.Item label="Freight" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    <Form.Item label="OB/L Type" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    <Form.Item label="Latest Gate In" style={formItemStyle1}>
+    <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
+    </Form.Item>
+    </Form>
+    </div>
+    </Col>
+    <Col  span={6}>
+    <div>
+    <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
+    <Form.Item label="*MB/L No." style={formItemStyle}>
+    <Input onClick={() => setIsAnyInputClicked(true)} />
+    </Form.Item>
+    <Form.Item label="Oversea Agent" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    <Form.Item label="Co-loader" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    <Form.Item label="Carrier Contact No" style={formItemStyle}>
+    <Input />
+    </Form.Item>
+    
+    {showAdditionalInputs && (
+        <>
+        
+          <Form.Item label="Shipper" style={formItemStyle}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    
+    </Select>
+    </Form.Item>
+    <Form.Item label="Bill To" style={formItemStyle2}>
+    <Select>
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+   
+    </Select>
+    </Form.Item>
+          {/* Add more additional inputs as needed */}
+        </>
+      )}
 
 
                             <Form.Item label="Voyage" style={formItemStyle}>
@@ -498,101 +498,101 @@ export const Newshipment = () => {
                               </>
                             )}
 
-                            <Form.Item label="CFS Location " style={formItemStyle}>
-                              <Select >
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                            <Form.Item label="*ETA" style={formItemStyle1}>
-                              <DatePicker onClick={() => setIsAnyInputClicked(true)} style={{ width: '100%', height: '24px' }} placement={placement} />
-                            </Form.Item>
-                            <Form.Item label="Final ETA " style={formItemStyle1}>
-                              <DatePicker style={{ width: '100%', height: '24px' }} placement={placement} />
-                            </Form.Item>
-                            <Form.Item label="ETB" style={formItemStyle2}>
-                              <DatePicker style={{ width: '100%', height: '24px' }} placement={placement} />
-                            </Form.Item>
-
-                            <Form.Item label="Container/Qty " style={formItemStyle1}>
-                              <Input />
-                            </Form.Item>
-                            <Form.Item label="Business Referred By " style={formItemStyle}>
-                              <Select >
-                                <Option value="option1">Option 1</Option>
-                                <Option value="option2">Option 2</Option>
-                                <Option value="option3">Option 3</Option>
-                                {/* Add more options as needed */}
-                              </Select>
-                            </Form.Item>
-                          </Form>
-                        </div>
-                      </Col>
-                    </Row>
-                  </div>
-                  <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
-                    <Panel style={{ backgroundColor: 'gray' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
-                      <div onClick={handleSecondMemoContentClick}>
-                        <Row>
-
-                          <Col span={16} style={{ marginRight: '10px' }}>
-                            {/* Ant Design Table */}
-                            <Table
-
-                              columns={columns} // Use the modified columns array
-                              dataSource={tableData}
-                              pagination={false}
-                            />
-                            {/* Add button */}
-
-                          </Col>
-
-
-
-
-
-
-                          <Col span={7}>
-                            <div>
-                              <TextArea style={{ backgroundColor: '#b5b3ae', minHeight: '150px' }} />
-                            </div>
-                          </Col>
-                        </Row>
-                      </div>
-
-                    </Panel>
-                  </Collapse>
-
+    <Form.Item label="CFS Location " style={formItemStyle}>
+    <Select >
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    <Form.Item label="*ETA" style={formItemStyle1}>
+    <DatePicker onClick={() => setIsAnyInputClicked(true)}  style={{ width: '100%',height:'24px' }} placement={placement} />
+    </Form.Item>
+    <Form.Item label="Final ETA " style={formItemStyle1}>
+    <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
+    </Form.Item>
+    <Form.Item label="ETB" style={formItemStyle2}>
+    <DatePicker style={{ width: '100%',height:'24px' }} placement={placement} />
+    </Form.Item>
+    
+    <Form.Item label="Container/Qty " style={formItemStyle1}>
+    <Input />
+    </Form.Item>
+    <Form.Item label="Business Referred By " style={formItemStyle}>
+    <Select >
+    <Option value="option1">Option 1</Option>
+    <Option value="option2">Option 2</Option>
+    <Option value="option3">Option 3</Option>
+    {/* Add more options as needed */}
+    </Select>
+    </Form.Item>
+    </Form>
+    </div>
+    </Col>
+    </Row>
+    </div>
+    <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
+        <Panel style={{ backgroundColor: 'gray' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
+            <div onClick={handleSecondMemoContentClick}>
+                      <Row>
+                    
+                      <Col span={16} style={{marginRight:'10px'}}>
+        {/* Ant Design Table */}
+        <Table
+            
+            columns={columns} // Use the modified columns array
+            dataSource={tableData}
+            pagination={false}
+        />
+        {/* Add button */}
+        
+    </Col>
+    
+    
+    
+    
+    
+    
+                <Col span={7}>
+                    <div>
+                    <TextArea  style={{backgroundColor:'#b5b3ae',minHeight:'150px'}}  />
+                    </div>
                 </Col>
-              </Panel>
-            </Collapse>
-
-          </>
-
-        </Col>
-        <Col span={4} >
-          <Button style={{ height: '40px', width: '250px', marginLeft: '20px', marginTop: '10px' }} >+ Add HB/L</Button>
-        </Col>
-        <Button
-          style={{
-            backgroundColor: 'green',
-            width: '110px',
-            position: 'relative',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            bottom: '5%',
-            zIndex: 9999, // To ensure the button is above other content
-          }}
-          type="primary"
-          disabled={!isAnyInputClicked} // Disable the button if no input above the table is clicked
-          onClick={handleSave}
-        >
-          Save
-        </Button>
-      </Row>
-
+            </Row>
+            </div>
+    
+        </Panel>
+    </Collapse>
+    
+    </Col>
+                  </Panel>
+                  </Collapse>
+                 
+                </>
+                
+              </Col>
+              <Col span={4} >
+               <Button style={{height:'40px' , width:'250px' , marginLeft:'20px', marginTop:'10px'}} >+ Add HB/L</Button>
+              </Col>
+              <Button
+               style={{
+                backgroundColor:'green',
+                width:'110px',
+                position: 'fixed',
+                left: '50%',
+                transform: 'translateX(-50%)',
+                bottom: '5%',
+                zIndex: 9999, // To ensure the button is above other content
+            }}
+    type="primary"
+    disabled={!isAnyInputClicked} // Disable the button if no input above the table is clicked
+    onClick={handleSave}
+>
+    Save
+</Button>
+            </Row>
+    
 
     </div>
 
