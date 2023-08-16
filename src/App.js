@@ -11,8 +11,6 @@ import { useAuth } from "./firebase";
 import { Newshipment } from "./components/Ocean import/Newshipment";
 import HeaderComponent from "./components/Headers/Header";
 import Shipmentlist from "./components/Ocean import/Shipemntlist";
-import MBLlist from "./components/Ocean import/MBLlist";
-import HBLlist from "./components/Ocean import/HBLlist";
 const { Content } = Layout;
 function App() {
   const currentUser = useAuth();
@@ -53,39 +51,25 @@ function App() {
      </Col>
       </Row>
     </Layout></>: <Navigate to="/login" />}/>
+  
 
-    <Route path="/ocean-import/MB_L-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent /> <Layout>
-      <Row>
-        <Col span={3}>
-          <Sidebarr />
-        </Col>
-       <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
-          
-            < MBLlist/>
-          </Content>
-     </Col>
-      </Row>
-    </Layout></>: <Navigate to="/login" />}/>
 
-    
-    <Route path="/ocean-import/HB_L-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent /> <Layout>
-      <Row>
-        <Col span={3}>
-          <Sidebarr />
-        </Col>
-       <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
-          
-            < HBLlist/>
-          </Content>
-     </Col>
-      </Row>
-    </Layout></>: <Navigate to="/login" />}/>
 
       <Route
-        path="/home"
-        element={currentUser && currentUser.emailVerified ?<> <HeaderComponent/><Sidebarr/></> : <Navigate to="/login" />}
+        path="/gofreight"
+        element={currentUser && currentUser.emailVerified ? <><HeaderComponent /> <Layout>
+        <Row>
+          <Col span={3}>
+            <Sidebarr />
+          </Col>
+         <Col span={21} >
+            <Content style={{paddingTop:'20px'}} >
+            
+              < Mainoverview/>
+            </Content>
+       </Col>
+        </Row>
+      </Layout></>: <Navigate to="/login" />}
       />
       <Route path="/" element={<Navigate to="/login" />} />
       </Routes>

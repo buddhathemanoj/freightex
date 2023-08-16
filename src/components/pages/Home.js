@@ -49,6 +49,9 @@ const Sidebarrr = () => {
         defaultSelectedKeys={['/ocean-import']}
         defaultOpenKeys={['sub-ocean-import', 'sub-ocean-export', 'sub-sales', 'sub-trade-partner']}
       >
+         <Menu.Item key="/gofreight" icon={<UserOutlined />}>
+            <Link to="/gofreight">Dashboard</Link>
+          </Menu.Item>
         <Menu.SubMenu
           key="sub-ocean-import"
           icon={<UserOutlined />}
