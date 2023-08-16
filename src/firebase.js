@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useState, useEffect } from "react"
+
 import { getFirestore } from 'firebase/firestore';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -34,5 +35,4 @@ export const useAuth = () => {
 };
 
 const firestore = getFirestore(app);
-
 export { app, auth, firestore };

@@ -24,7 +24,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/homeee" element={<Sidebarr/>} />
      
-      <Route path="/ocean-import/new-shipment" element={<><HeaderComponent/> <Layout>
+      <Route path="/ocean-import/new-shipment" element={<><HeaderComponent /> <Layout>
 
       <Row>
         <Col span={3}>
@@ -38,7 +38,7 @@ function App() {
      </Col>
       </Row>
     </Layout></>} />
-    <Route path="/ocean-import/shipment-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent/> <Layout>
+    <Route path="/ocean-import/shipment-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent /> <Layout>
       <Row>
         <Col span={3}>
           <Sidebarr />
