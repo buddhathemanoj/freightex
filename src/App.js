@@ -7,12 +7,18 @@ import { Signup } from './components/auth/Signup';
 import { Login } from "./components/auth/Login";
 import Sidebarr from "./components/pages/Home";
 import { useAuth } from "./firebase";
-import { Mainoverview } from "./components/Dashboard/Mainoverview";
+
 import { Newshipment } from "./components/Ocean import/Newshipment";
 import HeaderComponent from "./components/Headers/Header";
 import Shipmentlist from "./components/Ocean import/Shipemntlist";
+
 import { MBLlist } from "./components/Ocean import/MBLlist";
 import { HBLlist } from "./components/Ocean import/HBLlist";
+
+import { Mainoverview } from "./components/Dashboard/Mainoverview";
+import MBLlist from "./components/Ocean import/MBLlist";
+import HBLlist from "./components/Ocean import/HBLlist";
+
 
 const { Content } = Layout;
 function App() {
@@ -82,6 +88,9 @@ function App() {
     </Layout></>: <Navigate to="/login" />}/>
 
 
+
+
+
       <Route
         path="/gofreight"
         element={currentUser && currentUser.emailVerified ? <><HeaderComponent currentUser={currentUser} /> <Layout>
@@ -91,8 +100,7 @@ function App() {
           </Col>
          <Col span={21} >
             <Content style={{paddingTop:'20px'}} >
-            
-              < Mainoverview/>
+              <Mainoverview/>
             </Content>
        </Col>
         </Row>
