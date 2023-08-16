@@ -7,7 +7,7 @@ import { Signup } from './components/auth/Signup';
 import { Login } from "./components/auth/Login";
 import Sidebarr from "./components/pages/Home";
 import { useAuth } from "./firebase";
-
+import { Mainoverview } from "./components/Dashboard/Mainoverview";
 import { Newshipment } from "./components/Ocean import/Newshipment";
 import HeaderComponent from "./components/Headers/Header";
 import Shipmentlist from "./components/Ocean import/Shipemntlist";
@@ -28,7 +28,7 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/homeee" element={<Sidebarr/>} />
      
-      <Route path="/ocean-import/new-shipment" element={<><HeaderComponent /> <Layout>
+      <Route path="/ocean-import/new-shipment" element={<><HeaderComponent currentUser={currentUser}/> <Layout>
 
       <Row>
         <Col span={3}>
@@ -42,7 +42,7 @@ function App() {
      </Col>
       </Row>
     </Layout></>} />
-    <Route path="/ocean-import/shipment-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent /> <Layout>
+    <Route path="/ocean-import/shipment-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent currentUser={currentUser}/> <Layout>
       <Row>
         <Col span={3}>
           <Sidebarr />
@@ -84,7 +84,7 @@ function App() {
 
       <Route
         path="/gofreight"
-        element={currentUser && currentUser.emailVerified ? <><HeaderComponent /> <Layout>
+        element={currentUser && currentUser.emailVerified ? <><HeaderComponent currentUser={currentUser} /> <Layout>
         <Row>
           <Col span={3}>
             <Sidebarr />

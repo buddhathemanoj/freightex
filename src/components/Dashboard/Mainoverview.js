@@ -9,38 +9,41 @@ import { OverviewTraffic } from './traffic'
 
 
 
+
+
+
 export const Mainoverview = () => {
   return (
     <div>
         <div>
             <Row>
-                <Col span={5}>
+                <Col span={5} style={{marginRight:'10px'}}>
                     <OverviewBudget/>
                 </Col>
-                <Col span={5}>
+                <Col span={5} style={{marginRight:'10px'}}>
                     <OverviewTotalCustomers/>
                 </Col>
-                <Col span={5}>
+                <Col span={5} style={{marginRight:'10px'}}>
                     <OverviewTasksProgress/>
                 </Col>
-                <Col span={5}>
+                <Col span={5} style={{marginRight:'10px'}}>
                     <OverviewTotalProfit/>
                 </Col>
-                <Col span={5}>
-                    <OverviewBudget/>
-                </Col>
+              
             </Row>
             
         </div>
+        <br/>
+        <br/>
 <div>
     <Row>
-        <Col span={16}>
-            {/* <OverviewSales/> */}
-            <h1>hiii</h1>
+        <Col span={16} style={{marginRight:'10px'}}>
+            <OverviewSales/>
+           
         </Col>
-        <Col span={8}>
-            {/* <OverviewTraffic/> */}
-            <h1>hiii</h1>
+        <Col span={7}>
+            <OverviewTraffic/>
+            
         </Col>
     </Row>
 </div>
