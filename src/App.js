@@ -1,6 +1,6 @@
 import { BrowserRouter as Router ,Route, BrowserRouter, Routes,Navigate} from "react-router-dom";
 import './App.css';
-import 'antd/dist/antd'
+// import 'antd/dist/antd'
 import { Layout, Row, Col } from 'antd';
 
 import { Signup } from './components/auth/Signup';
@@ -67,7 +67,7 @@ function App() {
           <Sidebarr />
         </Col>
        <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
+          <Content style={{padding:'20px 20px'}} >
             < MBLlist/>
           </Content>
      </Col>
@@ -80,7 +80,7 @@ function App() {
           <Sidebarr />
         </Col>
        <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
+          <Content style={{padding:'20px 20px'}} >
             < HBLlist/>
           </Content>
      </Col>
@@ -99,7 +99,7 @@ function App() {
             <Sidebarr />
           </Col>
          <Col span={21} >
-            <Content style={{paddingTop:'20px'}} >
+            <Content style={{padding:'20px 20px'}} >
               <Mainoverview/>
             </Content>
        </Col>
