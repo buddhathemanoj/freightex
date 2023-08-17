@@ -2,3 +2,25 @@
     overflow: hidden !important;
     width: 100% !important;
 }
+.custom-search .ant-input,
+.ant-picker-input
+ {
+    height: 40px !important;
+    margin-left: 10px;
+    border-radius: 0px;
+    border: 0;
+    background: transparent !important;
+    /* background-color: #38323d; */
+    
+   
+  }
+  .custom-search input::placeholder {
+    color: var(--placeholder-color); /* Use the variable set in the inline style */
+  }
+  .item-button.ant-btn{
+    color:rgb(243 230 230 / 88%);
+  }
+  .search-button.anticon  {
+    font-size: 22px;
+    color: rgba(189, 174, 174, 0.568);
+}

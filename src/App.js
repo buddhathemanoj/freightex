@@ -1,6 +1,6 @@
 import { BrowserRouter as Router ,Route, BrowserRouter, Routes,Navigate} from "react-router-dom";
 import './App.css';
-import 'antd/dist/antd'
+// import 'antd/dist/antd'
 import { Layout, Row, Col } from 'antd';
 
 import { Signup } from './components/auth/Signup';
