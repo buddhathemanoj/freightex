@@ -67,7 +67,7 @@ function App() {
           <Sidebarr />
         </Col>
        <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
+          <Content style={{padding:'20px 20px'}} >
             < MBLlist/>
           </Content>
      </Col>
@@ -80,7 +80,7 @@ function App() {
           <Sidebarr />
         </Col>
        <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
+          <Content style={{padding:'20px 20px'}} >
             < HBLlist/>
           </Content>
      </Col>
@@ -99,7 +99,7 @@ function App() {
             <Sidebarr />
           </Col>
          <Col span={21} >
-            <Content style={{paddingTop:'20px'}} >
+            <Content style={{padding:'20px 20px'}} >
               <Mainoverview/>
             </Content>
        </Col>
