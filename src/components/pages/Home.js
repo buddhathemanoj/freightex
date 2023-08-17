@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom'; // Import useLocation
 import './Sidebar.css';
 
 const { Sider } = Layout;
@@ -28,6 +28,8 @@ const Sidebarrr = () => {
     setCollapsed(!collapsed);
   };
 
+  const location = useLocation(); // Get the current location
+
   return (
     <Sider
       collapsible
@@ -42,16 +44,16 @@ const Sidebarrr = () => {
     >
       <div className="demo-logo-vertical" />
       <Menu
-  style={{ backgroundColor: colorBgContainer1, color: 'white' }}
-  mode="inline"
-  defaultSelectedKeys={['/gofreight']}
-  defaultOpenKeys={[
-    'sub-ocean-import',
-    'sub-ocean-export',
-    'sub-sales',
-    'sub-trade-partner',
-  ]}
->
+        style={{ backgroundColor: colorBgContainer1, color: 'white' }}
+        mode="inline"
+        defaultSelectedKeys={[location.pathname]} // Use the current location as defaultSelectedKeys
+        defaultOpenKeys={[
+          'sub-ocean-import',
+          'sub-ocean-export',
+          'sub-sales',
+          'sub-trade-partner',
+        ]}
+      >
   <Menu.Item key="/gofreight" icon={<UserOutlined />}>
     <Link to="/gofreight">Dashboard</Link>
   </Menu.Item>
@@ -67,7 +69,12 @@ const Sidebarrr = () => {
     <Menu.Item key="/ocean-import/shipment-list">
       <Link to="/ocean-import/shipment-list">Shipment List</Link>
     </Menu.Item>
-    {/* Add more Ocean Import submenu items */}
+    <Menu.Item key="/ocean-import/shipment-list">
+      <Link to="/ocean-import/shipment-list">Master B/L List</Link>
+    </Menu.Item>
+    <Menu.Item key="/ocean-import/shipment-list">
+      <Link to="/ocean-import/shipment-list">House B/Layout List</Link>
+    </Menu.Item>
   </Menu.SubMenu>
 
   <Menu.SubMenu
@@ -81,16 +88,54 @@ const Sidebarrr = () => {
     <Menu.Item key="/ocean-export/shipment-list">
       <Link to="/ocean-export/shipment-list">Shipment List</Link>
     </Menu.Item>
-    {/* Add more Ocean Export submenu items */}
+    <Menu.Item key="/ocean-export/shipment-list">
+      <Link to="/ocean-export/shipment-list">Master B/L List</Link>
+    </Menu.Item>
+    <Menu.Item key="/ocean-export/shipment-list">
+      <Link to="/ocean-export/shipment-list">House B/Layout List</Link>
+    </Menu.Item>
+    <Menu.Item key="/ocean-export/shipment-list">
+      <Link to="/ocean-export/shipment-list">New Booking</Link>
+    </Menu.Item>
+    <Menu.Item key="/ocean-export/shipment-list">
+      <Link to="/ocean-export/shipment-list">Booking List</Link>
+    </Menu.Item>
+    <Menu.Item key="/ocean-export/shipment-list">
+      <Link to="/ocean-export/shipment-list">New Vessel Schedule</Link>
+    </Menu.Item>
+    <Menu.Item key="/ocean-export/shipment-list">
+      <Link to="/ocean-export/shipment-list">Vessel Schedule List</Link>
+    </Menu.Item>
   </Menu.SubMenu>
 
-  <Menu.Item key="/sales" icon={<UserOutlined />}>
-    <Link to="/sales">Sales</Link>
-  </Menu.Item>
+  <Menu.SubMenu
+    key="sub-sales"
+    icon={<UserOutlined />}
+    title="Sales"
+  >
+    <Menu.Item key="/sales/new-quotation">
+      <Link to="/sales/new-quotation">New Quotation</Link>
+    </Menu.Item>
+    <Menu.Item key="/sales/quotation-list">
+      <Link to="/sales/quotation-list">Quotation List</Link>
+    </Menu.Item>
+  </Menu.SubMenu>
 
-  <Menu.Item key="/trade-partner" icon={<UserOutlined />}>
-    <Link to="/trade-partner">Trade Partner</Link>
-  </Menu.Item>
+  <Menu.SubMenu
+    key="sub-trade-partner"
+    icon={<UserOutlined />}
+    title="Trade-partner"
+  >
+    <Menu.Item key="/trade-partner/new-quotation">
+      <Link to="/trade-partner/new-quotation">New Trade Partner</Link>
+    </Menu.Item>
+    <Menu.Item key="/trade-partner/quotation-list">
+      <Link to="/trade-partner/quotation-list">Trade Partner Credit Entry</Link>
+    </Menu.Item>
+    <Menu.Item key="/trade-partner/quotation-list">
+      <Link to="/trade-partner/quotation-list">Trade Partner List</Link>
+    </Menu.Item>
+  </Menu.SubMenu>
 </Menu>
 </Sider>
   );
