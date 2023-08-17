@@ -22,8 +22,16 @@ const userMenu = (
 );
 
 const Sidebarrr = () => {
-  const [collapsed, setCollapsed] = useState(false);
+  const [collapsed, setCollapsed] = useState(true);
   const [openSubMenuKeys, setOpenSubMenuKeys] = useState([]);
+
+  const handleSubMenuClick = (key) => {
+    if (openSubMenuKeys.includes(key)) {
+      setOpenSubMenuKeys(openSubMenuKeys.filter(subKey => subKey !== key));
+    } else {
+      setOpenSubMenuKeys([...openSubMenuKeys, key]);
+    }
+  };
 
   const handleMenuCollapse = () => {
     setCollapsed(!collapsed);
@@ -55,10 +63,12 @@ const Sidebarrr = () => {
   </Menu.Item>
 
   <Menu.SubMenu
-    key="sub-ocean-import"
-    icon={<UserOutlined />}
-    title="Ocean Import"
-  >
+  key="sub-ocean-import"
+  icon={<UserOutlined />}
+  title="Ocean Import"
+  onTitleClick={() => handleSubMenuClick('sub-ocean-import')}
+  open={openSubMenuKeys.includes('sub-ocean-import')}
+>
     <Menu.Item key="/ocean-import/new-shipment">
       <Link to="/ocean-import/new-shipment">New Shipment</Link>
     </Menu.Item>
@@ -77,6 +87,8 @@ const Sidebarrr = () => {
     key="sub-ocean-export"
     icon={<UserOutlined />}
     title="Ocean Export"
+    onTitleClick={() => handleSubMenuClick('sub-ocean-export')}
+    open={openSubMenuKeys.includes('sub-ocean-export')}
   >
     <Menu.Item key="/ocean-export/new-shipment">
       <Link to="/ocean-export/new-shipment">New Shipment</Link>
@@ -108,6 +120,8 @@ const Sidebarrr = () => {
     key="sub-sales"
     icon={<UserOutlined />}
     title="Sales"
+    onTitleClick={() => handleSubMenuClick('sub-sales')}
+    open={openSubMenuKeys.includes('sub-sales')}
   >
     <Menu.Item key="/sales/new-quotation">
       <Link to="/sales/new-quotation">New Quotation</Link>
@@ -121,6 +135,8 @@ const Sidebarrr = () => {
     key="sub-trade-partner"
     icon={<UserOutlined />}
     title="Trade-partner"
+    onTitleClick={() => handleSubMenuClick('sub-trade-partner')}
+    open={openSubMenuKeys.includes('sub-trade-partner')}
   >
     <Menu.Item key="/trade-partner/new-quotation">
       <Link to="/trade-partner/new-quotation">New Trade Partner</Link>
