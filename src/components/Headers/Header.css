@@ -1,7 +1,30 @@
-.headerrr{
-    overflow: hidden !important;
+
+
+.headerrr {
+    overflow: hidden;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    background-color: #38323d;
+    transition: padding 0.3s ease-in-out;
     width: 100% !important;
-}
+   z-index: 1000;
+   
+  }
+  
+  .headerrr.scroll {
+ 
+
+    padding-bottom: 0;
+   
+  }
+  
+  
+  
+  
+  
+  
+  
 .custom-search .ant-input,
 .ant-picker-input
  {
@@ -22,5 +45,5 @@
   }
   .search-button.anticon  {
     font-size: 22px;
-    color: rgba(189, 174, 174, 0.568);
+    color: rgba(44, 44, 44, 0.795);
 }

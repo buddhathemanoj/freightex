@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 import { Layout, Menu, Breadcrumb, Dropdown } from 'antd';
 import {
   UserOutlined,
+  DashboardOutlined,
   DownOutlined,
+  ImportOutlined,
   LogoutOutlined,
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
@@ -35,7 +37,7 @@ const Sidebarrr = () => {
 
   return (
     
-    <Layout>
+    <Layout >
       <Sider
       collapsible
       collapsed={collapsed}
@@ -49,12 +51,19 @@ const Sidebarrr = () => {
         defaultSelectedKeys={['/ocean-import']}
         defaultOpenKeys={['sub-ocean-import', 'sub-trade-partner']}
       >
-         <Menu.Item key="/gofreight" icon={<UserOutlined />}>
+
+<Menu.Item key="/headingcompany" >
+            <Link to="/gofreight"><h1 className='logomain'>Go <span style={{marginLeft:'6px'}} >Freight</span>  </h1></Link>
+          </Menu.Item>
+          <br/>
+          <br/>
+          <br/>
+         <Menu.Item key="/gofreight" icon={<DashboardOutlined />}>
             <Link to="/gofreight">Dashboard</Link>
           </Menu.Item>
         <Menu.SubMenu
           key="sub-ocean-import"
-          icon={<UserOutlined />}
+          icon={<ImportOutlined />}
           title="Ocean Import"
         >
           <Menu.Item key="/ocean-import/new-shipment">
