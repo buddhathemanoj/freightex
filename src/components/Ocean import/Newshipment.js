@@ -227,6 +227,7 @@ export const Newshipment = () => {
   const formItemStyle = { marginBottom: '5px' };
   const formItemStyle1 = { marginBottom: '25px' };
   const formItemStyle2 = { marginBottom: '40px' };
+  const formItemStyle3 = { marginBottom: '80px' };
   const inputstyle = { innerHeight: '15px' };
   const [placement, SetPlacement] = useState('topLeft');
   const [oblReceivedChecked, setOblReceivedChecked] = useState(true);
@@ -322,7 +323,7 @@ export const Newshipment = () => {
                                 {/* Add more options as needed */}
                               </Select>
                             </Form.Item>
-                            <Form.Item label="Place of Delivery (DEL)" style={formItemStyle2}>
+                            <Form.Item label="Place of Delivery (DEL)" style={formItemStyle3}>
 
                               <div style={{ display: 'flex', flexDirection: 'column' }}>
 
@@ -459,7 +460,7 @@ export const Newshipment = () => {
                                 {/* Add more options as needed */}
                               </Select>
                             </Form.Item>
-                            <Form.Item label="OB/L Received" style={formItemStyle}>
+                            <Form.Item label="OB/L Received" style={formItemStyle1}>
                               <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <Checkbox
 
@@ -581,14 +582,14 @@ export const Newshipment = () => {
                             </Form.Item>
                             <Form.Item label="*Service Term" style={formItemStyle}>
                               <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <Select style={{ marginBottom: '12px' }} value={formData.serviceTerm1} onChange={(value) => handleFieldChange("serviceTerm1", value)} >
+                                <Select style={{ marginBottom: '1px' }} value={formData.serviceTerm1} onChange={(value) => handleFieldChange("serviceTerm1", value)} >
                                   <Option value="option1">Option 1</Option>
                                   <Option value="option2">Option 2</Option>
                                   <Option value="option3">Option 3</Option>
                                   {/* Add more options as needed */}
                                 </Select>
-                                <p style={{ marginBottom: '12px' }} >~</p>
-                                <Select style={{ marginBottom: '12px' }} value={formData.serviceterm2} onChange={(value) => handleFieldChange("serviceTerm2", value)}>
+                                <p style={{ marginBottom: '2px' }} >~</p>
+                                <Select style={{ marginBottom: '2px' }} value={formData.serviceterm2} onChange={(value) => handleFieldChange("serviceTerm2", value)}>
                                   <Option value="option1">Option 1</Option>
                                   <Option value="option2">Option 2</Option>
                                   <Option value="option3">Option 3</Option>
@@ -597,7 +598,7 @@ export const Newshipment = () => {
                               </div>
 
                             </Form.Item>
-                            <Form.Item label=" Received Date" style={formItemStyle}>
+                            <Form.Item label=" Received Date" style={{marginBottom:'35px'}}>
                               <div style={{ display: 'flex', alignItems: 'center' }}>
                                 <Checkbox
 
@@ -701,20 +702,20 @@ export const Newshipment = () => {
                                 {/* Add more options as needed */}
                               </Select>
                             </Form.Item>
-                            <Form.Item label="*ETA" style={formItemStyle1}>
+                            <Form.Item label="*ETA" style={formItemStyle}>
                               <DatePicker value={formData.ETA} onChange={(date) => handleFieldChange('ETA', date)} onClick={() => setIsAnyInputClicked(true)} style={{ width: '100%', height: '24px' }} placement={placement} />
                             </Form.Item>
-                            <Form.Item label="Final ETA " style={formItemStyle1}>
+                            <Form.Item label="Final ETA " style={formItemStyle}>
                               <DatePicker value={formData.finalETA} onChange={(date) => handleFieldChange('finalETA', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                             </Form.Item>
                             <Form.Item label="ETB" style={formItemStyle2}>
                               <DatePicker value={formData.ETB} onChange={(date) => handleFieldChange('ETB', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                             </Form.Item>
 
-                            <Form.Item label="Container/Qty " style={formItemStyle1}>
+                            <Form.Item label="Container/Qty " style={formItemStyle}>
                               <Input value={formData.containerQty} onChange={(e) => handleFieldChange("containerQty", e.target.value)} />
                             </Form.Item>
-                            <Form.Item label="Business Referred By " style={formItemStyle}>
+                            <Form.Item label="Business Referred By " style={{marginBottom:"70px"}}>
                               <Select value={formData.businessRefer} onChange={(value) => handleFieldChange("businessRefer", value)} >
                                 <Option value="option1">Option 1</Option>
                                 <Option value="option2">Option 2</Option>
@@ -1095,14 +1096,14 @@ export const Newshipment = () => {
                             </Form.Item>
                             <Form.Item label="*Service Term" style={formItemStyle}>
                               <div style={{ display: 'flex', alignItems: 'center' }}>
-                                <Select style={{ marginBottom: '12px' }} value={formData.serviceTerm1} onChange={(value) => handleFieldChange("serviceTerm1", value)} >
+                                <Select  value={formData.serviceTerm1} onChange={(value) => handleFieldChange("serviceTerm1", value)} >
                                   <Option value="option1">Option 1</Option>
                                   <Option value="option2">Option 2</Option>
                                   <Option value="option3">Option 3</Option>
                                   {/* Add more options as needed */}
                                 </Select>
-                                <p style={{ marginBottom: '12px' }} >~</p>
-                                <Select style={{ marginBottom: '12px' }} value={formData.serviceterm2} onChange={(value) => handleFieldChange("serviceTerm2", value)}>
+                                <p  >~</p>
+                                <Select  value={formData.serviceterm2} onChange={(value) => handleFieldChange("serviceTerm2", value)}>
                                   <Option value="option1">Option 1</Option>
                                   <Option value="option2">Option 2</Option>
                                   <Option value="option3">Option 3</Option>
