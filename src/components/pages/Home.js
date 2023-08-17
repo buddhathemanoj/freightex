@@ -47,7 +47,7 @@ const Sidebarrr = () => {
         style={{ backgroundColor: colorBgContainer1, color: 'white' }}
         mode="inline"
         defaultSelectedKeys={['/ocean-import']}
-        defaultOpenKeys={['sub-ocean-import', 'sub-ocean-export', 'sub-sales', 'sub-trade-partner']}
+        defaultOpenKeys={['sub-ocean-import', 'sub-trade-partner']}
       >
          <Menu.Item key="/gofreight" icon={<UserOutlined />}>
             <Link to="/gofreight">Dashboard</Link>
@@ -72,41 +72,21 @@ const Sidebarrr = () => {
         </Menu.SubMenu>
 
         <Menu.SubMenu
-          key="sub-ocean-export"
+          key="sub-trade-partner"
           icon={<UserOutlined />}
-          title="Ocean Export"
+          title="Trade Partner"
         >
-          <Menu.Item key="/ocean-export/new-shipment">
-            <Link to="/ocean-export/new-shipment">New Shipment</Link>
+          <Menu.Item key="/trade-partner/new-tardepartner">
+            <Link to="/trade-partner/new-tradepartner">New Tradepartner</Link>
           </Menu.Item>
-          <Menu.Item key="/ocean-export/shipment-list">
-            <Link to="/ocean-export/shipment-list">Shipment List</Link>
+          <Menu.Item  key="/trade-partner/credit-entry">
+            <Link to="/trade-partner/credit-entry">Tradepartner Credit Entry</Link>
           </Menu.Item>
-          <Menu.Item key="/ocean-export/mb-l-list">
-            <Link to="/ocean-export/mb-l-list">MB/L List</Link>
-          </Menu.Item>
-          <Menu.Item key="/ocean-export/hb-l-list">
-            <Link to="/ocean-export/hb-l-list">HB/L List</Link>
-          </Menu.Item>
-          <Menu.Item key="/ocean-export/newbooking">
-            <Link to="/ocean-export/new-shipment">New Booking</Link>
-          </Menu.Item>
-          <Menu.Item key="/ocean-export/bookinglist">
-            <Link to="/ocean-export/shipment-list">Booking List</Link>
-          </Menu.Item>
-          <Menu.Item key="/ocean-export/newvessel-schedule">
-            <Link to="/ocean-export/newvessel-schedule">New Vessel Schedule</Link>
-          </Menu.Item>
-          <Menu.Item key="/ocean-export/vessel-schedulelist">
-            <Link to="/ocean-export/vessel-schedulelist">Vessel Schedule List</Link>
+          <Menu.Item key="/trade-partner/tradepartner-list">
+            <Link to="/trade-partner/tradepartner-list">Tradepartner List</Link>
           </Menu.Item>
         </Menu.SubMenu>
-        <Menu.Item key="/sales" icon={<UserOutlined />}>
-          <Link to="/sales">Sales</Link>
-        </Menu.Item>
-        <Menu.Item key="/trade-partner" icon={<UserOutlined />}>
-          <Link to="/trade-partner">Trade Partner</Link>
-        </Menu.Item>
+       
       </Menu>
     </Sider>
     </Layout>
