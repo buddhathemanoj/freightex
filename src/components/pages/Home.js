@@ -23,6 +23,7 @@ const userMenu = (
 
 const Sidebarrr = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [openSubMenuKeys, setOpenSubMenuKeys] = useState([]);
 
   const handleMenuCollapse = () => {
     setCollapsed(!collapsed);
@@ -47,12 +48,7 @@ const Sidebarrr = () => {
         style={{ backgroundColor: colorBgContainer1, color: 'white' }}
         mode="inline"
         defaultSelectedKeys={[location.pathname]}
-        defaultOpenKeys={[
-          'sub-ocean-import',
-          'sub-ocean-export',
-          'sub-sales',
-          'sub-trade-partner',
-        ]}
+        defaultOpenKeys={openSubMenuKeys}
       >
   <Menu.Item key="/gofreight" icon={<UserOutlined />}>
     <Link to="/gofreight">Dashboard</Link>
