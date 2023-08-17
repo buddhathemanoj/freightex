@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
-import { Link, useLocation } from 'react-router-dom'; // Import useLocation
+import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
 
 const { Sider } = Layout;
@@ -28,7 +28,7 @@ const Sidebarrr = () => {
     setCollapsed(!collapsed);
   };
 
-  const location = useLocation(); // Get the current location
+  const location = useLocation();
 
   return (
     <Sider
@@ -46,7 +46,7 @@ const Sidebarrr = () => {
       <Menu
         style={{ backgroundColor: colorBgContainer1, color: 'white' }}
         mode="inline"
-        defaultSelectedKeys={[location.pathname]} // Use the current location as defaultSelectedKeys
+        defaultSelectedKeys={[location.pathname]}
         defaultOpenKeys={[
           'sub-ocean-import',
           'sub-ocean-export',
