@@ -7,8 +7,11 @@ import {
   Button,
   Collapse,
   Checkbox,
+  Alert,
+  Space,
 } from "antd";
 import { LiaExternalLinkSquareAltSolid } from "react-icons/lia";
+import { FaListUl } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import {
   UserOutlined,
@@ -26,6 +29,7 @@ const HeaderComponent = ({ currentUser }) => {
   const [userData, setUserData] = useState(null);
   const [selectedItem, setSelectedItem] = useState("Ocean Import");
   const [isNewBoxOpen, setIsNewBoxOpen] = useState(false); // Initial selected item
+  const [isTodoBoxOpen, setIsTodoBoxOpen] = useState(false);
   const items = [
     "Ocean Import",
     "Ocean Export",
@@ -60,6 +64,10 @@ const HeaderComponent = ({ currentUser }) => {
 
   const handleNewBoxToggle = () => {
     setIsNewBoxOpen(!isNewBoxOpen);
+  };
+
+  const handleTodoBoxToggle = () => {
+    setIsTodoBoxOpen(!isTodoBoxOpen);
   };
 
   useEffect(() => {
@@ -267,6 +275,97 @@ const HeaderComponent = ({ currentUser }) => {
                 <DownOutlined
                   className={`dropdown-icon ${isNewBoxOpen ? "open" : ""}`}
                 />
+              </Button>
+            </Dropdown>
+          </div>
+
+          <div style={{ display: "flex", alignItems: "center" }}>
+            {/* New 'To do list' Dropdown */}
+            <Dropdown
+              overlay={
+                <Collapse in={isTodoBoxOpen}>
+                  <div
+                    style={{
+                      width: "400px",
+                      height: isTodoBoxOpen ? "290px" : "0",
+                      backgroundColor: "#FFFFFF",
+                      transition: "height 1s ease-in-out",
+                      overflow: "hidden",
+                      border: "1px solid #E3E7ED",
+                      boxShadow:
+                        "10px 11px 1px 0px rgba(0, 0, 0, 0.1019607843)",
+                      borderRadius: "5px",
+                    }}
+                  >
+                    <div
+                      style={{
+                        height: "40px",
+                        display: "flex",
+                        justifyContent: "left",
+                        borderBottom: "1px solid black",
+                        alignItems: "center",
+                        fontWeight: "700",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                      }}
+                    >
+                      <span>To-do list&nbsp;&nbsp;</span>
+                      <Space direction="horizontal">
+                        <Alert
+                          message="0 errors"
+                          type="error"
+                          style={{
+                            width: "fit-content",
+                            padding: "1px",
+                            fontWeight: "400",
+                            borderRadius: 0,
+                          }}
+                        />
+                        <Alert
+                          message="0 warnings"
+                          type="warning"
+                          style={{
+                            width: "fit-content",
+                            padding: "1px",
+                            fontWeight: "400",
+                            borderRadius: 0,
+                          }}
+                        />
+                      </Space>
+                    </div>
+                    <div
+                      style={{
+                        height: "200px",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginTop: "10px",
+                        borderBottom: "1px solid white",
+                      }}
+                    >
+                      <img src="/to-do-empty.png" className="to-do-empty" />
+                      <span
+                        style={{
+                          fontWeight: "500",
+                          textAlign: "center"
+                        }}
+                      >
+                        You don't have any To-dos
+                      </span>
+                    </div>
+                  </div>
+                </Collapse>
+              }
+              trigger={["click"]}
+              placement="bottomCenter"
+              onVisibleChange={handleTodoBoxToggle}
+            >
+              <Button
+                className={`item-button ${isTodoBoxOpen ? "open" : ""}`}
+                style={{ background: "transparent", border: "0" }}
+              >
+                <FaListUl />
               </Button>
             </Dropdown>
           </div>
