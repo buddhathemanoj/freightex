@@ -189,7 +189,8 @@ export const Mainoverview = () => {
                   style={{ width: "100%", marginLeft: "20px" }}
                 >
                  <RangePicker
-                style={{ width: '140%' }}
+                 
+                style={{ width: '140%',border:'1px solid #EBEDF2' }}
                 placeholder={['EXPORT ETD', 'Import ETA']}
               />
                 </Space>
