@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Dropdown, Menu, Input, Button } from "antd";
+import { Layout, Dropdown, Menu, Input, Button, Collapse } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import {
   UserOutlined,
   DownOutlined,
+  UpOutlined,
   LogoutOutlined,
   SearchOutlined,
 } from "@ant-design/icons";
@@ -14,7 +15,8 @@ import { Header } from "antd/lib/layout/layout";
 const HeaderComponent = ({ currentUser }) => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
-  const [selectedItem, setSelectedItem] = useState("Ocean Import"); // Initial selected item
+  const [selectedItem, setSelectedItem] = useState("Ocean Import");
+  const [isNewBoxOpen, setIsNewBoxOpen] = useState(false) // Initial selected item
   const items = [
     "Ocean Import",
     "Ocean Export",
@@ -45,6 +47,10 @@ const HeaderComponent = ({ currentUser }) => {
         header.classList.remove("scroll");
       }
     }
+  };
+
+  const handleNewBoxToggle = () => {
+    setIsNewBoxOpen(!isNewBoxOpen);
   };
 
   useEffect(() => {
@@ -159,6 +165,40 @@ const HeaderComponent = ({ currentUser }) => {
                 }
               />
             </div>
+          </div>
+          
+          <div style={{ display: "flex", alignItems: "center" }}>
+            {/* New 'What's New' Dropdown */}
+            <Dropdown
+              overlay={
+                <Collapse in={isNewBoxOpen}>
+                  <div
+                    style={{
+                      width: "400px",
+                      height: isNewBoxOpen ? "400px" : "0",
+                      backgroundColor: "#FFFFFF",
+                      transition: "height 1s ease-in-out",
+                      overflow: "hidden",
+                      boxShadow: '0 8px 32px 0 rgba(31, 38, 125, .50)',
+                      borderRadius: '5px'
+                    }}
+                  />
+                </Collapse>
+              }
+              trigger={["click"]}
+              placement="bottomCenter"
+              onVisibleChange={handleNewBoxToggle}
+            >
+              <Button
+                className={`item-button ${isNewBoxOpen ? "open" : ""}`}
+                style={{ background: "transparent", border: "0" }}
+              >
+                What's New{" "}
+  <DownOutlined
+    className={`dropdown-icon ${isNewBoxOpen ? "open" : ""}`}
+  />
+              </Button>
+            </Dropdown>
           </div>
 
           <div style={{ padding: "20px 0 0 0" }}>
