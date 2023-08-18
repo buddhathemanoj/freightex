@@ -101,7 +101,7 @@ const HeaderComponent = ({ currentUser }) => {
           }}
         >
           <div
-            style={{ height: "50px", marginLeft: "60px", marginTop: "10px" }}
+            style={{ height: "50px", marginTop: "10px" }}
           >
             <Link to="/gofreight">
               {" "}

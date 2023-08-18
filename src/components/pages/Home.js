@@ -3,6 +3,7 @@ import { Layout, Menu } from 'antd';
 import { UserOutlined, LogoutOutlined } from '@ant-design/icons';
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
+import Breadcrumbs from './Breadcrumbs';
 
 const { Sider } = Layout;
 
@@ -40,7 +41,7 @@ const Sidebarrr = () => {
   const location = useLocation();
 
   return (
-    <div style={{ position: 'fixed', left: 0, bottom: 0, zIndex: 10 }}>
+    <div style={{ position: 'fixed', left: 0, bottom: 0, zIndex: 10, display: 'flex' }}>
       <Sider
         collapsible
         collapsed={collapsed}
@@ -50,6 +51,7 @@ const Sidebarrr = () => {
           backgroundColor: colorBgContainer1,
           color: 'white',
           minHeight: '91vh',
+          maxHeight: '91vh'
         }}
       >
         <div className="demo-logo-vertical" />
@@ -151,6 +153,7 @@ const Sidebarrr = () => {
           </Menu.SubMenu>
         </Menu>
       </Sider>
+      <Breadcrumbs/>
       </div>
   );
 };
