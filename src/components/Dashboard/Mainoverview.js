@@ -63,9 +63,10 @@ import { OverviewTraffic } from './traffic';
 export const Mainoverview = () => {
   const columnStyle = {
     marginBottom: '10px', // Add margin between columns
-  
+    
    
     height: '100%',
+    outerWidth:'100%'
   };
 
   return (
