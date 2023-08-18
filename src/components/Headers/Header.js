@@ -1,5 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Layout, Dropdown, Menu, Input, Button, Collapse } from "antd";
+import {
+  Layout,
+  Dropdown,
+  Menu,
+  Input,
+  Button,
+  Collapse,
+  Checkbox,
+} from "antd";
+import { LiaExternalLinkSquareAltSolid } from "react-icons/lia";
 import { Link, useNavigate } from "react-router-dom";
 import {
   UserOutlined,
@@ -16,7 +25,7 @@ const HeaderComponent = ({ currentUser }) => {
   const navigate = useNavigate();
   const [userData, setUserData] = useState(null);
   const [selectedItem, setSelectedItem] = useState("Ocean Import");
-  const [isNewBoxOpen, setIsNewBoxOpen] = useState(false) // Initial selected item
+  const [isNewBoxOpen, setIsNewBoxOpen] = useState(false); // Initial selected item
   const items = [
     "Ocean Import",
     "Ocean Export",
@@ -106,9 +115,7 @@ const HeaderComponent = ({ currentUser }) => {
             backgroundColor: colorBgContainer,
           }}
         >
-          <div
-            style={{ height: "50px", marginTop: "10px" }}
-          >
+          <div style={{ height: "50px", marginTop: "10px" }}>
             <Link to="/gofreight">
               {" "}
               <img
@@ -166,7 +173,7 @@ const HeaderComponent = ({ currentUser }) => {
               />
             </div>
           </div>
-          
+
           <div style={{ display: "flex", alignItems: "center" }}>
             {/* New 'What's New' Dropdown */}
             <Dropdown
@@ -175,14 +182,77 @@ const HeaderComponent = ({ currentUser }) => {
                   <div
                     style={{
                       width: "400px",
-                      height: isNewBoxOpen ? "400px" : "0",
+                      height: isNewBoxOpen ? "290px" : "0",
                       backgroundColor: "#FFFFFF",
                       transition: "height 1s ease-in-out",
                       overflow: "hidden",
-                      boxShadow: '0 8px 32px 0 rgba(31, 38, 125, .50)',
-                      borderRadius: '5px'
+                      backgroundColor: "#26A69A",
+                      border: "1px solid #E3E7ED",
+                      boxShadow:
+                        "10px 11px 1px 0px rgba(0, 0, 0, 0.1019607843)",
+                      borderRadius: "5px",
                     }}
-                  />
+                  >
+                    <div
+                      style={{
+                        height: "40px",
+                        display: "flex",
+                        justifyContent: "space-between",
+                        borderBottom: "1px solid white",
+                        alignItems: "center",
+                        fontWeight: "700",
+                        paddingLeft: "10px",
+                        paddingRight: "10px",
+                        color: "white",
+                      }}
+                    >
+                      <span>New Feature(s)</span>
+                      <Checkbox style={{ color: "white", fontWeight: "200" }}>
+                        {" "}
+                        Don’t show until next new feature
+                      </Checkbox>
+                    </div>
+                    <div
+                      style={{
+                        height: "200px",
+                        display: "flex",
+                        flexDirection: "column",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        marginTop: "10px",
+                        borderBottom: "1px solid white",
+                      }}
+                    >
+                      <img src="/lightbulb.png" className="lightbulb" />
+                      <span
+                        style={{
+                          fontWeight: "700",
+                          textAlign: "center",
+                          color: "white",
+                        }}
+                      >
+                        You activate most of the new features
+                        <br />
+                        Find out more on our website!
+                      </span>
+                      <Button style={{ marginBottom: "10px" }}>
+                        Explore Now
+                        <LiaExternalLinkSquareAltSolid />
+                      </Button>
+                    </div>
+                    <div
+                      style={{
+                        paddingRight: "10px",
+                        paddingTop: "7px",
+                        color: "white",
+                      }}
+                    >
+                      <span style={{ float: "right", alignItems: "center" }}>
+                        Find more new features
+                        <LiaExternalLinkSquareAltSolid />
+                      </span>
+                    </div>
+                  </div>
                 </Collapse>
               }
               trigger={["click"]}
@@ -194,9 +264,9 @@ const HeaderComponent = ({ currentUser }) => {
                 style={{ background: "transparent", border: "0" }}
               >
                 What's New{" "}
-  <DownOutlined
-    className={`dropdown-icon ${isNewBoxOpen ? "open" : ""}`}
-  />
+                <DownOutlined
+                  className={`dropdown-icon ${isNewBoxOpen ? "open" : ""}`}
+                />
               </Button>
             </Dropdown>
           </div>
