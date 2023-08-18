@@ -9,6 +9,7 @@ import {
 } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import './Sidebar.css';
+import { width } from '@mui/system';
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -53,7 +54,10 @@ const Sidebarrr = () => {
       >
 
 <Menu.Item key="/headingcompany" >
-            <Link to="/gofreight"><h1 className='logomain'>Go <span style={{marginLeft:'6px'}} >Freight</span>  </h1></Link>
+            <Link to="/gofreight">
+            <img src="/logo.png" alt="Go Freight Logo" style={{width:"100px", height:"35px", marginLeft:"10px"}} className="logomain" />
+              {/* <h1 className='logomain'>Go <span style={{marginLeft:'6px'}} >Freight</span>  </h1> */}
+              </Link>
           </Menu.Item>
           <br/>
           <br/>
