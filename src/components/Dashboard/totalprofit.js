@@ -70,17 +70,7 @@ export const OverviewTotalProfit = (props) => {
             $22K
             </Typography>
           </Stack>
-          <Avatar
-            sx={{
-              backgroundColor: 'primary.main',
-              height: 56,
-              width: 56
-            }}
-          >
-            <SvgIcon>
-              <CurrencyDollarIcon />
-            </SvgIcon>
-          </Avatar>
+         
         </Stack>
         <Stack alignItems="center" direction="row" spacing={2} sx={{ mt: 2 }}>
             <Stack alignItems="center" direction="row" spacing={0.5}>
