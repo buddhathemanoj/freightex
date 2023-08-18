@@ -1,6 +1,6 @@
 import { BrowserRouter as Router ,Route, BrowserRouter, Routes,Navigate} from "react-router-dom";
 import './App.css';
-import 'antd/dist/antd'
+// import 'antd/dist/antd'
 import { Layout, Row, Col } from 'antd';
 
 import { Signup } from './components/auth/Signup';
@@ -17,6 +17,8 @@ import Shipmentlist from "./components/Ocean import/Shipemntlist";
 import { Mainoverview } from "./components/Dashboard/Mainoverview";
 import { MBLlist } from "./components/Ocean import/MBLlist";
 import { HBLlist } from "./components/Ocean import/HBLlist";
+import Sidebarrr from "./components/pages/Home";
+import { Basic } from "./components/Ocean import/NewShipment/Basic";
 
 
 
@@ -33,59 +35,76 @@ function App() {
       <Route path="/login" element={<Login />} />
       <Route path="/homeee" element={<Sidebarr/>} />
      
-      <Route path="/ocean-import/new-shipment" element={<><HeaderComponent currentUser={currentUser}/> <Layout>
-
-      <Row>
-        <Col span={3}>
-          <Sidebarr />
-        </Col>
-       <Col span={21}>
-          <Content style={{padding:'20px 20px'}} >
-          
-            <Newshipment />
-          </Content>
-     </Col>
-      </Row>
-    </Layout></>} />
-    <Route path="/ocean-import/shipment-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent currentUser={currentUser}/> <Layout>
-      <Row>
-        <Col span={3}>
-          <Sidebarr />
-        </Col>
-       <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
-          
-            < Shipmentlist/>
-          </Content>
-     </Col>
-      </Row>
-    </Layout></>: <Navigate to="/login" />}/>
+      <Route path="/ocean-import/new-shipment" element={currentUser && currentUser.emailVerified ?( <div className="app-container">
+        <HeaderComponent currentUser={currentUser} />
+        <Layout>
+          <Row>
+            <Col xs={24} sm={24} md={6} lg={6} xl={3} className="sidebar-col">
+              <Sidebarrr />
+            </Col>
+            <Col xs={24} sm={24} md={18} lg={18} xl={21} className="content-col">
+              <Content style={{paddingTop:'80px'}} className="content-wrapper">
+                <Newshipment />
+              </Content>
+            </Col>
+          </Row>
+        </Layout>
+      </div>
+    ) : (
+      <Navigate to="/login" />)} />
+    <Route path="/ocean-import/shipment-list"  element={currentUser && currentUser.emailVerified ?( <div className="app-container">
+        <HeaderComponent currentUser={currentUser} />
+        <Layout>
+          <Row>
+            <Col xs={24} sm={24} md={6} lg={6} xl={3} className="sidebar-col">
+              <Sidebarrr />
+            </Col>
+            <Col xs={24} sm={24} md={18} lg={18} xl={21} className="content-col">
+              <Content style={{paddingTop:'80px'}} className="content-wrapper">
+                <Shipmentlist />
+              </Content>
+            </Col>
+          </Row>
+        </Layout>
+      </div>
+    ) : (
+      <Navigate to="/login" />)} />
   
-    <Route path="/ocean-import/MB_L-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent /> <Layout>
-      <Row>
-        <Col span={3}>
-          <Sidebarr />
-        </Col>
-       <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
-            < MBLlist/>
-          </Content>
-     </Col>
-      </Row>
-    </Layout></>: <Navigate to="/login" />}/>
+    <Route path="/ocean-import/MB_L-list" element={currentUser && currentUser.emailVerified ?( <div className="app-container">
+        <HeaderComponent currentUser={currentUser} />
+        <Layout>
+          <Row>
+            <Col xs={24} sm={24} md={6} lg={6} xl={3} className="sidebar-col">
+              <Sidebarrr />
+            </Col>
+            <Col xs={24} sm={24} md={18} lg={18} xl={21} className="content-col">
+              <Content style={{paddingTop:'80px'}} className="content-wrapper">
+                <MBLlist />
+              </Content>
+            </Col>
+          </Row>
+        </Layout>
+      </div>
+    ) : (
+      <Navigate to="/login" />)}/>
 
-    <Route path="/ocean-import/HB_L-list"  element={currentUser && currentUser.emailVerified ? <><HeaderComponent /> <Layout>
-      <Row>
-        <Col span={3}>
-          <Sidebarr />
-        </Col>
-       <Col span={21} >
-          <Content style={{paddingTop:'20px'}} >
-            < HBLlist/>
-          </Content>
-     </Col>
-      </Row>
-    </Layout></>: <Navigate to="/login" />}/>
+    <Route path="/ocean-import/HB_L-list"  element={currentUser && currentUser.emailVerified ?( <div className="app-container">
+        <HeaderComponent currentUser={currentUser} />
+        <Layout>
+          <Row>
+            <Col xs={24} sm={24} md={6} lg={6} xl={3} className="sidebar-col">
+              <Sidebarrr />
+            </Col>
+            <Col xs={24} sm={24} md={18} lg={18} xl={21} className="content-col">
+              <Content style={{paddingTop:'80px'}} className="content-wrapper">
+                <HBLlist />
+              </Content>
+            </Col>
+          </Row>
+        </Layout>
+      </div>
+    ) : (
+      <Navigate to="/login" />)}/>
 
 
 
@@ -93,18 +112,23 @@ function App() {
 
       <Route
         path="/gofreight"
-        element={currentUser && currentUser.emailVerified ? <><HeaderComponent currentUser={currentUser} /> <Layout>
-        <Row>
-          <Col span={3}>
-            <Sidebarr />
-          </Col>
-         <Col span={21} >
-            <Content style={{paddingTop:'20px'}} >
-              <Mainoverview/>
-            </Content>
-       </Col>
-        </Row>
-      </Layout></>: <Navigate to="/login" />}
+        element={currentUser && currentUser.emailVerified ?( <div className="app-container">
+        <HeaderComponent currentUser={currentUser} />
+        <Layout>
+          <Row>
+            <Col xs={24} sm={24} md={6} lg={6} xl={3} className="sidebar-col">
+              <Sidebarrr />
+            </Col>
+            <Col xs={24} sm={24} md={18} lg={18} xl={21} className="content-col">
+              <Content style={{paddingTop:'80px'}} className="content-wrapper">
+                <Mainoverview />
+              </Content>
+            </Col>
+          </Row>
+        </Layout>
+      </div>
+    ) : (
+      <Navigate to="/login" />)}
       />
       <Route path="/" element={<Navigate to="/login" />} />
       </Routes>

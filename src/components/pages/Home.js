@@ -40,11 +40,12 @@ const Sidebarrr = () => {
   const location = useLocation();
 
   return (
+    <div style={{ position: 'fixed', left: 0, bottom: 0, zIndex: 10 }}>
       <Sider
         collapsible
         collapsed={collapsed}
-        onMouseEnter={() => setCollapsed(false)}
-        onMouseLeave={() => setCollapsed(true)}
+        onMouseEnter={() => setCollapsed(false)} //Mouse hover effect
+        onMouseLeave={() => setCollapsed(true)} //Mouse hover effect
         style={{
           backgroundColor: colorBgContainer1,
           color: 'white',
@@ -150,6 +151,7 @@ const Sidebarrr = () => {
           </Menu.SubMenu>
         </Menu>
       </Sider>
+      </div>
   );
 };
 

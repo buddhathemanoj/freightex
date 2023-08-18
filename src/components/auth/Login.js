@@ -40,7 +40,7 @@ export const Login = () => {
    
 
 <div className="sign-in-container">
-<h1 className="company">Go Freight</h1>
+<img src="/logo.png" alt="Go Freight Logo" className="logomain" />
 <div className="login-wrapper">
   
   <div className="logincontainer">

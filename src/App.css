@@ -17,3 +17,36 @@
 .ant-layout .ant-layout-sider-trigger {
   background-color: #38323d;
 }
+
+
+
+
+.sidebar-col {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 1000; /* Adjust the z-index as needed */
+  background-color: #38323d;
+  color: white;
+  overflow-y: auto;
+
+  /* Hide the scrollbar */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+/* Hide the scrollbar for Webkit browsers (Chrome, Safari, etc.) */
+.sidebar-col::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+
+.content-col {
+  margin-left: 240px; /* Width of your sidebar */
+}
+
+.content-wrapper {
+  padding: 20px;
+  overflow-y: auto;
+}
