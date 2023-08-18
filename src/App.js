@@ -18,6 +18,7 @@ import { Mainoverview } from "./components/Dashboard/Mainoverview";
 import { MBLlist } from "./components/Ocean import/MBLlist";
 import { HBLlist } from "./components/Ocean import/HBLlist";
 import Sidebarrr from "./components/pages/Home";
+import { Basic } from "./components/Ocean import/NewShipment/Basic";
 
 
 

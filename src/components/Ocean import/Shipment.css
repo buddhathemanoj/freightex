@@ -53,3 +53,12 @@ position: relative;
 .white-text {
   color: white !important;
 }
+
+/* .ant-tabs-nav-wrap {
+  display: inline-flex;
+  border: none;
+}
+.ant-tabs-nav {
+  width: auto;
+  margin: 0;
+} */
