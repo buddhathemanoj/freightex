@@ -49,7 +49,7 @@ const Sidebarrr = () => {
         style={{
           backgroundColor: colorBgContainer1,
           color: 'white',
-          minHeight: '100vh',
+          minHeight: '91vh',
         }}
       >
         <div className="demo-logo-vertical" />
