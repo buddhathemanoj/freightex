@@ -74,7 +74,7 @@ export const Signup = () => {
   };
   return (
     <div className="signup-container">
-        <h1 className="company-title">Go Freight</h1>
+            <img src="/logo.png" alt="Go Freight Logo" className="logomain" />
   <div className="signup-content">
 
     <Form form={form} onFinish={signUp}>
