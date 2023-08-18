@@ -86,9 +86,21 @@
   }
   .overvieww{
     background-color: #fff;
+    margin-bottom: 20px;
   }
   .negativeshipments{
     background-color: #fff;
+    margin-bottom: 20px;
+  }
+  .negativeshipments h1{
+    color: #4B77BE !important;
+  }
+  .todolist {
+    background-color: #fff;
+    margin-bottom: 20px;
+  }
+  .todolist h1{
+    color: #4B77BE !important;
   }
   /* .chart-legend-grid {
     display: grid;
