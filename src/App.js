@@ -42,7 +42,7 @@ function App() {
             <Col xs={24} sm={24} md={6} lg={6} xl={3} className="sidebar-col">
               <Sidebarrr />
             </Col>
-            <Col xs={24} sm={24} md={18} lg={18} xl={21} className="content-col">
+            <Col xs={24}  className="content-col">
               <Content style={{paddingTop:'80px'}} className="content-wrapper">
                 <Newshipment />
               </Content>
