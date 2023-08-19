@@ -37,6 +37,20 @@ const Sidebarrr = () => {
   };
 
   return (
+
+    <div style={{ position: 'fixed', left: 0, bottom: 0, display: 'flex' }}>
+      <Sider
+        collapsible
+        collapsed={collapsed}
+        onMouseEnter={() => setCollapsed(false)} //Mouse hover effect
+        onMouseLeave={() => setCollapsed(true)} //Mouse hover effect
+        style={{
+          backgroundColor: colorBgContainer1,
+          color: 'white',
+          minHeight: '93.5vh',
+          maxHeight: '93.5vh'
+        }}
+
     
     <Layout >
       <Sider
@@ -51,6 +65,7 @@ const Sidebarrr = () => {
         mode="inline"
         defaultSelectedKeys={['/ocean-import']}
         defaultOpenKeys={['sub-ocean-import', 'sub-trade-partner']}
+
       >
 
 <Menu.Item key="/headingcompany" >

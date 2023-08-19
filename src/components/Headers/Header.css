@@ -9,7 +9,7 @@
     transition: padding 0.3s ease-in-out;
     width: 100% !important;
    z-index: 1000;
-   
+   height: 46px;
   }
   
   .headerrr.scroll {
@@ -26,6 +26,21 @@
   .dropdown-icon.open {
     transform: rotate(180deg);
     transition: transform 0.3s ease-in-out;
+  }
+
+  .lightbulb {
+    height: 100px;
+    width: 100px;
+  }
+
+  .to-do-empty {
+    height: 150px;
+    width: 150px;
+  }
+
+  .notification-empty {
+    height: 150px;
+    width: 150px;
   }
   
   
