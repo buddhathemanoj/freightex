@@ -10,6 +10,8 @@
     width: 100% !important;
    z-index: 1000;
    height: 46px;
+   padding-left: 25px;
+   padding-right: 25px;
   }
   
   .headerrr.scroll {
@@ -21,6 +23,7 @@
 
   .logoheader {
     height: 100%;
+    padding: 5px;
   }
 
   .dropdown-icon.open {
@@ -52,11 +55,11 @@
 .custom-search .ant-input,
 .ant-picker-input
  {
-    height: 40px !important;
+    height: 46px !important;
     margin-left: 10px;
     border-radius: 0px;
     border: 0;
-    background: transparent !important;
+    background: #959fad !important;
     /* background-color: #38323d; */
     
    
