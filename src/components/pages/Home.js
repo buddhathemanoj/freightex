@@ -41,7 +41,7 @@ const Sidebarrr = () => {
   const location = useLocation();
 
   return (
-    <div style={{ position: 'fixed', left: 0, bottom: 0, zIndex: 10, display: 'flex' }}>
+    <div style={{ position: 'fixed', left: 0, bottom: 0, display: 'flex' }}>
       <Sider
         collapsible
         collapsed={collapsed}
@@ -50,8 +50,8 @@ const Sidebarrr = () => {
         style={{
           backgroundColor: colorBgContainer1,
           color: 'white',
-          minHeight: '91vh',
-          maxHeight: '91vh'
+          minHeight: '93.5vh',
+          maxHeight: '93.5vh'
         }}
       >
         <div className="demo-logo-vertical" />

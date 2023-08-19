@@ -124,7 +124,7 @@ const HeaderComponent = ({ currentUser }) => {
             backgroundColor: colorBgContainer,
           }}
         >
-          <div style={{ height: "50px", marginTop: "10px" }}>
+          <div style={{ height: "100%", padding:'8px'}}>
             <Link to="/gofreight">
               {" "}
               <img
@@ -441,7 +441,7 @@ const HeaderComponent = ({ currentUser }) => {
   </Dropdown>
 </div>
 
-          <div style={{ padding: "20px 0 0 0" }}>
+          <div style={{ padding: "12px 0 0 0" }}>
             {/* Ant Design Dropdown */}
             <Dropdown overlay={userMenu} style={{ color: "white" }}>
               <a

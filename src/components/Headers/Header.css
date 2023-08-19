@@ -9,7 +9,7 @@
     transition: padding 0.3s ease-in-out;
     width: 100% !important;
    z-index: 1000;
-   
+   height: 46px;
   }
   
   .headerrr.scroll {
