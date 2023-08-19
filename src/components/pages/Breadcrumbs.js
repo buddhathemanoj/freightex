@@ -8,7 +8,7 @@ const Breadcrumbs = () => {
   const pathnames = location.pathname.split('/').filter((x) => x);
 
   return (
-    <div style={{background: 'lightgrey', width: '2000px', height: '30px', overflow:'hidden' }}>
+    <div>
     <Breadcrumb style={{padding:'2px', marginLeft:'15px'}}>
       <Breadcrumb.Item>
         <Link to="/"><FaHome/> Home</Link>
