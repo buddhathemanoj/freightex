@@ -41,7 +41,8 @@ const Sidebarrr = () => {
   const location = useLocation();
 
   return (
-    <div style={{ position: 'fixed', left: 0, bottom: 0, zIndex: 10, display: 'flex' }}>
+    <div style={{ display:'flex', overflowX:'hidden'  }}>
+    <div style={{ position: 'fixed', left: 0, top:'46px', bottom: 0, zIndex: 10}}>
       <Sider
         collapsible
         collapsed={collapsed}
@@ -50,8 +51,7 @@ const Sidebarrr = () => {
         style={{
           backgroundColor: colorBgContainer1,
           color: 'white',
-          minHeight: '93.5vh',
-          maxHeight: '93.5vh'
+          minHeight: '99.5vh'
         }}
       >
         <div className="demo-logo-vertical" />
@@ -153,7 +153,10 @@ const Sidebarrr = () => {
           </Menu.SubMenu>
         </Menu>
       </Sider>
+      </div>
+      <div style={{background: 'lightgrey', top:'46px', left:'80px', position:'absolute', height: '30px', width:'2000px'}}>
       <Breadcrumbs/>
+      </div>
       </div>
   );
 };
