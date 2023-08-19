@@ -39,7 +39,7 @@ const Sidebarrr = () => {
   return (
 
     <div style={{ position: 'fixed', left: 0, bottom: 0, display: 'flex' }}>
-      <Sider
+      {/* <Sider
         collapsible
         collapsed={collapsed}
         onMouseEnter={() => setCollapsed(false)} //Mouse hover effect
@@ -49,7 +49,7 @@ const Sidebarrr = () => {
           color: 'white',
           minHeight: '93.5vh',
           maxHeight: '93.5vh'
-        }}
+        }} */}
 
     
     <Layout >
@@ -118,7 +118,7 @@ const Sidebarrr = () => {
       </Menu>
     </Sider>
     </Layout>
-
+</div>
   );
 };
 

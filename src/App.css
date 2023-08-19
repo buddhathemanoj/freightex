@@ -21,13 +21,12 @@
 
 
 
-.sidebar-col {
+/* .sidebar-col {
   position: fixed;
   left: 0;
   top: 43;
   bottom: 0;
-  z-index: 1000; /* Adjust the z-index as needed */
-  /* background-color: #38323d; */
+  z-index: 1000; 
   color: white;
   overflow-y: auto;
 
@@ -40,7 +39,7 @@
 .sidebar-col::-webkit-scrollbar {
   width: 0;
   background: transparent;
-}
+} */
 /* 
 .content-col {
   margin-left: 240px; 
