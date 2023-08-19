@@ -24,10 +24,10 @@
 .sidebar-col {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 43;
   bottom: 0;
   z-index: 1000; /* Adjust the z-index as needed */
-  background-color: #38323d;
+  /* background-color: #38323d; */
   color: white;
   overflow-y: auto;
 
@@ -46,7 +46,7 @@
   margin-left: 240px; 
 } */
 
-.content-wrapper {
+/* .content-wrapper {
   padding: 20px;
   overflow-y: auto;
-}
+} */

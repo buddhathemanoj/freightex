@@ -41,7 +41,7 @@ const Sidebarrr = () => {
   const location = useLocation();
 
   return (
-    <div style={{ position: 'fixed', left: 0, bottom: 0, zIndex: 10, display: 'flex' }}>
+    <div style={{  left: 0, bottom: 0, zIndex: 10, display: 'flex' }}>
       <Sider
         collapsible
         collapsed={collapsed}
@@ -86,7 +86,7 @@ const Sidebarrr = () => {
             </Menu.Item>
           </Menu.SubMenu>
 
-          <Menu.SubMenu
+          {/* <Menu.SubMenu
             key="sub-ocean-export"
             icon={<UserOutlined />}
             title="Ocean Export"
@@ -132,7 +132,7 @@ const Sidebarrr = () => {
             <Menu.Item key="/sales/quotation-list">
               <Link to="/sales/quotation-list">Quotation List</Link>
             </Menu.Item>
-          </Menu.SubMenu>
+          </Menu.SubMenu> */}
 
           <Menu.SubMenu
             key="sub-trade-partner"
