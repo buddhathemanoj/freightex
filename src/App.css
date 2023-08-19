@@ -31,20 +31,20 @@
   color: white;
   overflow-y: auto;
 
-  /* Hide the scrollbar */
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE and Edge */
+
+  scrollbar-width: none; 
+  -ms-overflow-style: none; 
 }
 
-/* Hide the scrollbar for Webkit browsers (Chrome, Safari, etc.) */
+
 .sidebar-col::-webkit-scrollbar {
   width: 0;
   background: transparent;
 }
-
+/* 
 .content-col {
-  margin-left: 240px; /* Width of your sidebar */
-}
+  margin-left: 240px; 
+} */
 
 .content-wrapper {
   padding: 20px;
