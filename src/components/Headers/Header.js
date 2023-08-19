@@ -12,6 +12,7 @@ import {
 } from "antd";
 import { LiaExternalLinkSquareAltSolid } from "react-icons/lia";
 import { FaListUl } from "react-icons/fa";
+import { IoMdNotificationsOutline } from "react-icons/io";
 import { Link, useNavigate } from "react-router-dom";
 import {
   UserOutlined,
@@ -365,10 +366,80 @@ const HeaderComponent = ({ currentUser }) => {
                 className={`item-button ${isTodoBoxOpen ? "open" : ""}`}
                 style={{ background: "transparent", border: "0" }}
               >
-                <FaListUl />
+                <FaListUl  style={{fontSize:'20px'}}/>
               </Button>
             </Dropdown>
           </div>
+
+<div style={{ display: "flex", alignItems: "center" }}>
+  {/* New 'To do list' Dropdown */}
+  <Dropdown
+    overlay={
+      <Collapse in={isTodoBoxOpen}>
+        <div
+          style={{
+            width: "400px",
+            height: isTodoBoxOpen ? "290px" : "0",
+            backgroundColor: "#FFFFFF",
+            transition: "height 1s ease-in-out",
+            overflow: "hidden",
+            border: "1px solid #E3E7ED",
+            boxShadow:
+              "10px 11px 1px 0px rgba(0, 0, 0, 0.1019607843)",
+            borderRadius: "5px",
+          }}
+        >
+          <div
+            style={{
+              height: "40px",
+              display: "flex",
+              justifyContent: "left",
+              borderBottom: "1px solid black",
+              alignItems: "center",
+              fontWeight: "700",
+              paddingLeft: "10px",
+              paddingRight: "10px",
+            }}
+          >
+            <span>Notifications&nbsp;&nbsp;</span>
+            <a href="" style={{fontWeight:'400'}}>Mark all as read</a>
+          </div>
+          <div
+            style={{
+              height: "200px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: "10px",
+              borderBottom: "1px solid white",
+            }}
+          >
+            <img src="/notification-empty.png" className="notification-empty" />
+            <span
+              style={{
+                fontWeight: "500",
+                textAlign: "center"
+              }}
+            >
+              You don't have any notification
+            </span>
+          </div>
+        </div>
+      </Collapse>
+    }
+    trigger={["click"]}
+    placement="bottomCenter"
+    onVisibleChange={handleTodoBoxToggle}
+  >
+    <Button
+      className={`item-button ${isTodoBoxOpen ? "open" : ""}`}
+      style={{ background: "transparent", border: "0" }}
+    >
+      <IoMdNotificationsOutline style={{fontSize:'25px'}}/>
+    </Button>
+  </Dropdown>
+</div>
 
           <div style={{ padding: "20px 0 0 0" }}>
             {/* Ant Design Dropdown */}
