@@ -57,7 +57,7 @@ export const Newshipment = () => {
       {tabNames.map((tabName, index) => (
         <Tabs.TabPane tab={<span style={{ fontSize: '20px' }}>{tabName}</span>}
         key={index + 1}>
-          <div style={{ height: 'calc(100vh - 56px)', overflowY: 'auto' }}>
+          <div style={{ height: 'calc(100vh - 56px)' }}>
             {tabContents[index]}
           </div>
         </Tabs.TabPane>

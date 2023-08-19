@@ -1,257 +1,190 @@
+
+
+
+// import React from 'react';
 // import PropTypes from 'prop-types';
-// import ComputerDesktopIcon from '@heroicons/react/24/solid/ComputerDesktopIcon';
-// import DeviceTabletIcon from '@heroicons/react/24/solid/DeviceTabletIcon';
-// import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon';
+// import './Dashboard.css'
 // import {
-//   Box,
 //   Card,
 //   CardContent,
 //   CardHeader,
 //   Stack,
-//   SvgIcon,
-//   Typography,
 //   useTheme
 // } from '@mui/material';
-// import { Chart } from './chart';
+// import ApexChart from 'react-apexcharts';
 
-// const useChartOptions = (labels) => {
+// export const OverviewProfitCustomers = ({ sx }) => {
 //   const theme = useTheme();
+//   const chartData = [40, 30, 15, 7, 5, 3];// Sample data for chart series (percentages)
+//   const labels = ['Apple', 'Samsung', 'RP Chemicals', 'Wipro', 'Infosys', 'Others']; // Sample labels for the data
+  
 
-//   return {
-//     chart: {
-//       background: 'transparent'
-//     },
-//     colors: [
-//       theme.palette.primary.main,
-//       theme.palette.success.main,
-//       theme.palette.warning.main
-//     ],
-//     dataLabels: {
-//       enabled: false
-//     },
-//     labels,
-//     legend: {
-//       show: false
-//     },
-//     plotOptions: {
-//       pie: {
-//         expandOnClick: false
-//       }
-//     },
-//     states: {
-//       active: {
-//         filter: {
-//           type: 'none'
+//   const useChartOptions = (labels) => {
+//     const theme = useTheme();
+   
+//     return {
+//       chart: {
+//         background: 'transparent'
+//       },
+//       colors: [
+//         theme.palette.primary.main,
+//         theme.palette.success.main,
+//         theme.palette.warning.main,
+//         theme.palette.info.main,
+//         theme.palette.secondary.main,
+//         theme.palette.error.main
+//       ],
+//       dataLabels: {
+//               enabled: false
+//             },
+//       tooltip: {
+//         enabled: true,
+//         custom: function({ seriesIndex }) {
+//           const companyName = labels[seriesIndex];
+//           const percentage = chartData[seriesIndex]; // Get the percentage from the chartData array
+//           return `<div class="custom-tooltip">
+//                     <div class="tooltip-label">${companyName}</div>
+//                     <div class="tooltip-value">${percentage}%</div>
+//                   </div>`;
 //         }
 //       },
-//       hover: {
-//         filter: {
-//           type: 'none'
+//       plotOptions: {
+//         pie: {
+//           donut: {
+//             size: '15%' // Adjust this value to control the size of the inner circle
+//           }
 //         }
-//       }
-//     },
-//     stroke: {
-//       width: 0
-//     },
-//     theme: {
-//       mode: theme.palette.mode
-//     },
-//     tooltip: {
-//       fillSeriesColor: false
-//     }
+//       },
+//       legend: {
+//         show: true,
+//         formatter: function (seriesName, opts) {
+//           return labels[opts.seriesIndex];
+//         },
+//         markers: {
+//           width: 15,
+//           height: 15,
+//           radius: 0,
+//         },
+//       },
+//       // Rest of the options...
+//     };
 //   };
-// };
-
-// const iconMap = {
-//   Desktop: (
-//     <SvgIcon>
-//       <ComputerDesktopIcon />
-//     </SvgIcon>
-//   ),
-//   Tablet: (
-//     <SvgIcon>
-//       <DeviceTabletIcon />
-//     </SvgIcon>
-//   ),
-//   Phone: (
-//     <SvgIcon>
-//       <PhoneIcon />
-//     </SvgIcon>
-//   )
-// };
-
-// export const OverviewTraffic = (props) => {
-//   const { chartSeries, labels, sx } = props;
 //   const chartOptions = useChartOptions(labels);
-
 //   return (
 //     <Card sx={sx}>
-//       <CardHeader title="Traffic Source" />
+//       <CardHeader style={{textAlign:'center'}} title="TOP % PROFIT CUSTOMERS" />
 //       <CardContent>
-//         <Chart
-//           height={300}
+//         <ApexChart
 //           options={chartOptions}
-//           series={chartSeries}
+//           series={chartData}
 //           type="donut"
-//           width="100%"
+//           height={208}
 //         />
-//         <Stack
-//           alignItems="center"
-//           direction="row"
-//           justifyContent="center"
-//           spacing={2}
-//           sx={{ mt: 2 }}
-//         >
-//           {chartSeries.map((item, index) => {
-//             const label = labels[index];
-
-//             return (
-//               <Box
-//                 key={label}
-//                 sx={{
-//                   display: 'flex',
-//                   flexDirection: 'column',
-//                   alignItems: 'center'
-//                 }}
-//               >
-//                 {iconMap[label]}
-//                 <Typography
-//                   sx={{ my: 1 }}
-//                   variant="h6"
-//                 >
-//                   {label}
-//                 </Typography>
-//                 <Typography
-//                   color="text.secondary"
-//                   variant="subtitle2"
-//                 >
-//                   {item}%
-//                 </Typography>
-//               </Box>
-//             );
-//           })}
-//         </Stack>
 //       </CardContent>
 //     </Card>
 //   );
 // };
 
-// OverviewTraffic.propTypes = {
-//   chartSeries: PropTypes.array.isRequired,
-//   labels: PropTypes.array.isRequired,
+// OverviewProfitCustomers.propTypes = {
 //   sx: PropTypes.object
 // };
 
+
+
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Dashboard.css'
 import {
-  Box,
   Card,
   CardContent,
   CardHeader,
-  Stack,
-  SvgIcon,
-  Typography,
   useTheme
 } from '@mui/material';
 import ApexChart from 'react-apexcharts';
-import ComputerDesktopIcon from '@heroicons/react/24/solid/ComputerDesktopIcon';
-import DeviceTabletIcon from '@heroicons/react/24/solid/DeviceTabletIcon';
-import PhoneIcon from '@heroicons/react/24/solid/PhoneIcon';
 
-const useChartOptions = (labels) => {
+export const OverviewProfitCustomers = ({ sx }) => {
   const theme = useTheme();
+  const chartData = [40, 30, 15, 7, 5, 3];
+  const labels = ['Apple', 'Samsung', 'RP Chemicals', 'Wipro', 'Infosys', 'Others'];
 
-  return {
-    chart: {
-      background: 'transparent'
-    },
-    colors: [
-      theme.palette.primary.main,
-      theme.palette.success.main,
-      theme.palette.warning.main
-    ],
-    // Rest of the options...
+  const useChartOptions = () => {
+    return {
+      chart: {
+        background: 'transparent'
+      },
+      colors: [
+        theme.palette.primary.main,
+        theme.palette.success.main,
+        theme.palette.warning.main,
+        theme.palette.info.main,
+        theme.palette.secondary.main,
+        theme.palette.error.main
+      ],
+      dataLabels: {
+        enabled: false
+      },
+      tooltip: {
+        enabled: true,
+        custom: function({ seriesIndex }) {
+          const companyName = labels[seriesIndex];
+          const percentage = chartData[seriesIndex];
+          return `<div class="custom-tooltip">
+                    <div class="tooltip-label">${companyName}</div>
+                    <div class="tooltip-value">${percentage}%</div>
+                  </div>`;
+        }
+      },
+      plotOptions: {
+        pie: {
+          donut: {
+            size: '15%'
+          }
+        }
+      },
+      legend: {
+        show: true,
+        markers: {
+          width: 12,
+          height: 12,
+          radius: 0
+        },
+        formatter: function(val, opts) {
+          return labels[opts.seriesIndex];
+        },
+        position: 'right'
+      }
+    };
   };
+
+  const chartOptions = useChartOptions();
+
+  return (
+    <Card sx={sx}>
+      <CardHeader style={{textAlign:'center'}} title="TOP % PROFIT CUSTOMERS" />
+      <CardContent>
+        <div className="chart-legend-grid">
+          <div className="chart-container">
+            <ApexChart
+              options={chartOptions}
+              series={chartData}
+              type="donut"
+              height={208}
+            />
+          </div>
+          {/* <div className="legend">
+            {labels.map((label, index) => (
+              <div key={index} className="legend-item">
+                <span className="color-box" style={{ backgroundColor: chartOptions.colors[index] }}></span>
+                {label}
+              </div>
+            ))}
+          </div> */}
+        </div>
+      </CardContent>
+    </Card>
+  );
 };
 
-const iconMap = {
-  Desktop: (
-    <SvgIcon>
-      <ComputerDesktopIcon />
-    </SvgIcon>
-  ),
-  Tablet: (
-    <SvgIcon>
-      <DeviceTabletIcon />
-    </SvgIcon>
-  ),
-  Phone: (
-    <SvgIcon>
-      <PhoneIcon />
-    </SvgIcon>
-  )
+OverviewProfitCustomers.propTypes = {
+  sx: PropTypes.object
 };
-
-export const OverviewTraffic = ({ sx }) => {
-    const theme = useTheme();
-    const chartSeries = [40, 30, 20]; // Sample data for chart series (percentages)
-    const labels = ['Desktop', 'Tablet', 'Phone']; // Sample labels for the data
-    const chartOptions = useChartOptions(labels);
-  
-    return (
-      <Card sx={sx}>
-        <CardHeader title="Traffic Source" />
-        <CardContent>
-          <ApexChart
-            options={chartOptions}
-            series={chartSeries}
-            type="donut"
-            height={248}
-            width="100%"
-          />
-          <Stack
-            alignItems="center"
-            direction="row"
-            justifyContent="center"
-            spacing={2}
-            sx={{ mt: 2 }}
-          >
-            {chartSeries.map((item, index) => {
-              const label = labels[index];
-  
-              return (
-                <Box
-                  key={label}
-                  sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center'
-                  }}
-                >
-                  {iconMap[label]}
-                  <Typography
-                    sx={{ my: 1 }}
-                    variant="h6"
-                  >
-                    {label}
-                  </Typography>
-                  <Typography
-                    color="text.secondary"
-                    variant="subtitle2"
-                  >
-                    {item}%
-                  </Typography>
-                </Box>
-              );
-            })}
-          </Stack>
-        </CardContent>
-      </Card>
-    );
-  };
-  
-  OverviewTraffic.propTypes = {
-    sx: PropTypes.object
-  };
-

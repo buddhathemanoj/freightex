@@ -124,15 +124,22 @@ const HeaderComponent = ({ currentUser }) => {
             backgroundColor: colorBgContainer,
           }}
         >
+
           <div style={{ height: "100%", padding:'8px'}}>
             <Link to="/gofreight">
+
+          <div
+            style={{ height: "50px", marginTop: "10px" }}
+          >
+            {/* <Link to="/gofreight">
+
               {" "}
               <img
                 src="/logo.png"
                 alt="Go Freight Logo"
                 className="logoheader"
               />
-            </Link>
+            </Link> */}
           </div>
 
           <div style={{ display: "flex", marginLeft: "160px" }}>
