@@ -32,10 +32,16 @@ export const Basic = () => {
  }
 
  const [showPlusInput, setShowPlusInput] = useState(false);
+ const [showHBLPlusInput, setShowHBLPlusInput] = useState(false);
 
  const toggleInput = () => {
    setShowPlusInput(prevShowPlusInput => !prevShowPlusInput);
  };
+
+ const hbltoggleInput = () => {
+  setShowHBLPlusInput(prevShowHBLPlusInput => !prevShowHBLPlusInput);
+};
+
  const handleCheckboxChange = (e) => {
    setShowAdditionalInputs(e.target.checked);
  };
@@ -246,6 +252,12 @@ export const Basic = () => {
   hblITIssueLoc:"",
   hblCargoType:"",
   hblContainerQty:"",
+  hblLCNo:"",
+  hblGroupComm:"",
+  hblShipType:"",
+  hblLineCode:"",
+  hblSCNo:"",
+  hblNameAcc:"",
  });
 
  const handleHblFieldChange = (fieldName, value) => {
@@ -294,9 +306,12 @@ export const Basic = () => {
  };
 
  const formItemStyle = { marginBottom: '5px' };
- const formItemStyle1 = { marginBottom: '25px' };
+ const formItemStyle1 = { marginBottom: '22px' };
  const formItemStyle2 = { marginBottom: '40px' };
  const formItemStyle3 = { marginBottom: '78px' };
+ const formItemStyle4 = { marginBottom: '185px' };
+ const formItemStyle5 = { marginBottom: '-10px' };
+
  const inputstyle = { innerHeight: '15px' };
  const [placement, SetPlacement] = useState('topLeft');
  const [oblReceivedChecked, setOblReceivedChecked] = useState(true);
@@ -430,16 +445,18 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="Latest Gate In" style={formItemStyle1}>
+                           <Form.Item label="Latest Gate In" style={formItemStyle}>
                              <DatePicker value={formData.latestGateIn} onChange={(date) => handleFieldChange('latestGateIn', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
                            
                        <br/>
                         <br/>
                        <div>
-                     <button onClick={toggleInput}>
+                       <Form.Item label="More" style={formItemStyle}>
+                           <button onClick={toggleInput}>
                               {showPlusInput ? '-' : '+'}
-                    </button>
+                            </button>
+                          </Form.Item>
                     <br/>
                     {showPlusInput && 
                     <>
@@ -1026,7 +1043,7 @@ export const Basic = () => {
                                </span>
                              </div>
                            </Form.Item>
-                           <Form.Item label="AN Sent Date" style={formItemStyle}>
+                           <Form.Item label="AN Sent Date" style={formItemStyle2}>
                              <div style={{ display: 'flex', alignItems: 'center' }}>
                                <Checkbox
                                  checked={ansentcheck}
@@ -1040,6 +1057,16 @@ export const Basic = () => {
                                </span>
                              </div>
                            </Form.Item>
+                           {showHBLPlusInput && (
+                            <>
+                            <Form.Item label="L/C No" style={formItemStyle}>
+                            <Input value={hbldata.hblLCNo} onChange={(e) => handleHblFieldChange("hblLCNo", e.target.value)} />
+                          </Form.Item>
+                          <Form.Item label="Group Comm" style={formItemStyle}>
+                          <Input value={hbldata.hblGroupComm} onChange={(e) => handleHblFieldChange("hblGroupComm", e.target.value)} />
+                        </Form.Item>
+                        </>
+                           )}
                          </Form>
                        </div>
                      </Col>
@@ -1119,7 +1146,7 @@ export const Basic = () => {
                                    <Option value="option3">Option 3</Option>
                                  </Select>
                                </Form.Item>
-                           <Form.Item label="DO Sent Date" style={formItemStyle}>
+                           <Form.Item label="DO Sent Date" style={formItemStyle2}>
                              <div style={{ display: 'flex', alignItems: 'center' }}>
                                <Checkbox
                                  checked={dosentcheck}
@@ -1133,6 +1160,18 @@ export const Basic = () => {
                                </span>
                              </div>
                            </Form.Item>
+                           {showHBLPlusInput && (<>
+                            <Form.Item label="Ship Type" style={formItemStyle}>
+                                 <Select value={hbldata.hblShipType} onChange={(value) => handleHblFieldChange("hblShipType", value)}>
+                                   <Option value="option1">Option 1</Option>
+                                   <Option value="option2">Option 2</Option>
+                                   <Option value="option3">Option 3</Option>
+                                 </Select>
+                               </Form.Item>
+                               <Form.Item label="Line Code" style={formItemStyle}>
+                             <Input value={hbldata.hblLineCode} onChange={(e) => handleHblFieldChange("hblLineCode", e.target.value)} />
+                           </Form.Item>
+                           </>)}
                          </Form>
                        </div>
                      </Col>
@@ -1227,6 +1266,21 @@ export const Basic = () => {
                            <Form.Item label="Door Delivered" style={formItemStyle}>
                              <DatePicker value={hbldata.hblDoorDeli} onChange={(date) => handleHblFieldChange('hblDoorDeli', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
+                           <Form.Item label="More" style={formItemStyle1}>
+                           <button onClick={hbltoggleInput}>
+                              {showHBLPlusInput ? '-' : '+'}
+                            </button>
+                          </Form.Item>
+                          {showHBLPlusInput && (
+                             <>
+                          <Form.Item label="S/C No" style={formItemStyle}>
+                             <Input value={hbldata.hblSCNo} onChange={(e) => handleHblFieldChange("hblSCNo", e.target.value)} />
+                           </Form.Item>
+                          <Form.Item label="E-Commerce" style={formItemStyle}>
+                             <Checkbox onChange={handleCheckboxChange} />
+                           </Form.Item>
+                           </>
+                           )}
                          </Form>
                        </div>
                      </Col>
@@ -1276,9 +1330,19 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="Container/Qty " style={formItemStyle1}>
+                           <Form.Item label="Container/Qty " style={formItemStyle4}>
                              <Input value={hbldata.hblContainerQty} onChange={(e) => handleHblFieldChange("hblContainerQty", e.target.value)} />
                            </Form.Item>
+                           {showHBLPlusInput && (
+                             <>
+                          <Form.Item label="Name Account" style={formItemStyle}>
+                             <Input value={hbldata.hblNameAcc} onChange={(e) => handleHblFieldChange("hblNameAcc", e.target.value)} />
+                           </Form.Item>
+                          <Form.Item label="Customs Doc" style={formItemStyle}>
+                             <Checkbox onChange={handleCheckboxChange} />
+                           </Form.Item>
+                           </>
+                           )}
                          </Form>
                        </div>
                      </Col>
