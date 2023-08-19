@@ -18,6 +18,15 @@
     padding-bottom: 0;
    
   }
+
+  .logoheader {
+    height: 100%;
+  }
+
+  .dropdown-icon.open {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease-in-out;
+  }
   
   
   
