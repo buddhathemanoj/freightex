@@ -3,7 +3,7 @@
 
 import React from 'react';
 import StickyBox from 'react-sticky-box';
-import { Tabs, theme } from 'antd';
+import { Tabs, theme,Row,Col } from 'antd';
 import { Basic } from './NewShipment/Basic';
 import './Shipment.css'; // Import the custom CSS file
 
@@ -46,7 +46,8 @@ export const Newshipment = () => {
   );
 
   return (
-    <Tabs
+   
+      <Tabs
       defaultActiveKey="1"
       renderTabBar={renderTabBar}
       tabBarGutter={15} // Adjust the gap between tabs
@@ -63,5 +64,7 @@ export const Newshipment = () => {
         </Tabs.TabPane>
       ))}
     </Tabs>
+     
+    
   );
 };
