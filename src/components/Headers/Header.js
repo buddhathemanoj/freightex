@@ -174,7 +174,7 @@ const HeaderComponent = ({ currentUser }) => {
                 placeholder="Search"
                 size="large"
                 onSearch={(value) => console.log("Search triggered:", value)}
-                className="custom-search"
+                className="custoarch"
                 style={{ "--placeholder-color": "black", background: "#959fad", height: '100%' }}
                 enterButton={
                   <Button

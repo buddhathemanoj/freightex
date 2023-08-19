@@ -52,20 +52,21 @@
   
   
   
-.custom-search .ant-input,
-.ant-picker-input
+.custoarch .ant-input-search,
+.ant-input-search .ant-input-lg 
  {
     height: 46px !important;
     margin-left: 10px;
     border-radius: 0px;
     border: 0;
-    background: #959fad !important;
+    background: #959fad ;
     /* background-color: #38323d; */
     
    
   }
   .custom-search input::placeholder {
     color: var(--placeholder-color); /* Use the variable set in the inline style */
+    background: #959fad ;
   }
   .item-button.ant-btn{
     color:rgb(243 230 230 / 88%);
