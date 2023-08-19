@@ -119,20 +119,19 @@ const HeaderComponent = ({ currentUser }) => {
           className="headerrr"
           style={{
             paddingBottom: "15px 0px ",
-            display: "flex",
-            justifyContent: "space-between",
             backgroundColor: colorBgContainer,
           }}
         >
 
-          <div style={{ height: "100%", padding:'8px'}}>
-            <Link to="/gofreight"></Link></div>
-
+          {/* <div style={{ height: "100%", padding:'8px'}}>
+            <Link to="/gofreight"></Link>
+          </div> */}
+          
+        <div style={{display:'flex', justifyContent:'space-between', width:'100%'}}>
           <div
-            style={{ height: "50px", marginTop: "10px" }}
+            style={{ height: "46px", padding:'4px'}}
           >
             <Link to="/gofreight">
-
               {" "}
               <img
                 src="/logo.png"
@@ -142,7 +141,8 @@ const HeaderComponent = ({ currentUser }) => {
             </Link>
           </div>
 
-          <div style={{ display: "flex", marginLeft: "160px" }}>
+          <div style={{display:'flex', float:'right'}}> 
+          <div style={{ display: "flex"}}>
             {/* Dropdown for selecting an item */}
             <div
               style={{
@@ -166,9 +166,7 @@ const HeaderComponent = ({ currentUser }) => {
             <div
               style={{
                 display: "flex",
-                alignItems: "center",
-                backgroundColor: "white",
-                padding: "25px",
+                alignItems: "center"
               }}
             >
               {/* Ant Design Search Bar */}
@@ -177,10 +175,10 @@ const HeaderComponent = ({ currentUser }) => {
                 size="large"
                 onSearch={(value) => console.log("Search triggered:", value)}
                 className="custom-search"
-                style={{ "--placeholder-color": "black" }}
+                style={{ "--placeholder-color": "black", background: "#959fad", height: '100%' }}
                 enterButton={
                   <Button
-                    style={{ background: "transparent", border: "0" }}
+                    style={{ background: "#959fad", border: "0", alignItems: 'center', height: '100%' }}
                     shape="circle"
                   >
                     <SearchOutlined className="search-button" />
@@ -277,7 +275,7 @@ const HeaderComponent = ({ currentUser }) => {
             >
               <Button
                 className={`item-button ${isNewBoxOpen ? "open" : ""}`}
-                style={{ background: "transparent", border: "0" }}
+                style={{ backgroundColor: "#26A69A", border: "0", borderRadius:'0', height:'100%', marginLeft:'20px' }}
               >
                 What's New{" "}
                 <DownOutlined
@@ -464,6 +462,8 @@ const HeaderComponent = ({ currentUser }) => {
               </a>
             </Dropdown>
           </div>
+          </div>
+        </div>
         </Header>
       </Layout>
     </div>
