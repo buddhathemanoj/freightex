@@ -337,7 +337,7 @@ export const Basic = () => {
  return (
  <div className='newshipment-container' >
    <div>
-     <Row style={{ minHeight: '200vh !important' }}>
+     <Row >
        <Col span={20}>
          <>
            <Collapse activeKey={ismemoOpen ? '1' : ''}>
@@ -359,7 +359,7 @@ export const Basic = () => {
                            <Form.Item label="Post Date" style={formItemStyle}>
                              <Input value={formData.postDate}  onChange={(e) => handleFieldChange("postDate", e.target.value)} />
                            </Form.Item>
-                           <Form.Item label="Forwarding Agent" style={formItemStyle}>
+                           <Form.Item  label={<span className=".custom-label">forwarding Agent</span>}style={formItemStyle}>
                              <Select className='custom-dropdownn' value={formData.forwardingAgent}  onChange={(value) => handleFieldChange("forwardingAgent", value)}  style={{ width: '100%',color:'black' }}  >
                                <Option style={{ height: '24px' }} value="option1">Option 1</Option>
                                <Option style={{ height: '24px' }} value="option2">Option 2</Option>
@@ -539,7 +539,7 @@ export const Basic = () => {
                            <Form.Item label="ETD" style={formItemStyle}>
                              <DatePicker value={formData.ETD} onChange={(date) => handleFieldChange('ETD', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
-                           <Form.Item label="Place of Delivery ETA" style={formItemStyle}>
+                           <Form.Item label={<span >Place of Delivery <br/>(DEL)</span>} style={formItemStyle}>
                              <DatePicker value={formData.placeOfDeliveryETA} onChange={(date) => handleFieldChange('placeOfDeliveryETA', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
                            <Form.Item label="ATD" style={formItemStyle2}>
@@ -896,7 +896,7 @@ export const Basic = () => {
      
  
        <Col span={4} >
-         <Button style={{ height: '40px', width: '250px', marginLeft: '20px', marginTop: '10px' }} onClick={handleAddhbl}>+ Add HB/L</Button>
+         <Button className='hblbutton' style={{ height: '40px', marginLeft: '20px', marginTop: '10px' }} onClick={handleAddhbl}>+ Add HB/L</Button>
        </Col>
      </Row>
    </div>

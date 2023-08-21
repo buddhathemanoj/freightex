@@ -42,7 +42,7 @@ const Sidebarrr = () => {
 
   return (
     <div style={{ display:'flex', overflowX:'hidden'  }}>
-    <div style={{ position: 'fixed', left: 0, top:'46px', bottom: 0, zIndex: 10}}>
+    <div style={{ position: 'fixed', left: 0, top:'46px', bottom: 0, zIndex: 10,backgroundColor:'rgb(56, 50, 61)'}}>
       <Sider
         collapsible
         collapsed={collapsed}
