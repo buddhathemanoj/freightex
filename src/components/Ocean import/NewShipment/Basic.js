@@ -6,6 +6,8 @@ import '../Shipment.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClose } from '@fortawesome/free-solid-svg-icons';
 import { color, fontSize } from '@mui/system';
+import CutomSelect from './CustomSelect';
+import CustomSelect from './CustomSelect';
 const { TextArea } = Input;
 const { Panel } = Collapse;
 const { Option } = Select;
@@ -19,6 +21,12 @@ export const Basic = () => {
  const [isSecondMemoOpen, setIsSecondMemoOpen] = useState(false);
  const [tableData, setTableData] = useState([]);
  const [isAnyInputClicked, setIsAnyInputClicked] = useState(false);
+
+ const options = [
+   { label: 'Option 1', value: 'option1' },
+   { label: 'Option 2', value: 'option2' },
+   { label: 'Option 3', value: 'option3' },
+ ]
 
  const [showAdditionalInputs, setShowAdditionalInputs] = useState(false);
  const [addhbl, setAddhbl] = useState(false);
@@ -505,7 +513,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="Carrier Contact No" style={formItemStyle}>
+                           <Form.Item label="Carrier Contact No." style={formItemStyle}>
                              <Input value={formData.carrierContactNo} onChange={(e) => handleFieldChange("carrierContactNo", e.target.value)} />
                            </Form.Item>
 
@@ -748,10 +756,7 @@ export const Basic = () => {
                          <div>
                            <Form.Item label="B/L Type " style={formItemStyle}>
                              <Select value={formData.blType} onChange={(value) => handleFieldChange("blType", value)} >
-                               <Option value="option1">Option 1</Option>
-                               <Option value="option2">Option 2</Option>
-                               <Option value="option3">Option 3</Option>
-                               {/* Add more options as needed */}
+                             <CustomSelect options={options} />
                              </Select>
                            </Form.Item>
                            <Form.Item label="B/L Acct. Carrier " style={formItemStyle}>

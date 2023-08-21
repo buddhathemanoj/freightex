@@ -11,7 +11,7 @@ const Breadcrumbs = () => {
     <div>
     <Breadcrumb style={{padding:'2px', marginLeft:'15px'}}>
       <Breadcrumb.Item>
-        <Link to="/"><FaHome/> Home</Link>
+        <Link to="/gofreight"><FaHome/> Home</Link>
       </Breadcrumb.Item>
       {pathnames.map((name, index) => {
         const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
