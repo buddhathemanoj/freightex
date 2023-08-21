@@ -343,11 +343,11 @@ export const Basic = () => {
            <Collapse activeKey={ismemoOpen ? '1' : ''}>
              <Panel
            
-               style={{ backgroundColor: '#38323d',color:'white' }}
+               style={{ backgroundColor: '#555555',color:'white' }}
                header={<span className="white-text">MB/L 102012</span>}
                key="1"
                onClick={handlememoToggle}>
-               <Col span={24} style={{ border: '1px solid orange', padding: '10px' }}>
+               <Col span={24} style={{ padding: '10px' }}>
                  <div onClick={handleSecondMemoContentClick} >
                    <Row>
                      <Col span={6} >
@@ -841,7 +841,7 @@ export const Basic = () => {
                    </Row>
                  </div>
                  <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
-                   <Panel style={{ backgroundColor: 'gray' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
+                   <Panel style={{ backgroundColor: ' #e0e0e0' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
                      <div onClick={handleSecondMemoContentClick}>
                        <Row>
 
@@ -920,7 +920,7 @@ export const Basic = () => {
                }
                key="1"
                >
-               <Col span={24} style={{ border: '1px solid orange', padding: '10px' }}>
+               <Col span={24} style={{  padding: '10px' }}>
                  <div onClick={handleSecondMemoContentClick} >
                    <Row>
                      <Col span={6} >

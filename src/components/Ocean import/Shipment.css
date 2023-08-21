@@ -27,6 +27,11 @@
   font-size: 22px;
   
   }
+  .ant-collapse-content-box{
+    background: #f4f4f4;
+    border: 1px solid #6f6f6f;
+    border-top: 0;
+  }
   div.ant-select-selector{
     height: 24px !important; 
     color: rgb(0, 0, 0) !important;
@@ -39,6 +44,8 @@
   }
   .ant-collapse-header .ant-collapse-arrow {
 margin-top: 13px;
+float: right;
+
 position: relative;
   }
   .ant-select-single .ant-select-selector .ant-select-selection-item{
