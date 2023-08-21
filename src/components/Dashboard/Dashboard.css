@@ -2,6 +2,7 @@
   text-align: center;
   justify-content: space-between !important;
   display: flex;
+  background-color: azure;
 }
 
 .dashboard {
