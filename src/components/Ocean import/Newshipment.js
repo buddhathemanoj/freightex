@@ -1,6 +1,3 @@
-
-
-
 import React from 'react';
 import StickyBox from 'react-sticky-box';
 import { Tabs, theme,Row,Col } from 'antd';
@@ -35,10 +32,10 @@ export const Newshipment = () => {
       style={{
         zIndex: 1,
         background: colorBgContainer,
-        width: 'fit-content', // Adjust tab bar width
-        fontSize:'24px',
-        padding:"0 30px",   // Center the tab bar
-        borderRadius: '8px'  // Add border radius
+        width: 'fit-content',
+        fontSize: '24px',
+        padding: "0 30px",
+        borderRadius: '8px'
       }}
     >
       <DefaultTabBar {...props} />
@@ -46,25 +43,24 @@ export const Newshipment = () => {
   );
 
   return (
-   
-      <Tabs
-      defaultActiveKey="1"
+    <Tabs
+      defaultActiveKey="Basic" // Set "Basic" as the active tab
       renderTabBar={renderTabBar}
-      tabBarGutter={15} // Adjust the gap between tabs
-     size='large'
-      
-      style={{ height: '100vh' }} // Set a height to the Tabs container
+      tabBarGutter={15}
+      size='large'
+      style={{ height: '100vh' }}
     >
       {tabNames.map((tabName, index) => (
-        <Tabs.TabPane tab={<span style={{ fontSize: '20px' }}>{tabName}</span>}
-        key={index + 1}>
+        <Tabs.TabPane
+          tab={<span style={{ fontSize: '20px' }}>{tabName}</span>}
+          key={tabName}
+          disabled={tabName !== 'Basic'} // Disable tabs other than "Basic"
+        >
           <div style={{ height: 'calc(100vh - 56px)' }}>
             {tabContents[index]}
           </div>
         </Tabs.TabPane>
       ))}
     </Tabs>
-     
-    
   );
 };
