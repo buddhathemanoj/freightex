@@ -29,6 +29,7 @@ body, html {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 20px 0;
   }
  
   .logincontainer {
@@ -89,5 +90,6 @@ body, html {
   margin-top: 20px;
 }
 .logomain{
-max-width: 350px;
+max-width: 200px;
+margin-bottom: 20px;
 }
