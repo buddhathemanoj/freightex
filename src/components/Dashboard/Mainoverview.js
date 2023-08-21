@@ -1,6 +1,5 @@
 
 import React,{useState} from "react";
-
 import {
   Row,
   Col,
@@ -14,11 +13,11 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Dashboard.css";
 import {  DownOutlined} from '@ant-design/icons';
-import { faCaretUp, faCaretDown } from "@fortawesome/free-solid-svg-icons";
-
+import { faCaretUp, faCaretDown, faChartLine, faBarChart, faBarcode, faChartBar, faList, faServer } from "@fortawesome/free-solid-svg-icons";
 import { BarChart, Bar, XAxis, YAxis, Tooltip ,CartesianGrid } from 'recharts';
 import { OverviewProfitCustomers } from "./traffic";
 import { OverviewVolumeCustomers } from "./sales";
+import { color } from "@mui/system";
 const { RangePicker } = DatePicker;
 const columns = [
   {
@@ -103,14 +102,14 @@ export const Mainoverview = () => {
       );
     
   const columnStyle = {
-    marginBottom: "10px", // Add margin between columns
+    marginBottom: "10px",
 
     height: "100%",
     outerWidth: "100%",
   };
 
   return (
-    <div>
+    <div className="dashboard">
       <div className="overvieww">
         <div>
           <Row gutter={15}>
@@ -170,6 +169,7 @@ export const Mainoverview = () => {
               <OverviewVolumeCustomers />
             </Col>
           </Row>
+      <br/>
         </div>
       </div>
 
@@ -180,17 +180,17 @@ export const Mainoverview = () => {
                  <div style={{ display: "flex" }}>
               <div>
                 <h1 style={{ whiteSpace: "nowrap", margin: 0 }}>
+                  <FontAwesomeIcon icon={faServer} />
+                  &nbsp;
                   NEGATIVE PROFIT SHIPMENTS
                 </h1>
               </div>
               <div>
                 <Space
                   direction="vertical"
-                  style={{ width: "100%", marginLeft: "20px" }}
-                >
+                  style={{ width: "100%", marginLeft: "20px" }} >
                  <RangePicker
-                 
-                style={{ width: '140%',border:'1px solid #EBEDF2' }}
+                style={{ width: '90%',border:'1px solid #EBEDF2',height:"34px", marginTop:"-4px" }}
                 placeholder={['EXPORT ETD', 'Import ETA']}
               />
                 </Space>
@@ -211,10 +211,11 @@ export const Mainoverview = () => {
               </div>
             </div>
             </div>
-           
+            <div className="custom-hr">
+              <div className="hr-line"></div>
+            </div>
           </Col>
           <Col span={24}>
-          
             <Table columns={columns} dataSource={data} />
           </Col>
         </Row>
@@ -224,17 +225,14 @@ export const Mainoverview = () => {
             <Col span={24}>
                   <ToDoList/>
             </Col>
-          
         </Row>
         </div>
         <div style={{ width: "100%" }}>
         <Row>
           <Col span={24}>
-            
               <div >
                 <BarrChart />
               </div>
-            
           </Col>
         </Row>
         </div>
@@ -243,12 +241,7 @@ export const Mainoverview = () => {
 };
 
 
-
 const ToDoList = () => {
-
-
-
-
     const columns = [
         {
           title: "NAME",
@@ -265,10 +258,7 @@ const ToDoList = () => {
           dataIndex: "warning",
           key: "warnings",
         },
-       
       ];
-      
-  
 
       const data = [
         {
@@ -277,7 +267,6 @@ const ToDoList = () => {
           Warning:'none',
           alertsss:"none"
         },
-        
       ];
 
 
@@ -302,11 +291,13 @@ const ToDoList = () => {
                       
                             <div>
                                 <h1 style={{ whiteSpace: "nowrap", margin: 0 }}>
+                                  <FontAwesomeIcon icon={faList} />
+                                  &nbsp;
                                     TO-DO LIST
                                 </h1>
                             </div>
                             <div>
-                                <div style={{ display: "flex", alignItems: "center" }}>
+                                <div style={{ display: "flex", alignItems: "center", height:"28px" }}>
                                     <Button.Group>
                                         <Button>Summary</Button>
                                         <Button>Details</Button>
@@ -319,8 +310,10 @@ const ToDoList = () => {
                                     <Button style={{ marginLeft: "20px", backgroundColor: 'blue', color: 'white' }}>Refresh</Button>
                                 </div>
                             </div>
-                        
                     </div>
+                    <div className="custom-hr">
+              <div className="hr-line"></div>
+            </div>
                 </Col>
                 <Col span={24}>
                     <Table columns={columns} dataSource={data} />
@@ -329,12 +322,6 @@ const ToDoList = () => {
         </div>
     );
 };
-
-
-
-
-
-
 
 
     const BarrChart = () => {
@@ -353,15 +340,24 @@ const ToDoList = () => {
               </div>
             );
           }
-      
           return null;
         };
       
         return (
-          <div style={{ width: "100%" }}>
-            <Row>
+          <div className="BankChart" style={{ width: "100%" }}>
+            <div>
+            <h1 className="bankbalance" >
+              <FontAwesomeIcon icon={faChartBar} style={{marginLeft:"4px"}} />
+              &nbsp;
+              BANK BALANCE</h1>
+            <div className="custom-hr">
+              <div className="hr-line"></div>
+            </div>
+            </div>
+              <Row>
               <Col span={24}>
-                <BarChart width={400} height={400} data={data}>
+                {/* <div><h1>Bank Balance</h1></div> */}
+                <BarChart width={1350} height={300} data={data}>
                   <XAxis dataKey="bank" />
                   <YAxis
                     type="number"
@@ -377,9 +373,5 @@ const ToDoList = () => {
               </Col>
             </Row>
           </div>
-           
-          
-     
-        
     );
   };

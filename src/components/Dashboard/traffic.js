@@ -160,7 +160,7 @@ export const OverviewProfitCustomers = ({ sx }) => {
 
   return (
     <Card sx={sx}>
-      <CardHeader style={{textAlign:'center'}} title="TOP % PROFIT CUSTOMERS" />
+      <CardHeader className='card-header' title="TOP 5% PROFIT CUSTOMERS" />
       <CardContent>
         <div className="chart-legend-grid">
           <div className="chart-container">
