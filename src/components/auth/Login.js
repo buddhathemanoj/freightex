@@ -37,9 +37,8 @@ export const Login = () => {
  
   };
   return (
-   
-
-<div className="sign-in-container">
+   <div className="bodyy">
+    <div className="sign-in-container">
 <img src="/logo.png" alt="Go Freight Logo" className="logomain" />
 <div className="login-wrapper">
   
@@ -82,8 +81,14 @@ export const Login = () => {
       </Col>
       </Row>
       </div>
+      <div>
+        <p className="copyrights">Copyright © 2015 - 2023 Digisailor. All Rights Reserved.</p>
+      </div>
   </div>
 </div>
+   </div>
+
+
 
 
 

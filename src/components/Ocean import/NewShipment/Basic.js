@@ -337,29 +337,29 @@ export const Basic = () => {
  return (
  <div className='newshipment-container' >
    <div>
-     <Row style={{ minHeight: '200vh !important' }}>
+     <Row >
        <Col span={20}>
          <>
            <Collapse activeKey={ismemoOpen ? '1' : ''}>
              <Panel
            
-               style={{ backgroundColor: '#38323d',color:'white' }}
+               style={{ backgroundColor: '#555555',color:'white' }}
                header={<span className="white-text">MB/L 102012</span>}
                key="1"
                onClick={handlememoToggle}>
-               <Col span={24} style={{ border: '1px solid orange', padding: '10px' }}>
+               <Col span={24} style={{ padding: '10px' }}>
                  <div onClick={handleSecondMemoContentClick} >
                    <Row>
                      <Col span={6} >
                        <div >
                          <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
-                           <Form.Item label="File No" style={formItemStyle}>
+                           <Form.Item label="File No." style={formItemStyle}>
                              <Input value={formData.fileNo}  onChange={(e) => handleFieldChange("fileNo", e.target.value)} />
                            </Form.Item>
                            <Form.Item label="Post Date" style={formItemStyle}>
                              <Input value={formData.postDate}  onChange={(e) => handleFieldChange("postDate", e.target.value)} />
                            </Form.Item>
-                           <Form.Item label="Forwarding Agent" style={formItemStyle}>
+                           <Form.Item  label={<span className=".custom-label">forwarding Agent</span>}style={formItemStyle}>
                              <Select className='custom-dropdownn' value={formData.forwardingAgent}  onChange={(value) => handleFieldChange("forwardingAgent", value)}  style={{ width: '100%',color:'black' }}  >
                                <Option style={{ height: '24px' }} value="option1">Option 1</Option>
                                <Option style={{ height: '24px' }} value="option2">Option 2</Option>
@@ -486,7 +486,7 @@ export const Basic = () => {
                      <Col span={6}>
                        <div>
                          <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
-                           <Form.Item label="*MB/L No." style={formItemStyle}>
+                           <Form.Item label={<span className="required-label">MB/L No.</span>} style={formItemStyle}>
                              <Input onClick={() => setIsAnyInputClicked(true)} value={formData.mblNo} onChange={(e) => handleFieldChange("mblNo", e.target.value)} />
                            </Form.Item>
                            <Form.Item label="Oversea Agent" style={formItemStyle}>
@@ -539,7 +539,7 @@ export const Basic = () => {
                            <Form.Item label="ETD" style={formItemStyle}>
                              <DatePicker value={formData.ETD} onChange={(date) => handleFieldChange('ETD', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
-                           <Form.Item label="Place of Delivery ETA" style={formItemStyle}>
+                           <Form.Item label={<span >Place of Delivery <br/>(DEL)</span>} style={formItemStyle}>
                              <DatePicker value={formData.placeOfDeliveryETA} onChange={(date) => handleFieldChange('placeOfDeliveryETA', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
                            <Form.Item label="ATD" style={formItemStyle2}>
@@ -602,7 +602,7 @@ export const Basic = () => {
                      <Col span={6}>
                        <div>
                          <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
-                           <Form.Item label="*Office" style={formItemStyle}>
+                           <Form.Item  label={<span className="required-label">Office</span>} style={formItemStyle}>
                              <Select onClick={() => setIsAnyInputClicked(true)} value={formData.office} onChange={(value) => handleFieldChange("office", value)} >
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -796,7 +796,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="*ETA" style={formItemStyle}>
+                           <Form.Item  label={<span className="required-label">ETA</span>} style={formItemStyle}>
                              <DatePicker value={formData.ETA} onChange={(date) => handleFieldChange('ETA', date)} onClick={() => setIsAnyInputClicked(true)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
                            <Form.Item label="Final ETA " style={formItemStyle}>
@@ -841,7 +841,7 @@ export const Basic = () => {
                    </Row>
                  </div>
                  <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
-                   <Panel style={{ backgroundColor: 'gray' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
+                   <Panel style={{ backgroundColor: ' #e0e0e0' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
                      <div onClick={handleSecondMemoContentClick}>
                        <Row>
 
@@ -896,7 +896,7 @@ export const Basic = () => {
      
  
        <Col span={4} >
-         <Button style={{ height: '40px', width: '250px', marginLeft: '20px', marginTop: '10px' }} onClick={handleAddhbl}>+ Add HB/L</Button>
+         <Button className='hblbutton' style={{ height: '40px', marginLeft: '20px', marginTop: '10px' }} onClick={handleAddhbl}>+ Add HB/L</Button>
        </Col>
      </Row>
    </div>
@@ -920,7 +920,7 @@ export const Basic = () => {
                }
                key="1"
                >
-               <Col span={24} style={{ border: '1px solid orange', padding: '10px' }}>
+               <Col span={24} style={{  padding: '10px' }}>
                  <div onClick={handleSecondMemoContentClick} >
                    <Row>
                      <Col span={6} >

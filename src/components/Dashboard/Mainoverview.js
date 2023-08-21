@@ -108,8 +108,9 @@ export const Mainoverview = () => {
     outerWidth: "100%",
   };
 
-  return (
+  return
     <div className="dashboard">
+    <div style={{marginLeft:'-90px'}}>
       <div className="overvieww">
         <div>
           <Row gutter={15}>

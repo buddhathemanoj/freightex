@@ -42,10 +42,11 @@ const Sidebarrr = () => {
 
   return (
     <div style={{ display:'flex', overflowX:'hidden'  }}>
-    <div style={{ position: 'fixed', left: 0, top:'46px', bottom: 0, zIndex: 10}}>
+    <div style={{ position: 'fixed', left: 0, top:'46px', bottom: 0, zIndex: 10,backgroundColor:'rgb(56, 50, 61)'}}>
       <Sider
         collapsible
         collapsed={collapsed}
+        collapsedWidth={45}
         onMouseEnter={() => setCollapsed(false)} //Mouse hover effect
         onMouseLeave={() => setCollapsed(true)} //Mouse hover effect
         style={{
@@ -54,7 +55,7 @@ const Sidebarrr = () => {
           minHeight: '99.5vh'
         }}
       >
-        <div className="demo-logo-vertical" />
+        {/* <div className="demo-logo-vertical" /> */}
         <Menu
           style={{ backgroundColor: colorBgContainer1, color: 'white' }}
           mode="inline"
@@ -154,7 +155,7 @@ const Sidebarrr = () => {
         </Menu>
       </Sider>
       </div>
-      <div style={{background: 'lightgrey', top:'46px', left:'80px', position:'absolute', height: '30px', width:'2000px'}}>
+      <div style={{background: 'lightgrey', top:'46px', left:'45px', position:'absolute', height: '30px', width:'2000px'}}>
       <Breadcrumbs/>
       </div>
       </div>
