@@ -108,9 +108,8 @@ export const Mainoverview = () => {
     outerWidth: "100%",
   };
 
-  return
+  return (
     <div className="dashboard">
-    <div style={{marginLeft:'-90px'}}>
       <div className="overvieww">
         <div>
           <Row gutter={15}>
@@ -298,7 +297,7 @@ const ToDoList = () => {
                                 </h1>
                             </div>
                             <div>
-                                <div style={{ display: "flex", alignItems: "center", height:"28px" }}>
+                                <div style={{ display: "flex", alignItems: "center", height:"23px" }}>
                                     <Button.Group>
                                         <Button>Summary</Button>
                                         <Button>Details</Button>
