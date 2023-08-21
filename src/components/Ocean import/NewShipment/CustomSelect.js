@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button, Input, Select } from 'antd';
 
 const SelectBar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,21 +20,21 @@ const SelectBar = () => {
 
   return (
     <div className="select-bar">
-      <div className="select-button" onClick={toggleDropdown}>
+      <Select className="select-button" onClick={toggleDropdown}>
         Select an Option
-      </div>
+      </Select>
       {isOpen && (
         <div className="dropdown">
           <div className="dropdown-controls">
-            <input
+            <Input
               type="text"
               placeholder="Search options..."
               value={filterText}
               onChange={handleFilterChange}
               className="search-input"
             />
-            <button className="dropdown-button">Advance</button>
-            <button className="dropdown-button">+</button>
+            <Button className="dropdown-button">Advance</Button>
+            <Button className="dropdown-button">+</Button>
           </div>
           <div className="options-list">
             {filteredOptions.map((option, index) => (
