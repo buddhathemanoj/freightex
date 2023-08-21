@@ -34,7 +34,7 @@ export const Newshipment = () => {
         background: colorBgContainer,
         width: 'fit-content',
         fontSize: '24px',
-        padding: "0 30px",
+        padding: "0 0px",
         borderRadius: '8px'
       }}
     >
@@ -48,7 +48,7 @@ export const Newshipment = () => {
       renderTabBar={renderTabBar}
       tabBarGutter={15}
       size='large'
-      style={{ height: '100vh' }}
+      
     >
       {tabNames.map((tabName, index) => (
         <Tabs.TabPane
