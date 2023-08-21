@@ -72,7 +72,7 @@ export const OverviewVolumeCustomers = ({ sx }) => {
   const chartOptions = useChartOptions(labels);
   return (
     <Card sx={sx}>
-      <CardHeader style={{textAlign:'center'}} title="TOP % VOLUME CUSTOMERS (NO.OF B/L B , AWB)" />
+      <CardHeader className='card-header' title="TOP 5% VOLUME CUSTOMERS (NO.OF B/L B , AWB)" />
       <CardContent>
         <ApexChart
           options={chartOptions}
