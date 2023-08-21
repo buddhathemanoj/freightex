@@ -353,7 +353,7 @@ export const Basic = () => {
                      <Col span={6} >
                        <div >
                          <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
-                           <Form.Item label="File No" style={formItemStyle}>
+                           <Form.Item label="File No." style={formItemStyle}>
                              <Input value={formData.fileNo}  onChange={(e) => handleFieldChange("fileNo", e.target.value)} />
                            </Form.Item>
                            <Form.Item label="Post Date" style={formItemStyle}>

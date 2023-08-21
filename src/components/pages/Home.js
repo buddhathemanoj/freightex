@@ -54,7 +54,7 @@ const Sidebarrr = () => {
           minHeight: '99.5vh'
         }}
       >
-        <div className="demo-logo-vertical" />
+        {/* <div className="demo-logo-vertical" /> */}
         <Menu
           style={{ backgroundColor: colorBgContainer1, color: 'white' }}
           mode="inline"
