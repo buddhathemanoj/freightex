@@ -94,7 +94,9 @@ position: relative;
 .hblbutton{
   width: 250px;
 }
-
+.ant-picker .ant-picker-input >input {
+font-size: 11px;
+}
 @media screen and (min-width: 1100px) and (max-width: 1600px) {
   .ant-tabs{
     width: 80vw;
