@@ -46,6 +46,7 @@ const Sidebarrr = () => {
       <Sider
         collapsible
         collapsed={collapsed}
+        collapsedWidth={45}
         onMouseEnter={() => setCollapsed(false)} //Mouse hover effect
         onMouseLeave={() => setCollapsed(true)} //Mouse hover effect
         style={{
@@ -154,7 +155,7 @@ const Sidebarrr = () => {
         </Menu>
       </Sider>
       </div>
-      <div style={{background: 'lightgrey', top:'46px', left:'80px', position:'absolute', height: '30px', width:'2000px'}}>
+      <div style={{background: 'lightgrey', top:'46px', left:'45px', position:'absolute', height: '30px', width:'2000px'}}>
       <Breadcrumbs/>
       </div>
       </div>

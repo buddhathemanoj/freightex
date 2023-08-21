@@ -37,9 +37,8 @@ export const Login = () => {
  
   };
   return (
-   
-
-<div className="sign-in-container">
+   <div className="bodyy">
+    <div className="sign-in-container">
 <img src="/logo.png" alt="Go Freight Logo" className="logomain" />
 <div className="login-wrapper">
   
@@ -87,6 +86,9 @@ export const Login = () => {
       </div>
   </div>
 </div>
+   </div>
+
+
 
 
 

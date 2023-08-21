@@ -110,7 +110,7 @@ export const Mainoverview = () => {
   };
 
   return (
-    <div>
+    <div style={{marginLeft:'-90px'}}>
       <div className="overvieww">
         <div>
           <Row gutter={15}>
