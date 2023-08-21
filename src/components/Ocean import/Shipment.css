@@ -79,3 +79,8 @@ position: relative;
     margin-inline-start: 2px;
     margin-inline-end: 8px;
 }
+.required-label::before {
+  content: '*';
+  color: red; /* Change this to the desired color */
+
+}

@@ -9,3 +9,6 @@ div.ant-select-selector{
   .logomain:hover{
     color: white !important;
   }
+  .ant-layout-sider ant-layout-sider-dark ant-layout-sider-collapsed ant-layout-sider-has-trigger{
+   min-width: 40px !important;
+  }

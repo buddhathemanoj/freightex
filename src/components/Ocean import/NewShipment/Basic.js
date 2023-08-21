@@ -486,7 +486,7 @@ export const Basic = () => {
                      <Col span={6}>
                        <div>
                          <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
-                           <Form.Item label="*MB/L No." style={formItemStyle}>
+                           <Form.Item label={<span className="required-label">MB/L No.</span>} style={formItemStyle}>
                              <Input onClick={() => setIsAnyInputClicked(true)} value={formData.mblNo} onChange={(e) => handleFieldChange("mblNo", e.target.value)} />
                            </Form.Item>
                            <Form.Item label="Oversea Agent" style={formItemStyle}>
@@ -602,7 +602,7 @@ export const Basic = () => {
                      <Col span={6}>
                        <div>
                          <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
-                           <Form.Item label="*Office" style={formItemStyle}>
+                           <Form.Item  label={<span className="required-label">Office</span>} style={formItemStyle}>
                              <Select onClick={() => setIsAnyInputClicked(true)} value={formData.office} onChange={(value) => handleFieldChange("office", value)} >
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -796,7 +796,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="*ETA" style={formItemStyle}>
+                           <Form.Item  label={<span className="required-label">ETA</span>} style={formItemStyle}>
                              <DatePicker value={formData.ETA} onChange={(date) => handleFieldChange('ETA', date)} onClick={() => setIsAnyInputClicked(true)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
                            <Form.Item label="Final ETA " style={formItemStyle}>
