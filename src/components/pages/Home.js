@@ -162,7 +162,7 @@ const Sidebarrr = () => {
         </Menu>
       </Sider>
       </div>
-      <div style={{background: 'lightgrey', top:'46px', left:'45px', position:'absolute', height: '30px', width:'2000px'}}>
+      <div style={{background: 'transparent', top:'48px', left:'45px', position:'absolute', height: '30px', width:'700px'}}>
       <Breadcrumbs/>
       </div>
       </div>

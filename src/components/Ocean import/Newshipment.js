@@ -3,6 +3,7 @@ import StickyBox from 'react-sticky-box';
 import { Tabs, theme,Row,Col } from 'antd';
 import { Basic } from './NewShipment/Basic';
 import './Shipment.css'; // Import the custom CSS file
+import { height } from '@mui/system';
 
 const tabNames = [
   "Basic",
@@ -35,7 +36,7 @@ export const Newshipment = () => {
         width: 'fit-content',
         fontSize: '24px',
         padding: "0 0px",
-        borderRadius: '8px'
+        height:'50px'
       }}
     >
       <DefaultTabBar {...props} />
@@ -44,6 +45,7 @@ export const Newshipment = () => {
 
   return (
     <Tabs
+    type="card"
       defaultActiveKey="Basic" // Set "Basic" as the active tab
       renderTabBar={renderTabBar}
       tabBarGutter={15}
@@ -52,9 +54,9 @@ export const Newshipment = () => {
     >
       {tabNames.map((tabName, index) => (
         <Tabs.TabPane
-          tab={<span style={{ fontSize: '16px' }}>{tabName}</span>}
+          tab={<span style={{ fontSize: '16px', fontWeight:'600', padding:'0 0px' }}>{tabName}</span>}
           key={tabName}
-          disabled={tabName !== 'Basic'} // Disable tabs other than "Basic"
+          disabled={tabName !== 'Basic' } // Disable tabs other than "Basic"
         >
           <div style={{ height: 'calc(100vh - 56px)' }}>
             {tabContents[index]}

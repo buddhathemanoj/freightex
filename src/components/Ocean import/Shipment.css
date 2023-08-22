@@ -7,7 +7,7 @@
  border-radius: 0px;
 }
 .ant-layout-content {
-  min-height: 150vh !important;
+  /* min-height: 150vh !important; */
   position: relative !important;
 }
 .ant-layout .ant-layout-sider-trigger {
@@ -20,6 +20,10 @@
   .ant-layout-header {
     line-height: normal;
    
+  }
+
+  .ant-tabs-tab-disabled {
+    margin-left: 0 !important;
   }
   
   .ant-collapse-header-text {
@@ -43,6 +47,15 @@
   .ant-form{
     line-height: 0px !important;
   }
+
+  :where(.css-dev-only-do-not-override-byeoj0).ant-tabs .ant-tabs-tab {
+    padding: 7px 10px;
+  }
+
+  :where(.css-dev-only-do-not-override-byeoj0).ant-collapse>.ant-collapse-item >.ant-collapse-header {
+    padding: 0;
+  }
+
   .ant-collapse-header .ant-collapse-arrow {
 margin-top: 13px;
 float: right;
