@@ -48,6 +48,10 @@
     padding: 5px 12px;
   }
 
+  :where(.css-dev-only-do-not-override-byeoj0).ant-tabs .ant-tabs-tab {
+    padding: 5px 15px;
+  }
+
   .ant-collapse-header .ant-collapse-arrow {
 margin-top: 13px;
 float: right;
