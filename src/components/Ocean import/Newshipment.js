@@ -52,7 +52,7 @@ export const Newshipment = () => {
     >
       {tabNames.map((tabName, index) => (
         <Tabs.TabPane
-          tab={<span style={{ fontSize: '20px' }}>{tabName}</span>}
+          tab={<span style={{ fontSize: '16px' }}>{tabName}</span>}
           key={tabName}
           disabled={tabName !== 'Basic'} // Disable tabs other than "Basic"
         >
