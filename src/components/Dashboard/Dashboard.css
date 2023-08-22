@@ -1,133 +1,170 @@
 .maindiv{
-    text-align: center;
-    justify-content: space-between !important;
-    display: flex;
-    
+  text-align: center;
+  justify-content: space-between !important;
+  display: flex;
+  background-color: azure;
+}
+
+.dashboard {
+  margin-left: -90px;
 }
 
 .headinggofdash{
-    color: #4A4A4A;
-    font-size: 14px;
-    line-height: 1.42857143;
-    font-weight: 600;
-   
-    text-transform: uppercase;
+  color: #4A4A4A;
+  font-size: 14px;
+  line-height: 1.42857143;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 .centervalue{
-    color: #4B77BE !important;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 1.1;
-    margin: 0px 0;
-    font-size: 35px;
+  color: #4B77BE !important;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  margin: 0px 0;
+  font-size: 35px;
 }
 .prevstatus{
-    color: #9699A2;
-    font-weight: normal;
-    font-size: 13px;
+  color: #9699A2;
+  font-weight: normal;
+  font-size: 13px;
 }
 .subdivss{
-    padding: 28px 20px 26px;
-    border: 1px solid #EBEDF2;
-    background-color: white;
-    position: relative;
-    text-align: center;
+  padding: 28px 20px 26px;
+  border: 1px solid #EBEDF2;
+  background-color: white;
+  position: relative;
+  text-align: center;
 }
 
 .apexcharts-tooltip {
-    background-color: rgba(0, 0, 0, 0.8);
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    padding: 8px;
-    font-size: 12px;
-    pointer-events: none;
-  }
-  
-  .apexcharts-tooltip-series-group {
-    font-weight: bold;
-  }
-  
-  .apexcharts-tooltip-title {
-    margin-bottom: 4px;
-  }
-  
-  .apexcharts-tooltip-marker {
-    width: 10px;
-    height: 10px;
-    margin-right: 4px;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  
-  .apexcharts-tooltip-marker-0 {
-    background-color: #1976d2;
-  }
-  
-  .apexcharts-tooltip-marker-1 {
-    background-color: #4caf50;
-  }
-  
-  .apexcharts-tooltip-marker-2 {
-    background-color: #ff9800;
-  }
-  
-  .apexcharts-tooltip-marker-3 {
-    background-color: #2196f3;
-  }
-  
-  .apexcharts-tooltip-marker-4 {
-    background-color: #f44336;
-  }
-  
-  .apexcharts-tooltip-marker-5 {
-    background-color: #9c27b0;
-  }
-  .overvieww{
-    background-color: #fff;
-    margin-bottom: 20px;
-  }
-  .negativeshipments{
-    background-color: #fff;
-    margin-bottom: 20px;
-  }
-  .negativeshipments h1{
-    color: #4B77BE !important;
-  }
-  .todolist {
-    background-color: #fff;
-    margin-bottom: 20px;
-  }
-  .todolist h1{
-    color: #4B77BE !important;
-  }
-  /* .chart-legend-grid {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    column-gap: 10px;
-  }
-  
-  .chart-container {
-    width: 100%;
-  }
-  
-  .legend {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .legend-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 5px;
-  }
-  
-  .color-box {
-    width: 12px;
-    height: 12px;
-    margin-right: 5px;
-    border-radius: 50%;
-  }
-   */
+  background-color: rgba(0, 0, 0, 0.8);
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 8px;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.apexcharts-tooltip-series-group {
+  font-weight: bold;
+}
+
+.apexcharts-tooltip-title {
+  margin-bottom: 4px;
+}
+
+.apexcharts-tooltip-marker {
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.apexcharts-tooltip-marker-0 {
+  background-color: #1976d2;
+}
+
+.apexcharts-tooltip-marker-1 {
+  background-color: #4caf50;
+}
+
+.apexcharts-tooltip-marker-2 {
+  background-color: #ff9800;
+}
+
+.apexcharts-tooltip-marker-3 {
+  background-color: #2196f3;
+}
+
+.apexcharts-tooltip-marker-4 {
+  background-color: #f44336;
+}
+
+.apexcharts-tooltip-marker-5 {
+  background-color: #9c27b0;
+}
+.overvieww{
+  background-color: #fff;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.negativeshipments{
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 14px;
+}
+.negativeshipments h1{
+  color: #4B77BE !important;
+  font-size: 16px;
+}
+.todolist {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 5px;
+ }
+.todolist h1{
+  color: #4B77BE !important;
+  font-size: 16px;
+}
+
+.bankbalance {
+  color: #4B77BE !important;
+  font-size: 16px;
+ }
+.BankChart{
+  background-color: #fff;
+  padding: 5px;
+}
+.custom-hr {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0; /* Adjust margin as needed */
+}
+
+.hr-line {
+  flex-grow: 1;
+  height: 1px;
+  background-color: #9699A2;
+  margin: 0 20px; /* Adjust margin to control empty space */
+  margin-bottom: 15px;
+}
+
+.card-header {
+  text-align: center;
+  font-size: 14px !important;
+}
+
+/* .chart-legend-grid {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  column-gap: 10px;
+}
+
+.chart-container {
+  width: 100%;
+}
+
+.legend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.color-box {
+  width: 12px;
+  height: 12px;
+  margin-right: 5px;
+  border-radius: 50%;
+}
+ */

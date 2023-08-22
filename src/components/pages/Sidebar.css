@@ -6,9 +6,7 @@ div.ant-select-selector{
     margin-top: 20px !important;
     line-height: 1rem;
   }
-  .logomain:hover{
-    color: white !important;
-  }
+
   .ant-layout-sider ant-layout-sider-dark ant-layout-sider-collapsed ant-layout-sider-has-trigger{
    min-width: 40px !important;
   }

@@ -170,7 +170,7 @@ export const Basic = () => {
    shipMode:"",
    OblReceived :"",
    placeOfReceiptETD:null,
-   it_Issued_Date:null,
+   it_Issued_Location:null,
    office:"",
    carrier:"",
    agentRefNo:"",
@@ -355,12 +355,12 @@ export const Basic = () => {
                header={<span className="white-text">MB/L 102012</span>}
                key="1"
                onClick={handlememoToggle}>
-               <Col span={24} style={{ padding: '10px' }}>
+               <Col span={24} style={{ padding: '0px' }}>
                  <div onClick={handleSecondMemoContentClick} >
                    <Row>
                      <Col span={6} >
                        <div >
-                         <Form labelCol={{ span: 10 }} wrapperCol={{ span: 14 }}>
+                         <Form labelCol={{ span: 10 }} wrapperCol={{ span: 12 }}>
                            <Form.Item label="File No." style={formItemStyle}>
                              <Input value={formData.fileNo}  onChange={(e) => handleFieldChange("fileNo", e.target.value)} />
                            </Form.Item>
@@ -385,7 +385,7 @@ export const Basic = () => {
                            </Form.Item>
                            {showAdditionalInputs && (
                              <>
-                               <Form.Item label="Customer Ref.No">
+                               <Form.Item label={<span >Customer<br/> Ref.No</span>} >
                                  <Input value={formData.customer_RefNo}  onChange={(e) => handleFieldChange("customer_RefNo", e.target.value)} />
                                </Form.Item>
                                <Form.Item label="Customer" style={formItemStyle}>
@@ -415,7 +415,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="Port of Loading" style={formItemStyle}>
+                           <Form.Item  label={<span >Port of <br/>Loading</span>}  style={formItemStyle}>
                              <Select value={formData.port_of_Loading} onChange={(value) => handleFieldChange("port_of_Loading", value)}>
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -423,7 +423,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="Place of Delivery (DEL)" style={formItemStyle3}>
+                           <Form.Item label={<span >Place of <br/>Delivery (DEL)</span>}  style={formItemStyle3}>
 
                              <div style={{ display: 'flex', flexDirection: 'column' }}>
 
@@ -468,7 +468,7 @@ export const Basic = () => {
                     <br/>
                     {showPlusInput && 
                     <>
-                     <Form.Item label="Place of Receipt" style={formItemStyle}>
+                     <Form.Item label={<span >Place of<br/> Receipt</span>}  style={formItemStyle}>
                              <Select value={formData.place_of_Receipt} onChange={(value) => handleFieldChange("place_of_Receipt", value)} >
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -497,7 +497,7 @@ export const Basic = () => {
                            <Form.Item label={<span className="required-label">MB/L No.</span>} style={formItemStyle}>
                              <Input onClick={() => setIsAnyInputClicked(true)} value={formData.mblNo} onChange={(e) => handleFieldChange("mblNo", e.target.value)} />
                            </Form.Item>
-                           <Form.Item label="Oversea Agent" style={formItemStyle}>
+                           <Form.Item label={<span >Oversea <br/>Agent</span>}  style={formItemStyle}>
                              <Select value={formData.overseaAgent} onChange={(value) => handleFieldChange("overseaAgent", value)}>
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -513,7 +513,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="Carrier Contact No." style={formItemStyle}>
+                           <Form.Item  label={<span >Carrier <br/>Contact No</span>}  style={formItemStyle}>
                              <Input value={formData.carrierContactNo} onChange={(e) => handleFieldChange("carrierContactNo", e.target.value)} />
                            </Form.Item>
 
@@ -547,7 +547,7 @@ export const Basic = () => {
                            <Form.Item label="ETD" style={formItemStyle}>
                              <DatePicker value={formData.ETD} onChange={(date) => handleFieldChange('ETD', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
-                           <Form.Item label={<span >Place of Delivery <br/>(DEL)</span>} style={formItemStyle}>
+                           <Form.Item label={<span >Place of Delivery <br/>ETA</span>} style={formItemStyle}>
                              <DatePicker value={formData.placeOfDeliveryETA} onChange={(date) => handleFieldChange('placeOfDeliveryETA', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
                            <Form.Item label="ATD" style={formItemStyle2}>
@@ -562,7 +562,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="OB/L Received" style={formItemStyle1}>
+                           <Form.Item label={<span >OB/L <br/>Received</span>}  style={formItemStyle1}>
                              <div style={{ display: 'flex', alignItems: 'center' }}>
                                <Checkbox
 
@@ -586,11 +586,11 @@ export const Basic = () => {
                        <div>
                        {showPlusInput && 
                     <>
-                     <Form.Item label="Place of Receipt ETD" style={formItemStyle}>
+                     <Form.Item label={<span >Place of<br/> Receipt ETD</span>}  style={formItemStyle}>
                              <DatePicker value={formData.placeOfReceiptETD} onChange={(date) => handleFieldChange('placeOfReceiptETD', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
-                     <Form.Item label="IT Issued Date" style={formItemStyle}>
-                             <Select value={formData.it_Issued_Date} onChange={(value) => handleFieldChange("it_Issued_Date", value)} >
+                     <Form.Item label={<span >IT Issued<br/> Location</span>}   style={formItemStyle}>
+                             <Select value={formData.it_Issued_Location} onChange={(value) => handleFieldChange("it_Issued_Date", value)} >
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
                                <Option value="option3">Option 3</Option>
@@ -663,7 +663,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="Port of Discharge" style={formItemStyle}>
+                           <Form.Item label={<span >Port of <br/>Discharge</span>}  style={formItemStyle}>
                              <Select value={formData.portofDischarge} onChange={(value) => handleFieldChange("portofDischarge", value)} >
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -671,7 +671,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                           <Form.Item label="Final Destination" style={formItemStyle}>
+                           <Form.Item label={<span >Final<br/>Destination</span>}  style={formItemStyle}>
                              <Select value={formData.finalDestination} onChange={(value) => handleFieldChange("finalDestination", value)} >
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -700,7 +700,7 @@ export const Basic = () => {
                              </div>
 
                            </Form.Item>
-                           <Form.Item label=" Received Date" style={{marginBottom:'35px'}}>
+                           <Form.Item label={<span >Released<br/>Date</span>}  style={{marginBottom:'35px'}}>
                              <div style={{ display: 'flex', alignItems: 'center' }}>
                                <Checkbox
 
@@ -723,7 +723,7 @@ export const Basic = () => {
                        {showPlusInput && 
                     <>
                  
-                     <Form.Item label="Return Location" style={formItemStyle}>
+                     <Form.Item label={<span >Return<br/>Location</span>}  style={formItemStyle}>
                              <Select value={formData.return_Location} onChange={(value) => handleFieldChange("return_Location", value)}>
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -759,7 +759,7 @@ export const Basic = () => {
                              <CustomSelect options={options} />
                              </Select>
                            </Form.Item>
-                           <Form.Item label="B/L Acct. Carrier " style={formItemStyle}>
+                           <Form.Item label={<span >B/L Acct.<br/>Carrier</span>}  style={formItemStyle}>
                              <Select value={formData.blAcctCarrier} onChange={(value) => handleFieldChange("blAcctCarrier", value)} >
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -811,10 +811,10 @@ export const Basic = () => {
                              <DatePicker value={formData.ETB} onChange={(date) => handleFieldChange('ETB', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
                            </Form.Item>
 
-                           <Form.Item label="Container/Qty " style={formItemStyle}>
+                           <Form.Item label={<span >Container<br/>/Qty</span>}   style={formItemStyle}>
                              <Input value={formData.containerQty} onChange={(e) => handleFieldChange("containerQty", e.target.value)} />
                            </Form.Item>
-                           <Form.Item label="Business Referred By " style={{marginBottom:"70px"}}>
+                           <Form.Item label={<span >Business<br/>Referred By</span>}  style={{marginBottom:"70px"}}>
                              <Select value={formData.businessRefer} onChange={(value) => handleFieldChange("businessRefer", value)} >
                                <Option value="option1">Option 1</Option>
                                <Option value="option2">Option 2</Option>
@@ -1097,7 +1097,7 @@ export const Basic = () => {
                                {/* Add more options as needed */}
                              </Select>
                            </Form.Item>
-                               <Form.Item label="Forwarding Agent" style={formItemStyle2}>
+                               <Form.Item   label={<span >Forwarding <br/>Agent</span>}  style={formItemStyle2}>
                                  <Select value={hbldata.hblFwdAgent} onChange={(value) => handleHblFieldChange("hblFwdAgent", value)}>
                                    <Option value="option1">Option 1</Option>
                                    <Option value="option2">Option 2</Option>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Layout, Menu } from 'antd';
 import { UserOutlined, LogoutOutlined, DashboardOutlined, ImportOutlined } from '@ant-design/icons';
+import { AiOutlineHome } from 'react-icons/ai';
+
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
 import Breadcrumbs from './Breadcrumbs';
@@ -62,7 +64,7 @@ const Sidebarrr = () => {
           defaultSelectedKeys={[location.pathname]}
           defaultOpenKeys={openSubMenuKeys}
         >
-          <Menu.Item key="/gofreight" icon={<DashboardOutlined/>}>
+          <Menu.Item key="/gofreight" icon={<AiOutlineHome />}>
             <Link to="/gofreight">Dashboard</Link>
           </Menu.Item>
 
