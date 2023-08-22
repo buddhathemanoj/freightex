@@ -30,7 +30,7 @@
   .ant-collapse-content-box{
     background: #f4f4f4;
     border: 1px solid #6f6f6f;
-    padding: 16px 3px !important;
+    padding: 5px 3px !important;
     border-top: 0;
   }
   div.ant-select-selector{
@@ -43,6 +43,11 @@
   .ant-form{
     line-height: 0px !important;
   }
+
+  :where(.css-dev-only-do-not-override-byeoj0).ant-collapse>.ant-collapse-item >.ant-collapse-header {
+    padding: 5px 12px;
+  }
+
   .ant-collapse-header .ant-collapse-arrow {
 margin-top: 13px;
 float: right;
@@ -64,13 +69,37 @@ position: relative;
   color: #444;
   }
 
+  .door-move {
+  width: 150px;
+  }
+
+  .clearance {
+    width: 160px;
+    margin-left: -60px;
+  }
+
+  .c-hold {
+    width: 100px;
+    margin-left: -65px;
+  }
+
+
 .white-text {
   color: white !important;
+  font-size: 17px;
 }
 
 .input-label{
   display: inline-block;
   line-height: 1;
+}
+
+.ant-form-item-control-input {
+  width: 240px;
+}
+
+.post-date {
+  width: 240px !important;
 }
 
 /* .ant-tabs-nav-wrap {
@@ -84,7 +113,7 @@ position: relative;
 
 .ant-tabs{
   width: 90vw;
-  margin-left: -80px;
+  margin-left: -130px;
   overflow-wrap: normal;
 }
 
