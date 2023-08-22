@@ -1018,7 +1018,7 @@ export const Basic = () => {
                             </div>
                           </Checkbox.Group>
                         </Form.Item> */}
-                        <div style={{display:'flex', justifyContent:'center', marginRight:'0' }}>
+                        <div style={{display:'flex', justifyContent:'center', marginRight:'0', marginLeft:"20px" }}>
                                 <Form.Item className='door-move' label="Door Move" style={formItemStyle}>
                                   <Checkbox onChange={handleCheckboxChange} />
                                 </Form.Item>
@@ -1027,6 +1027,403 @@ export const Basic = () => {
                                 </Form.Item>
                                 <Form.Item className='c-hold' label="C.Hold" style={formItemStyle}>
                                   <Checkbox onChange={handleCheckboxChange} />
+                                </Form.Item>
+                                </div>
+                           <Form.Item label={<span className='input-label'>Business<br/>Referred By</span>} style={formItemStyle}>
+                             <Select value={hbldata.hblBRby} onChange={(value) => handleHblFieldChange("hblBRby", value)}>
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="OB/L Received" style={formItemStyle}>
+                             <div style={{ display: 'flex', alignItems: 'center' }}>
+                               <Checkbox
+                                 checked={hoblreceivedcheck}
+                                 onChange={(e) => setHoblReceivedcheck(e.target.checked)}
+                               />
+                               <span style={{ marginLeft: '10px', flex: 1 }}>
+                                 <DatePicker value={hbldata.hblOBLDate} onChange={(date) => handleHblFieldChange('hblOBLDate', date)}
+                                   style={{ width: '100%', height: '24px' }}
+                                   disabled={!hoblreceivedcheck}
+                                 />
+                               </span>
+                             </div>
+                           </Form.Item>
+                           <Form.Item label={<span className='input-label'>Freight<br/>Released</span>} style={formItemStyle}>
+                             <div style={{ display: 'flex', alignItems: 'center' }}>
+                               <Checkbox
+                                 checked={freightreceivedcheck}
+                                 onChange={(e) => setfreightreceivedcheck(e.target.checked)}
+                               />
+                               <span style={{ marginLeft: '10px', flex: 1 }}>
+                                 <DatePicker value={hbldata.hblFreightReleased} onChange={(date) => handleHblFieldChange('hblFreightReleased', date)}
+                                   style={{ width: '100%', height: '24px' }}
+                                   disabled={!freightreceivedcheck}
+                                 />
+                               </span>
+                             </div>
+                           </Form.Item>
+                           <Form.Item label="AN Sent Date" style={formItemStyle2}>
+                             <div style={{ display: 'flex', alignItems: 'center' }}>
+                               <Checkbox
+                                 checked={ansentcheck}
+                                 onChange={(e) => setAnSentCheck(e.target.checked)}
+                               />
+                               <span style={{ marginLeft: '10px', flex: 1 }}>
+                                 <DatePicker value={hbldata.hblANSent} onChange={(date) => handleHblFieldChange('hblANSent', date)}
+                                   style={{ width: '100%', height: '24px' }}
+                                   disabled={!ansentcheck}
+                                 />
+                               </span>
+                             </div>
+                           </Form.Item>
+                           {showHBLPlusInput && (
+                            <>
+                            <Form.Item label="L/C No" style={formItemStyle}>
+                            <Input value={hbldata.hblLCNo} onChange={(e) => handleHblFieldChange("hblLCNo", e.target.value)} />
+                          </Form.Item>
+                          <Form.Item label="Group Comm" style={formItemStyle}>
+                          <Input value={hbldata.hblGroupComm} onChange={(e) => handleHblFieldChange("hblGroupComm", e.target.value)} />
+                        </Form.Item>
+                        </>
+                           )}
+                         </Form>
+                       </div>
+                     </Col>
+                     <Col span={6}>
+                       <div>
+                         <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                           <Form.Item label="AMS No" style={formItemStyle}>
+                             <Input onClick={() => setIsAnyInputClicked(true)} value={hbldata.hblAMSNo} onChange={(e) => handleHblFieldChange("hblAMSNo", e.target.value)} />
+                           </Form.Item>
+                           <Form.Item label="Shipper" style={formItemStyle}>
+                             <Select value={hbldata.hblShipper} onChange={(value) => handleHblFieldChange("hblShipper", value)}>
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="Bill To" style={formItemStyle}>
+                             <Select value={hbldata.hblBillto} onChange={(value) => handleHblFieldChange("hblBillto", value)}>
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                               <Form.Item   label={<span className='input-label'>Forwarding <br/>Agent</span>}  style={formItemStyle2}>
+                                 <Select value={hbldata.hblFwdAgent} onChange={(value) => handleHblFieldChange("hblFwdAgent", value)}>
+                                   <Option value="option1">Option 1</Option>
+                                   <Option value="option2">Option 2</Option>
+                                   <Option value="option3">Option 3</Option>
+                                 </Select>
+                               </Form.Item>
+                               <Form.Item label="Trucker" style={formItemStyle}>
+                                 <Select value={hbldata.hblTrucker} onChange={(value) => handleHblFieldChange("hblTrucker", value)}>
+                                   <Option value="option1">Option 1</Option>
+                                   <Option value="option2">Option 2</Option>
+                                   <Option value="option3">Option 3</Option>
+
+                                 </Select>
+                               </Form.Item>
+                               <Form.Item label={<span className='input-label'>Place of<br/>Delivery ETA</span>} style={formItemStyle}>
+                             <DatePicker value={hbldata.hblPODETA} onChange={(date) => handleHblFieldChange('hblPODETA', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                               <Form.Item label="Ship Mode" style={formItemStyle}>
+                                 <Select value={hbldata.hblShipMode} onChange={(value) => handleHblFieldChange("hblShipMode", value)}>
+                                   <Option value="option1">Option 1</Option>
+                                   <Option value="option2">Option 2</Option>
+                                   <Option value="option3">Option 3</Option>
+                                 </Select>
+                               </Form.Item>
+                               <Form.Item label="IT No" style={formItemStyle}>
+                             <Input value={hbldata.hblITNo} onChange={(e) => handleHblFieldChange("hblITNo", e.target.value)} />
+                           </Form.Item>
+                           <Form.Item label="Expiry Date" style={formItemStyle2}>
+                             <DatePicker value={hbldata.hblExpDate} onChange={(date) => handleHblFieldChange('hblExpDate', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                               <Form.Item label="Sale Type" style={formItemStyle}>
+                                 <Select value={hbldata.hblSaleType} onChange={(value) => handleHblFieldChange("hblSaleType", value)}>
+                                   <Option value="option1">Option 1</Option>
+                                   <Option value="option2">Option 2</Option>
+                                   <Option value="option3">Option 3</Option>
+                                 </Select>
+                               </Form.Item>
+                               <Form.Item label={<span className='input-label'>C.Released<br/>Date</span>} style={formItemStyle}>
+                             <DatePicker value={hbldata.hblCRelDate} onChange={(date) => handleHblFieldChange('hblCRelDate', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                           <Form.Item label="Entry No" style={formItemStyle}>
+                             <Input value={hbldata.hblEntryNo} onChange={(e) => handleHblFieldChange("hblEntryNo", e.target.value)} />
+                           </Form.Item>
+                           <Form.Item label="ROR" style={formItemStyle}>
+                             <Checkbox onChange={handleCheckboxChange} />
+                           </Form.Item>
+                               <Form.Item label="Released By" style={formItemStyle}>
+                                 <Select value={hbldata.hblRelBy} onChange={(value) => handleHblFieldChange("hblRelBy", value)}>
+                                   <Option value="option1">Option 1</Option>
+                                   <Option value="option2">Option 2</Option>
+                                   <Option value="option3">Option 3</Option>
+                                 </Select>
+                               </Form.Item>
+                           <Form.Item label="DO Sent Date" style={formItemStyle2}>
+                             <div style={{ display: 'flex', alignItems: 'center' }}>
+                               <Checkbox
+                                 checked={dosentcheck}
+                                 onChange={(e) => setDoSentCheck(e.target.checked)}
+                               />
+                               <span style={{ marginLeft: '10px', flex: 1 }}>
+                                 <DatePicker value={hbldata.hblDoSentDate} onChange={(date) => handleHblFieldChange('hblDoSentDate', date)}
+                                   style={{ width: '100%', height: '24px' }}
+                                   disabled={!dosentcheck}
+                                 />
+                               </span>
+                             </div>
+                           </Form.Item>
+                           {showHBLPlusInput && (<>
+                            <Form.Item label="Ship Type" style={formItemStyle}>
+                                 <Select value={hbldata.hblShipType} onChange={(value) => handleHblFieldChange("hblShipType", value)}>
+                                   <Option value="option1">Option 1</Option>
+                                   <Option value="option2">Option 2</Option>
+                                   <Option value="option3">Option 3</Option>
+                                 </Select>
+                               </Form.Item>
+                               <Form.Item label="Line Code" style={formItemStyle}>
+                             <Input value={hbldata.hblLineCode} onChange={(e) => handleHblFieldChange("hblLineCode", e.target.value)} />
+                           </Form.Item>
+                           </>)}
+                         </Form>
+                       </div>
+                     </Col>
+                     <Col span={6}>
+                       <div>
+                         <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                         <Form.Item label="IFS No" style={formItemStyle}>
+                             <Input value={hbldata.hblIFSNo} onChange={(e) => handleHblFieldChange("hblIFSNo", e.target.value)} />
+                           </Form.Item>
+                           <Form.Item label="Consignee" style={formItemStyle}>
+                                 <Select value={hbldata.hblConsignee} onChange={(value) => handleHblFieldChange("hblConsignee", value)}>
+                                   <Option value="option1">Option 1</Option>
+                                   <Option value="option2">Option 2</Option>
+                                   <Option value="option3">Option 3</Option>
+                                 </Select>
+                               </Form.Item>
+                               <Form.Item label="Sub B/L No" style={formItemStyle}>
+                             <Input value={hbldata.hblSubBLNo} onChange={(e) => handleHblFieldChange("hblSubBLNo", e.target.value)} />
+                           </Form.Item>
+                           <Form.Item label={<span className='input-label'>ISF Matched<br/>Date</span>} style={formItemStyle2}>
+                             <DatePicker value={hbldata.hblISFMDate} onChange={(date) => handleHblFieldChange('hblISFMDate', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                           <Form.Item label="CY/CFS Location" style={formItemStyle}>
+                             <Select value={hbldata.hblcycfsloc} onChange={(value) => handleHblFieldChange("hblcycfsloc", value)} >
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label={<span className='input-label'>Final<br/>Destination</span>} style={formItemStyle}>
+                             <Select value={hbldata.hblFinalDest} onChange={(value) => handleHblFieldChange("hblFinalDest", value)} >
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="Freight" style={formItemStyle}>
+                             <Select value={hbldata.hblFreight} onChange={(value) => handleHblFieldChange("hblFreight", value)} >
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="IT Date" style={formItemStyle3}>
+                             <DatePicker value={hbldata.hblITDate}  onChange={(date) => handleHblFieldChange('hblITDate', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                           <Form.Item label="Incoterms" style={formItemStyle}>
+                             <Select value={hbldata.hblIncoTerms} onChange={(value) => handleHblFieldChange("hblIncoTerms", value)} >
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="*Service Term" style={formItemStyle}>
+                             <div style={{ display: 'flex', alignItems: 'center' }}>
+                               <Select  value={hbldata.hblST1} onChange={(value) => handleHblFieldChange("hblST1", value)} >
+                                 <Option value="option1">Option 1</Option>
+                                 <Option value="option2">Option 2</Option>
+                                 <Option value="option3">Option 3</Option>
+                                 {/* Add more options as needed */}
+                               </Select>
+                               <p  >~</p>
+                               <Select  value={hbldata.hblST2} onChange={(value) => handleHblFieldChange("hblST2", value)}>
+                                 <Option value="option1">Option 1</Option>
+                                 <Option value="option2">Option 2</Option>
+                                 <Option value="option3">Option 3</Option>
+                                 {/* Add more options as needed */}
+                               </Select>
+                             </div>
+                           </Form.Item>
+                           <Form.Item label="Entry DOC Sent" style={formItemStyle}>
+                             <DatePicker value={hbldata.hblEntryDoc} onChange={(date) => handleHblFieldChange('hblEntryDoc', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                           <Form.Item label=" Received Date" style={formItemStyle}>
+                             <div style={{ display: 'flex', alignItems: 'center' }}>
+                               <Checkbox
+                                 checked={receiveddatecheck}
+                                 onChange={(e) => setReceivedDateCheck(e.target.checked)}
+                               />
+                               <span style={{ marginLeft: '10px', flex: 1 }}>
+                                 <DatePicker value={hbldata.hblRevDate} onChange={(date) => handleHblFieldChange('hblRevDate', date)}
+                                   style={{ width: '100%', height: '24px' }}
+                                   disabled={!receiveddatecheck}
+                                 />
+                               </span>
+                             </div>
+                           </Form.Item>
+                           <Form.Item label="Door Delivered" style={formItemStyle}>
+                             <DatePicker value={hbldata.hblDoorDeli} onChange={(date) => handleHblFieldChange('hblDoorDeli', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                           <Form.Item label="More" style={formItemStyle1}>
+                           <button onClick={hbltoggleInput}>
+                              {showHBLPlusInput ? '-' : '+'}
+                            </button>
+                          </Form.Item>
+                          {showHBLPlusInput && (
+                             <>
+                          <Form.Item label="S/C No" style={formItemStyle}>
+                             <Input value={hbldata.hblSCNo} onChange={(e) => handleHblFieldChange("hblSCNo", e.target.value)} />
+                           </Form.Item>
+                          <Form.Item label="E-Commerce" style={formItemStyle}>
+                             <Checkbox onChange={handleCheckboxChange} />
+                           </Form.Item>
+                           </>
+                           )}
+                         </Form>
+                       </div>
+                     </Col>
+                     <Col span={6}>
+                       <div>
+                         <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                         <Form.Item label={<span className='input-label'>ISF Filling<br/>By 3rd Party</span>} style={formItemStyle}>
+                             <Checkbox onChange={handleCheckboxChange} />
+                           </Form.Item>
+                           <Form.Item label="Notify" style={formItemStyle}>
+                             <Select value={hbldata.hblNotify} onChange={(value) => handleHblFieldChange("hblNotify", value)} >
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="Op" style={formItemStyle3}>
+                             <Select value={hbldata.hblOp} onChange={(value) => handleHblFieldChange("hblOp", value)} >
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="Available" style={formItemStyle}>
+                             <DatePicker value={hbldata.hblAvailable} onChange={(date) => handleHblFieldChange('hblAvailable', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                           <Form.Item label="Final ETA" style={formItemStyle}>
+                             <DatePicker value={hbldata.hblfinalETA} onChange={(date) => handleHblFieldChange('hblFinalETA', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                           <Form.Item label="LFD" style={formItemStyle}>
+                             <DatePicker value={hbldata.hblLFD} onChange={(date) => handleHblFieldChange('hblLFD', date)} style={{ width: '100%', height: '24px' }} placement={placement} />
+                           </Form.Item>
+                               {/* Add more additional inputs as needed */}
+                           <Form.Item label={<span className='input-label'>IT Issued<br/>Location</span>} style={formItemStyle3}>
+                             <Select value={hbldata.hblITIssueLoc} onChange={(value) => handleHblFieldChange("hblITIssueLoc", value)} >
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="Cargo Type" style={formItemStyle}>
+                             <Select value={hbldata.hblCargoType} onChange={(value) => handleHblFieldChange("hblCargoType", value)} >
+                               <Option value="option1">Option 1</Option>
+                               <Option value="option2">Option 2</Option>
+                               <Option value="option3">Option 3</Option>
+                               {/* Add more options as needed */}
+                             </Select>
+                           </Form.Item>
+                           <Form.Item label="Container/Qty " style={formItemStyle4}>
+                             <Input value={hbldata.hblContainerQty} onChange={(e) => handleHblFieldChange("hblContainerQty", e.target.value)} />
+                           </Form.Item>
+                           {showHBLPlusInput && (
+                             <>
+                          <Form.Item label="Name Account" style={formItemStyle}>
+                             <Input value={hbldata.hblNameAcc} onChange={(e) => handleHblFieldChange("hblNameAcc", e.target.value)} />
+                           </Form.Item>
+                          <Form.Item label="Customs Doc" style={formItemStyle}>
+                             <Checkbox onChange={handleCheckboxChange} />
+                           </Form.Item>
+                           </>
+                           )}
+                         </Form>
+                       </div>
+                     </Col>
+                   </Row>
+                 </div>
+                 <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
+                   <Panel style={{ backgroundColor: 'gray' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
+                     <div onClick={handleSecondMemoContentClick}>
+                       <Row>
+
+                         <Col span={16} style={{ marginRight: '10px' }}>
+                           {/* Ant Design Table */}
+                           <Table
+
+                             columns={columns} // Use the modified columns array
+                             dataSource={tableData}
+                             pagination={false}
+                           />
+                           {/* Add button */}
+                         </Col>
+                         <Col span={7}>
+                           <div>
+                             <TextArea style={{ backgroundColor: '#b5b3ae', minHeight: '150px' }} />
+                           </div>
+                         </Col>
+                       </Row>
+                     </div>
+                   </Panel>
+                 </Collapse>
+               </Col>
+               <Button
+                 style={{
+                   backgroundColor: '#26a69a',
+                   color: "white",
+                   marginTop:"20px",
+                   width: '110px',
+                   position: 'relative',
+                   left: '50%',
+                   transform: 'translateX(-50%)',
+                   bottom: '5%',
+                   zIndex: 9999, // To ensure the button is above other content
+                 }}
+                 type="primary"
+                 disabled={!isAnyInputClicked} // Disable the button if no input above the table is clicked
+                 onClick={handleSubmit}
+               >
+                 Save
+               </Button>
+             </Panel>
+           </Collapse>
+         </>
+       </Col>
+     </Row>
+   </div>
+   )}
+   </div>
+
+ )
+
                                 </Form.Item></div>
                                 <Form.Item label={<span className='input-label'>Business<br />Referred By</span>} style={formItemStyle}>
                                   <Select value={hbldata.hblBRby} onChange={(value) => handleHblFieldChange("hblBRby", value)}>
@@ -1422,4 +1819,5 @@ export const Basic = () => {
     </div>
 
   )
+
 }

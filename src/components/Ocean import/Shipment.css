@@ -70,19 +70,18 @@ position: relative;
   }
 
   .door-move {
-  width: 150px;
-  }
-
-  .clearance {
-    width: 160px;
-    margin-left: -60px;
-  }
-
-  .c-hold {
-    width: 100px;
-    margin-left: -65px;
-  }
-
+    width: 170px;
+    }
+  
+    .clearance {
+      width: 170px;
+      margin-left: -50px;
+    }
+  
+    .c-hold {
+      width: 110px;
+      margin-left: -55px;
+    }
 
 .white-text {
   color: white !important;
