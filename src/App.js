@@ -19,8 +19,6 @@ import { MBLlist } from "./components/Ocean import/MBLlist";
 import { HBLlist } from "./components/Ocean import/HBLlist";
 import Sidebarrr from "./components/pages/Home";
 import { Basic } from "./components/Ocean import/NewShipment/Basic";
-import CustomSelect from "./components/Ocean import/NewShipment/CustomSelect";
-import SelectBar from "./components/Ocean import/NewShipment/CustomSelect";
 
 
 
@@ -133,7 +131,6 @@ function App() {
       <Navigate to="/login" />)}
       />
       <Route path="/" element={<Navigate to="/login" />} />
-      <Route path="/select" element={<SelectBar />} />
       </Routes>
     </BrowserRouter>
 
