@@ -54,7 +54,16 @@ export const Newshipment = () => {
     >
       {tabNames.map((tabName, index) => (
         <Tabs.TabPane
-          tab={<span style={{ fontSize: '16px', fontWeight:'600', padding:'0 0px' }}>{tabName}</span>}
+          tab={ <span
+            style={{
+              fontSize: '16px',
+              fontWeight: '600',
+              padding: '0 0px',
+              color: tabName === 'Basic' ? '#444' : 'inherit' // Set color to #444 for 'Basic' tab
+            }}
+          >
+            {tabName}
+          </span>}
           key={tabName}
           disabled={tabName !== 'Basic' } // Disable tabs other than "Basic"
         >

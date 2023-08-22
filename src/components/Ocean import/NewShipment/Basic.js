@@ -914,7 +914,7 @@ export const Basic = () => {
               <>
                 <Collapse activeKey={ismemoOpen1 ? '1' : ''}>
                   <Panel
-                    style={{ backgroundColor: '#555555', color: "white" }}
+                    style={{ backgroundColor: '#f3c200', color: "white" }}
                     onClick={handlememoToggle}
                     header={
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: "white" }}>
