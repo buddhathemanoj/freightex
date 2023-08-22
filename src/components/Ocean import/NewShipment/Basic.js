@@ -1021,7 +1021,7 @@ export const Basic = () => {
                             </div>
                           </Checkbox.Group>
                         </Form.Item> */}
-                        <div style={{display:'flex', justifyContent:'center', marginRight:'0' }}>
+                        <div className='hbl-checkbox' style={{display:'flex', justifyContent:'center', marginRight:'0', marginLeft:'10%' }}>
                                 <Form.Item className='door-move' label="Door Move" style={formItemStyle}>
                                   <Checkbox onChange={handleCheckboxChange} />
                                 </Form.Item>
