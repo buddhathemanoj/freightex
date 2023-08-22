@@ -1013,15 +1013,17 @@ export const Basic = () => {
                             </div>
                           </Checkbox.Group>
                         </Form.Item> */}
-                        <Form.Item label="Door Move" style={formItemStyle}>
-                             <Checkbox onChange={handleCheckboxChange} />
-                           </Form.Item>
-                           <Form.Item label="C.Clearance" style={formItemStyle}>
-                             <Checkbox onChange={handleCheckboxChange} />
-                           </Form.Item>
-                           <Form.Item label="C.Hold" style={formItemStyle}>
-                             <Checkbox onChange={handleCheckboxChange} />
-                           </Form.Item>
+                        <div style={{display:'flex', justifyContent:'center', marginRight:'0', marginLeft:"60px" }}>
+                                <Form.Item className='door-move' label="Door Move" style={formItemStyle}>
+                                  <Checkbox onChange={handleCheckboxChange} />
+                                </Form.Item>
+                                <Form.Item className='clearance' label="C.Clearance" style={formItemStyle}>
+                                  <Checkbox onChange={handleCheckboxChange} />
+                                </Form.Item>
+                                <Form.Item className='c-hold' label="C.Hold" style={formItemStyle}>
+                                  <Checkbox onChange={handleCheckboxChange} />
+                                </Form.Item>
+                                </div>
                            <Form.Item label={<span className='input-label'>Business<br/>Referred By</span>} style={formItemStyle}>
                              <Select value={hbldata.hblBRby} onChange={(value) => handleHblFieldChange("hblBRby", value)}>
                                <Option value="option1">Option 1</Option>
