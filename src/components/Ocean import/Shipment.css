@@ -64,6 +64,20 @@ position: relative;
   color: #444;
   }
 
+  .door-move {
+    width: 170px;
+    }
+    
+    .clearance {
+      width: 170px;
+      margin-left: -50px;
+    }
+  
+    .c-hold {
+      width: 110px;
+      margin-left: -55px;
+    }
+
 .white-text {
   color: white !important;
 }
