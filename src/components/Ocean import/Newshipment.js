@@ -35,7 +35,8 @@ export const Newshipment = () => {
         width: 'fit-content',
         fontSize: '24px',
         padding: "0 0px",
-        borderRadius: '8px'
+        borderRadius: '8px',
+        height:'40px'
       }}
     >
       <DefaultTabBar {...props} />
