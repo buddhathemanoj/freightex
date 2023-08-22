@@ -60,10 +60,17 @@ position: relative;
   }
   .ant-form-item .ant-form-item-label >label {
   font-size: 11px !important;
+  font-weight: 600;
+  color: #444;
   }
 
 .white-text {
   color: white !important;
+}
+
+.input-label{
+  display: inline-block;
+  line-height: 1;
 }
 
 /* .ant-tabs-nav-wrap {
