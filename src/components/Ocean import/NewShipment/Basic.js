@@ -346,7 +346,7 @@ export const Basic = () => {
     <div className='newshipment-container' >
       <div>
         <Row >
-          <Col span={20}>
+          <Col span={21}>
             <>
               <Collapse activeKey={ismemoOpen ? '1' : ''}>
                 <Panel
@@ -365,7 +365,7 @@ export const Basic = () => {
                                 <Input value={formData.fileNo} onChange={(e) => handleFieldChange("fileNo", e.target.value)} />
                               </Form.Item>
                               <Form.Item label="Post Date" style={formItemStyle}>
-                                <Input value={formData.postDate} onChange={(e) => handleFieldChange("postDate", e.target.value)} />
+                                <Input className='post-date' value={formData.postDate} onChange={(e) => handleFieldChange("postDate", e.target.value)} />
                               </Form.Item>
                               <Form.Item label={<span className="input-label">Forwarding<br /> Agent</span>} style={formItemStyle}>
                                 <Select className='custom-dropdownn' value={formData.forwardingAgent} onChange={(value) => handleFieldChange("forwardingAgent", value)} style={{ width: '100%', color: 'black' }}  >
@@ -900,7 +900,7 @@ export const Basic = () => {
 
 
 
-          <Col span={4} >
+          <Col span={3} >
             <Button className='hblbutton' style={{ height: '40px', marginLeft: '20px', marginTop: '10px' }} onClick={handleAddhbl}>+ Add HB/L</Button>
           </Col>
         </Row>
