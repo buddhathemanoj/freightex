@@ -39,7 +39,7 @@ const HeaderComponent = ({ currentUser }) => {
     "Trade Partner",
     "Sales",
   ];
-  const colorBgContainer = "#38323d";
+  const colorBgContainer = "#2b3643";
   const { Search } = Input;
 
   useEffect(() => {
