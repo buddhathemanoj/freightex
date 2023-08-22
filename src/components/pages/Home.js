@@ -6,10 +6,11 @@ import { AiOutlineHome } from 'react-icons/ai';
 import { Link, useLocation } from 'react-router-dom';
 import './Sidebar.css';
 import Breadcrumbs from './Breadcrumbs';
+import { FaUserAlt, FaUserFriends } from 'react-icons/fa';
 
 const { Sider } = Layout;
 
-const colorBgContainer1 = '#38323d';
+const colorBgContainer1 = '#2b3643';
 
 const userMenu = (
   <Menu>
@@ -44,7 +45,7 @@ const Sidebarrr = () => {
 
   return (
     <div style={{ display:'flex', overflowX:'hidden'  }}>
-    <div style={{ position: 'fixed', left: 0, top:'46px', bottom: 0, zIndex: 10,backgroundColor:'rgb(56, 50, 61)'}}>
+    <div style={{ position: 'fixed', left: 0, top:'46px', bottom: 0, zIndex: 10,backgroundColor:'#2b3643'}}>
       <Sider
         collapsible
         collapsed={collapsed}
@@ -70,8 +71,12 @@ const Sidebarrr = () => {
 
           <Menu.SubMenu
             key="sub-ocean-import"
-            icon={<ImportOutlined />}
-            title="Ocean Import"
+            title={
+              <span>
+              <img src="ocean_import.png" alt="Ocean Import" width="20" height="20" style={{marginRight:"7px"}} />
+              Ocean Import
+            </span>
+            }
             onTitleClick={() => handleSubMenuClick('sub-ocean-import')}
             open={openSubMenuKeys.includes('sub-ocean-import')}
           >
@@ -139,7 +144,7 @@ const Sidebarrr = () => {
 
           <Menu.SubMenu
             key="sub-trade-partner"
-            icon={<UserOutlined />}
+            icon={<FaUserFriends />}
             title="Trade-partner"
             onTitleClick={() => handleSubMenuClick('sub-trade-partner')}
             open={openSubMenuKeys.includes('sub-trade-partner')}
