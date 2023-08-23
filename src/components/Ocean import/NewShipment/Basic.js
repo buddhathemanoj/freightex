@@ -100,6 +100,7 @@ export const Basic = () => {
       title: tableTitle,
       dataIndex: 'tableTitle',
       key: 'tableTitle',
+      className: 'custom-table-header',
       render: (text, record) => (
         <Button type="danger" onClick={() => handleRemoveRow(record.key)}><DeleteOutlined /></Button>
       ), // Empty content for this column
@@ -354,7 +355,7 @@ export const Basic = () => {
                 <Panel
 
                   style={{ backgroundColor: '#555555', color: 'white' }}
-                  header={<span className="white-text">MB/L 102012</span>}
+                  header={<span className="white-text">MB/L Information</span>}
                   key="1"
                   onClick={handlememoToggle}>
                   <Col span={24} style={{ padding: '0px' }}>
@@ -733,7 +734,7 @@ export const Basic = () => {
                                         {/* Add more options as needed */}
                                       </Select>
                                     </Form.Item>
-                                    <Form.Item label=" Received Date" style={formItemStyle}>
+                                    <Form.Item label="E-Commerce" style={formItemStyle}>
                                       <div style={{ display: 'flex', alignItems: 'center' }}>
                                         <Checkbox
 
@@ -918,7 +919,7 @@ export const Basic = () => {
                     onClick={handlememoToggle}
                     header={
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: "white" }}>
-                        <span>HB/L 102012</span>
+                        <span>HB/L Information</span>
                         <FontAwesomeIcon
                           icon={faClose}
                           style={{ cursor: 'pointer', marginRight:'10px' }}
