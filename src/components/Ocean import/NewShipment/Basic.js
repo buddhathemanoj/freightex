@@ -21,6 +21,7 @@ export const Basic = () => {
   const [isSecondMemoOpen, setIsSecondMemoOpen] = useState(false);
   const [tableData, setTableData] = useState([]);
   const [isAnyInputClicked, setIsAnyInputClicked] = useState(false);
+  const [expandIconPosition, setExpandIconPosition] = useState('end');
 
   const options = [
     { label: 'Option 1', value: 'option1' },
@@ -362,7 +363,7 @@ export const Basic = () => {
         <Row >
           <Col span={20}>
             <>
-              <Collapse activeKey={ismemoOpen ? '1' : ''}>
+              <Collapse activeKey={ismemoOpen ? '1' : ''} expandIconPosition={expandIconPosition}>
                 <Panel
 
                   style={{ backgroundColor: '#555555', color: 'white' }}
@@ -859,7 +860,7 @@ export const Basic = () => {
                         </Col>
                       </Row>
                     </div>
-                    <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
+                    <Collapse activeKey={isSecondMemoOpen ? '1' : ''} expandIconPosition={expandIconPosition}>
                       <Panel style={{ backgroundColor: ' #e0e0e0' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
                         <div onClick={handleSecondMemoContentClick}>
                           <Row>
@@ -924,13 +925,13 @@ export const Basic = () => {
           <Row style={{ minHeight: '200vh !important' }}>
             <Col span={20}>
               <>
-                <Collapse activeKey={ismemoOpen1 ? '1' : ''}>
+                <Collapse activeKey={ismemoOpen1 ? '1' : ''} expandIconPosition={expandIconPosition}>
                   <Panel
                     style={{ backgroundColor: '#f3c200', color: "white" }}
                     onClick={handlememoToggle}
                     header={
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: "white" }}>
-                        <span>HB/L Information</span>
+                        <span className='white-text'>HB/L Information</span>
                         <FontAwesomeIcon
                           icon={faClose}
                           style={{ cursor: 'pointer', marginRight:'10px' }}
@@ -1384,7 +1385,7 @@ export const Basic = () => {
                           </Col>
                         </Row>
                       </div>
-                      <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
+                      <Collapse activeKey={isSecondMemoOpen ? '1' : ''} expandIconPosition={expandIconPosition}>
                         <Panel style={{ backgroundColor: 'gray' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
                           <div onClick={handleSecondMemoContentClick}>
                             <Row>
