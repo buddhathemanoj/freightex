@@ -21,6 +21,7 @@ export const Basic = () => {
   const [isSecondMemoOpen, setIsSecondMemoOpen] = useState(false);
   const [tableData, setTableData] = useState([]);
   const [isAnyInputClicked, setIsAnyInputClicked] = useState(false);
+  const [expandIconPosition, setExpandIconPosition] = useState('end');
 
   const options = [
     { label: 'Option 1', value: 'option1' },
@@ -85,9 +86,9 @@ export const Basic = () => {
   };
 
   const tableTitle = (
-    <Row justify="space-between" align="middle">
-      <Col>
-        <Button type="primary" onClick={handleAddRow}>
+    <Row justify="space-between" align="middle" style={{height:'32px'}}>
+      <Col style={{padding:'0'}}>
+        <Button type="primary" onClick={handleAddRow} style={{background:'#72C5BD', borderRadius:'0'}}>
           <PlusOutlined />
         </Button>
       </Col>
@@ -109,11 +110,15 @@ export const Basic = () => {
       title: 'Subject',
       dataIndex: 'subject',
       key: 'subject',
+      sorter: {
+      compare: (a, b) => a.subject - b.subject,
+      multiple: 3,
+    },
       editable: true, // Make the column editable
       render: (text, record) => (
 
 
-        <Input value={text} onChange={e => handleCellEdit(record.key, 'subject', e.target.value)} />
+        <Input value={text} onChange={e => handleCellEdit(record.key, 'subject', e.target.value)} style={{padding:'0', height:'32px'}}/>
 
 
       ),
@@ -122,6 +127,10 @@ export const Basic = () => {
       title: 'Last Modified',
       dataIndex: 'lastModified',
       key: 'lastModified',
+      sorter: {
+      compare: (a, b) => a.lastModified - b.lastModified,
+      multiple: 3,
+    },
       editable: true,
       render: (text, record) => (
         <Input value={text} onChange={e => handleCellEdit(record.key, 'lastModified', e.target.value)} />
@@ -131,6 +140,10 @@ export const Basic = () => {
       title: 'Created',
       dataIndex: 'created',
       key: 'created',
+      sorter: {
+      compare: (a, b) => a.created - b.created,
+      multiple: 3,
+    },
       editable: true,
       render: (text, record) => (
         <Input value={text} onChange={e => handleCellEdit(record.key, 'created', e.target.value)} />
@@ -140,7 +153,6 @@ export const Basic = () => {
       title: 'Action/TP',
       dataIndex: 'action',
       key: 'action',
-
     },
   ];
 
@@ -351,7 +363,7 @@ export const Basic = () => {
         <Row >
           <Col span={20}>
             <>
-              <Collapse activeKey={ismemoOpen ? '1' : ''}>
+              <Collapse activeKey={ismemoOpen ? '1' : ''} expandIconPosition={expandIconPosition}>
                 <Panel
 
                   style={{ backgroundColor: '#555555', color: 'white' }}
@@ -363,7 +375,7 @@ export const Basic = () => {
                       <Row>
                         <Col span={6} >
                           <div >
-                            <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                            <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                               <Form.Item label="File No." style={formItemStyle}>
                                 <Input value={formData.fileNo} onChange={(e) => handleFieldChange("fileNo", e.target.value)} />
                               </Form.Item>
@@ -496,7 +508,7 @@ export const Basic = () => {
                         </Col>
                         <Col span={6}>
                           <div>
-                            <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                            <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                               <Form.Item label={<span className="required-label">MB/L No.</span>} style={formItemStyle}>
                                 <Input onClick={() => setIsAnyInputClicked(true)} value={formData.mblNo} onChange={(e) => handleFieldChange("mblNo", e.target.value)} />
                               </Form.Item>
@@ -612,7 +624,7 @@ export const Basic = () => {
                         </Col>
                         <Col span={6}>
                           <div>
-                            <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                            <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                               <Form.Item label={<span className="required-label">Office</span>} style={formItemStyle}>
                                 <Select onClick={() => setIsAnyInputClicked(true)} value={formData.office} onChange={(value) => handleFieldChange("office", value)} >
                                   <Option value="option1">Option 1</Option>
@@ -755,7 +767,7 @@ export const Basic = () => {
                         </Col>
                         <Col span={6}>
 
-                          <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                          <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                             <div>
                               <Form.Item label="B/L Type " style={formItemStyle}>
                                 <Select value={formData.blType} onChange={(value) => handleFieldChange("blType", value)} >
@@ -848,7 +860,7 @@ export const Basic = () => {
                         </Col>
                       </Row>
                     </div>
-                    <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
+                    <Collapse activeKey={isSecondMemoOpen ? '1' : ''} expandIconPosition={expandIconPosition}>
                       <Panel style={{ backgroundColor: ' #e0e0e0' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
                         <div onClick={handleSecondMemoContentClick}>
                           <Row>
@@ -866,7 +878,7 @@ export const Basic = () => {
                             </Col>
                             <Col span={7}>
                               <div>
-                                <TextArea style={{ backgroundColor: '#b5b3ae', minHeight: '150px' }} />
+                                <TextArea style={{ backgroundColor: '#e7e7e7', minHeight: '150px', marginLeft:'25px' }} />
                               </div>
                             </Col>
                           </Row>
@@ -913,13 +925,13 @@ export const Basic = () => {
           <Row style={{ minHeight: '200vh !important' }}>
             <Col span={20}>
               <>
-                <Collapse activeKey={ismemoOpen1 ? '1' : ''}>
+                <Collapse activeKey={ismemoOpen1 ? '1' : ''} expandIconPosition={expandIconPosition}>
                   <Panel
                     style={{ backgroundColor: '#f3c200', color: "white" }}
                     onClick={handlememoToggle}
                     header={
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', color: "white" }}>
-                        <span>HB/L Information</span>
+                        <span className='white-text'>HB/L Information</span>
                         <FontAwesomeIcon
                           icon={faClose}
                           style={{ cursor: 'pointer', marginRight:'10px' }}
@@ -934,7 +946,7 @@ export const Basic = () => {
                         <Row>
                           <Col span={6} >
                             <div >
-                              <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                              <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                                 <Form.Item label="* HB/L No." style={formItemStyle}>
                                   <Input value={hbldata.hblNo} onChange={(e) => handleHblFieldChange("hblNo", e.target.value)} />
                                 </Form.Item>
@@ -1097,7 +1109,7 @@ export const Basic = () => {
                           </Col>
                           <Col span={6}>
                             <div>
-                              <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                              <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                                 <Form.Item label="AMS No" style={formItemStyle}>
                                   <Input onClick={() => setIsAnyInputClicked(true)} value={hbldata.hblAMSNo} onChange={(e) => handleHblFieldChange("hblAMSNo", e.target.value)} />
                                 </Form.Item>
@@ -1202,7 +1214,7 @@ export const Basic = () => {
                           </Col>
                           <Col span={6}>
                             <div>
-                              <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                              <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                                 <Form.Item label="IFS No" style={formItemStyle}>
                                   <Input value={hbldata.hblIFSNo} onChange={(e) => handleHblFieldChange("hblIFSNo", e.target.value)} />
                                 </Form.Item>
@@ -1311,7 +1323,7 @@ export const Basic = () => {
                           </Col>
                           <Col span={6}>
                             <div>
-                              <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                              <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                                 <Form.Item label={<span className='input-label'>ISF Filling<br />By 3rd Party</span>} style={formItemStyle}>
                                   <Checkbox onChange={handleCheckboxChange} />
                                 </Form.Item>
@@ -1373,7 +1385,7 @@ export const Basic = () => {
                           </Col>
                         </Row>
                       </div>
-                      <Collapse activeKey={isSecondMemoOpen ? '1' : ''}>
+                      <Collapse activeKey={isSecondMemoOpen ? '1' : ''} expandIconPosition={expandIconPosition}>
                         <Panel style={{ backgroundColor: 'gray' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
                           <div onClick={handleSecondMemoContentClick}>
                             <Row>
@@ -1390,7 +1402,7 @@ export const Basic = () => {
                               </Col>
                               <Col span={7}>
                                 <div>
-                                  <TextArea style={{ backgroundColor: '#b5b3ae', minHeight: '150px' }} />
+                                  <TextArea style={{ backgroundColor: '#e7e7e7', minHeight: '150px', marginLeft:'25px' }} />
                                 </div>
                               </Col>
                             </Row>
