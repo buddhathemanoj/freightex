@@ -878,7 +878,7 @@ export const Basic = () => {
                             </Col>
                             <Col span={7}>
                               <div>
-                                <TextArea style={{ backgroundColor: '#b5b3ae', minHeight: '150px' }} />
+                                <TextArea style={{ backgroundColor: '#e7e7e7', minHeight: '150px' }} />
                               </div>
                             </Col>
                           </Row>
@@ -1402,7 +1402,7 @@ export const Basic = () => {
                               </Col>
                               <Col span={7}>
                                 <div>
-                                  <TextArea style={{ backgroundColor: '#b5b3ae', minHeight: '150px' }} />
+                                  <TextArea style={{ backgroundColor: '#e7e7e7', minHeight: '150px' }} />
                                 </div>
                               </Col>
                             </Row>
