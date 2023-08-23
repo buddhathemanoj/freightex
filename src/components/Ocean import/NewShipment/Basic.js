@@ -374,7 +374,7 @@ export const Basic = () => {
                       <Row>
                         <Col span={6} >
                           <div >
-                            <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                            <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                               <Form.Item label="File No." style={formItemStyle}>
                                 <Input value={formData.fileNo} onChange={(e) => handleFieldChange("fileNo", e.target.value)} />
                               </Form.Item>
@@ -507,7 +507,7 @@ export const Basic = () => {
                         </Col>
                         <Col span={6}>
                           <div>
-                            <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                            <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                               <Form.Item label={<span className="required-label">MB/L No.</span>} style={formItemStyle}>
                                 <Input onClick={() => setIsAnyInputClicked(true)} value={formData.mblNo} onChange={(e) => handleFieldChange("mblNo", e.target.value)} />
                               </Form.Item>
@@ -623,7 +623,7 @@ export const Basic = () => {
                         </Col>
                         <Col span={6}>
                           <div>
-                            <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                            <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                               <Form.Item label={<span className="required-label">Office</span>} style={formItemStyle}>
                                 <Select onClick={() => setIsAnyInputClicked(true)} value={formData.office} onChange={(value) => handleFieldChange("office", value)} >
                                   <Option value="option1">Option 1</Option>
@@ -766,7 +766,7 @@ export const Basic = () => {
                         </Col>
                         <Col span={6}>
 
-                          <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                          <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                             <div>
                               <Form.Item label="B/L Type " style={formItemStyle}>
                                 <Select value={formData.blType} onChange={(value) => handleFieldChange("blType", value)} >
@@ -945,7 +945,7 @@ export const Basic = () => {
                         <Row>
                           <Col span={6} >
                             <div >
-                              <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                              <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                                 <Form.Item label="* HB/L No." style={formItemStyle}>
                                   <Input value={hbldata.hblNo} onChange={(e) => handleHblFieldChange("hblNo", e.target.value)} />
                                 </Form.Item>
@@ -1108,7 +1108,7 @@ export const Basic = () => {
                           </Col>
                           <Col span={6}>
                             <div>
-                              <Form labelCol={{ span: 10 }} wrapperCol={{ span: 13 }}>
+                              <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                                 <Form.Item label="AMS No" style={formItemStyle}>
                                   <Input onClick={() => setIsAnyInputClicked(true)} value={hbldata.hblAMSNo} onChange={(e) => handleHblFieldChange("hblAMSNo", e.target.value)} />
                                 </Form.Item>
@@ -1213,7 +1213,7 @@ export const Basic = () => {
                           </Col>
                           <Col span={6}>
                             <div>
-                              <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                              <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                                 <Form.Item label="IFS No" style={formItemStyle}>
                                   <Input value={hbldata.hblIFSNo} onChange={(e) => handleHblFieldChange("hblIFSNo", e.target.value)} />
                                 </Form.Item>
@@ -1322,7 +1322,7 @@ export const Basic = () => {
                           </Col>
                           <Col span={6}>
                             <div>
-                              <Form labelCol={{ span: 8 }} wrapperCol={{ span: 14 }}>
+                              <Form labelCol={{ span: 7 }} wrapperCol={{ span: 16 }}>
                                 <Form.Item label={<span className='input-label'>ISF Filling<br />By 3rd Party</span>} style={formItemStyle}>
                                   <Checkbox onChange={handleCheckboxChange} />
                                 </Form.Item>
