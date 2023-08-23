@@ -180,6 +180,24 @@ font-size: 11px;
   }
 }
 
+.custom-table-header {
+  padding: 0;
+}
+
+:where(.css-dev-only-do-not-override-byeoj0).ant-table-wrapper .ant-table-thead th.ant-table-column-has-sorters {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+:where(.css-dev-only-do-not-override-byeoj0).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:first-child {
+  padding: 0;
+  width: 50px;
+  background: white;
+}
+:where(.css-dev-only-do-not-override-byeoj0).ant-table-wrapper .ant-table-container table>thead>tr:first-child >*:last-child {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
 @media screen and (min-width: 1100px) and (max-width: 1250px) {
   body{
     overflow-x: hidden;

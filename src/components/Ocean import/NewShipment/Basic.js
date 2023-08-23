@@ -85,9 +85,9 @@ export const Basic = () => {
   };
 
   const tableTitle = (
-    <Row justify="space-between" align="middle">
-      <Col>
-        <Button type="primary" onClick={handleAddRow}>
+    <Row justify="space-between" align="middle" style={{height:'32px'}}>
+      <Col style={{padding:'0'}}>
+        <Button type="primary" onClick={handleAddRow} style={{background:'#72C5BD', borderRadius:'0'}}>
           <PlusOutlined />
         </Button>
       </Col>
@@ -109,11 +109,15 @@ export const Basic = () => {
       title: 'Subject',
       dataIndex: 'subject',
       key: 'subject',
+      sorter: {
+      compare: (a, b) => a.subject - b.subject,
+      multiple: 3,
+    },
       editable: true, // Make the column editable
       render: (text, record) => (
 
 
-        <Input value={text} onChange={e => handleCellEdit(record.key, 'subject', e.target.value)} />
+        <Input value={text} onChange={e => handleCellEdit(record.key, 'subject', e.target.value)} style={{padding:'0', height:'32px'}}/>
 
 
       ),
@@ -122,6 +126,10 @@ export const Basic = () => {
       title: 'Last Modified',
       dataIndex: 'lastModified',
       key: 'lastModified',
+      sorter: {
+      compare: (a, b) => a.lastModified - b.lastModified,
+      multiple: 3,
+    },
       editable: true,
       render: (text, record) => (
         <Input value={text} onChange={e => handleCellEdit(record.key, 'lastModified', e.target.value)} />
@@ -131,6 +139,10 @@ export const Basic = () => {
       title: 'Created',
       dataIndex: 'created',
       key: 'created',
+      sorter: {
+      compare: (a, b) => a.created - b.created,
+      multiple: 3,
+    },
       editable: true,
       render: (text, record) => (
         <Input value={text} onChange={e => handleCellEdit(record.key, 'created', e.target.value)} />
@@ -140,7 +152,6 @@ export const Basic = () => {
       title: 'Action/TP',
       dataIndex: 'action',
       key: 'action',
-
     },
   ];
 
