@@ -1386,7 +1386,7 @@ export const Basic = () => {
                         </Row>
                       </div>
                       <Collapse activeKey={isSecondMemoOpen ? '1' : ''} expandIconPosition={expandIconPosition}>
-                        <Panel style={{ backgroundColor: 'gray' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
+                        <Panel style={{ backgroundColor: '#E0E0E0' }} header="Memo" key="1" onClick={handleSecondMemoToggle}>
                           <div onClick={handleSecondMemoContentClick}>
                             <Row>
 
