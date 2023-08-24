@@ -19,6 +19,7 @@ import { MBLlist } from "./components/Ocean import/MBLlist";
 import { HBLlist } from "./components/Ocean import/HBLlist";
 import Sidebarrr from "./components/pages/Home";
 import { Basic } from "./components/Ocean import/NewShipment/Basic";
+import ForgotPassword from "./components/auth/ForgotPwd";
 
 
 
@@ -33,6 +34,7 @@ function App() {
    <Routes>
       <Route path="/signup" element={<Signup />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/forgot_pwd" element={<ForgotPassword/>} />
       <Route path="/homeee" element={<Sidebarr/>} />
      
       <Route path="/ocean-import/new-shipment" element={currentUser && currentUser.emailVerified ?( <div className="app-container">

@@ -3,7 +3,7 @@ import { Form, Input, Button, message,Row,Col,Checkbox } from 'antd';
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../firebase';
 import { useAuth ,firestore} from "../../firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import './Login.css'
 export const Login = () => {
   const [form] = Form.useForm();
@@ -72,10 +72,10 @@ export const Login = () => {
       <span style={{ marginLeft: '8px' }}>Remember me</span>
     </Form.Item>
   </div>
-  <div style={{marginTop:'3px', marginLeft:'40px'}}>
-    <p>Forget Password?</p>
+  <div style={{ marginTop: '15px', marginLeft: '40px' }}>
+    <Link to="/forgot_pwd">Forgot Password?</Link>
   </div>
-</div>
+  </div>
 
       </Form>
       </Col>
