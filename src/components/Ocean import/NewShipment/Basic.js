@@ -748,11 +748,7 @@ export const Basic = () => {
                                     </Form.Item>
                                     <Form.Item label="E-Commerce" style={formItemStyle}>
                                       <div style={{ display: 'flex', alignItems: 'center' }}>
-                                        <Checkbox
-
-                                          value={formData.receivedDate}
-                                          onChange={(e) => handleFieldChange("receivedDate", e.target.checked)}
-                                        />
+                                        <Checkbox/>
 
                                       </div>
                                     </Form.Item>

@@ -53,7 +53,7 @@
   }
 
   :where(.css-dev-only-do-not-override-byeoj0).ant-collapse>.ant-collapse-item >.ant-collapse-header {
-    padding: 0;
+    padding: 5px 0;
   }
 
   .ant-collapse-header .ant-collapse-arrow {
